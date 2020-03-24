@@ -6,7 +6,7 @@
     <title>Near by Shops</title>
 </head>
 <body><center>
-    <form action="index.js" method="post">
+    <form method="post">
         <h1>SHOPKEEPER DETAILS</h1>
         <input type="text" placeholder="Name" id="name"><br><br>
         <input type="text" placeholder="Shop Name" id="shpname"><br><br>
@@ -24,12 +24,10 @@
         <input type="file" name="shopowner" id="shopowner"><br><br>
         <input type="checkbox" name="tandc" id="tandc">
         By Clicking here you agree to our <a href="">Terms and Conditions.</a><br><br>
-        <button type="submit">
-            Submit
-        </button><br><br>
+        <input type="submit" onclick="store()" value="Submit" name="" id="">
     </form>
     <button onclick="getLocation()">Locate Me!</button><br><br>
 </center>
-<script src="./findshop.js"></script>
+
 </body>
 </html>

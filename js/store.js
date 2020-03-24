@@ -1,23 +1,3 @@
-
-
-function getLocation() {
-  
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-var lat,logi;
-function showPosition(position) {
-  lat = position.coords.latitude;
-  logi = position.coords.longitude;
-  document.getElementById("lat").innerHTML=lat;
-  document.getElementById("log").innerHTML=logi;
-  
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude); 
-}
 var FrontImg,BackImg,ShopImg,OwnerImg;
 function Front(){
   FrontImg = event.target.files[0];

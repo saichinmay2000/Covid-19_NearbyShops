@@ -11,14 +11,25 @@
         <input type="text" placeholder="Name" id="name"><br><br>
         <input type="text" placeholder="Shop Name" id="shpname"><br><br>
         <input type="text" placeholder="Shop Address" id="address"><br><br>
-        <button>Locate Me!</button><br><br>
+        <button onclick="getLocation()">Locate Me!</button><br><br>
+        <p id="map"></p><br><br>
         <input type="number" placeholder="Mobile Number" id="mobnum"><br><br>
         <input type="text" name="shoplicense" id="shoplicense" placeholder="Shop License Number"><br><br>
         License Front
         <input type="file" name="frontlicense" id="frontlicense" placeholder="License Front"><br><br>
         License Back
         <input type="file" name="backlicense" id="backlicense" placeholder="License Back"><br><br>
+        Shop Photo Front
+        <input type="file" name="shoppic" id="shoppic"><br><br>
+        Shop Owner Image
+        <input type="file" name="shopowner" id="shopowner"><br><br>
+        <input type="checkbox" name="tandc" id="tandc">
+        By Clicking here you agree to our <a href="">Terms and Conditions.</a><br><br>
+        <button type="submit">
+            Submit
+        </button>
     </form>
 </center>
+<script src="./findshop.js"></script>
 </body>
 </html>

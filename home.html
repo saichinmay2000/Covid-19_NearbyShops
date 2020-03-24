@@ -13,7 +13,7 @@
 </head>
 <body><center>
         <h1>SHOPKEEPER DETAILS</h1>
-        <input type="text" placeholder="Name" id="name"><br><br>
+        <input type="text" placeholder="Name" id="name" required><br><br>
         <input type="text" placeholder="Shop Name" id="shpname"><br><br>
         <input type="text" placeholder="Shop Address" id="address"><br><br>
         <p id="map"></p><br><br>
@@ -30,7 +30,8 @@
         <input type="checkbox" name="tandc" id="tandc">
         By Clicking here you agree to our <a href="">Terms and Conditions.</a><br><br>
         <button onclick="getLocation()" >Locate Me!</button><br><br>
-      
+        <p id="log"></p>
+        <p id="lat"></p>
         <input type="submit" onclick="store()" value="Submit" name="" id="">
 </center>
 

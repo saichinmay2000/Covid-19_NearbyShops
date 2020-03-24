@@ -1,6 +1,7 @@
 
 
 function getLocation() {
+  
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
@@ -11,6 +12,8 @@ var lat,logi;
 function showPosition(position) {
   lat = position.coords.latitude;
   logi = position.coords.longitude;
+  document.getElementById("lat").innerHTML=lat;
+  document.getElementById("log").innerHTML=logi;
   
   console.log(position.coords.latitude);
   console.log(position.coords.longitude); 
@@ -51,9 +54,7 @@ function store(){
   ShopName:shpname,
   Address: address,
   MobileNumber: mobnum,
-  ShopLiscense:shoplicense,
-  Latitude:lat,
-  Longitude:logi
+  ShopLiscense:shoplicense
 });
 var storage = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"FrontImage");
 var storage1 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"BackImage");
@@ -197,7 +198,7 @@ uploadTask.on('state_changed', function(snapshot){
         })
         });
         });
-        
+        window.open("Main.html");
       }
       else{
         window.alert("Enter all the fields");

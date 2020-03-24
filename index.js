@@ -1,5 +1,4 @@
 (function(){
-  
   var firebaseConfig = {
     apiKey: "AIzaSyCrXaMutwiZ5wkQnZlN46XGnQpx1kVqhqM",
     authDomain: "shopkeeper-4f9d9.firebaseapp.com",

@@ -1,16 +1,14 @@
 var x = document.getElementById("map");
-function getLocation()
-{
-    if(navigator.geolocation)
-    {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    }
-    else
-    {
-        x.innerHTML = "GeoLocation is turned off or Geolocation is not supported.";
-    }
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
 }
-function showPosition(Position)
-{
-    x.innerHTML = "Latitude: "+ Position.cord.latitude + "<br> Longitude: "+ Position.cord.longitude;
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
 }

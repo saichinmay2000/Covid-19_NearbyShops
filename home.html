@@ -6,24 +6,29 @@
     <title>Shop Registration</title>
     <link rel="stylesheet" href="./main.css">
 </head>
-<body>
-    <div class="mention">
-        <h1>Register Now</h1>
-    <form>
-        <input type="text" class="look" name="name" placeholder="Merchant name" required><br>
-        <input type="text" class="look" name="shopname" placeholder="Shop Name" required><br>
-        <textarea name="address" id="" class="look" cols="30" rows="10" placeholder="Shop Address" required></textarea><br>
-        <p id="map"></p><br>
-        <input type="tel" class="look" name="phone" name="phone" pattern="[0-9]{10}" placeholder="Phone Number" required>
-        <input type="text" class="look" name="license_number" placeholder="Shop License Number" required>
-        Shop Owner Image<input type="file" id="btn">
-        Shop Front Image<input type="file" id="btn">
-        License Front<input type="file" id="btn">
-        License Back<input type="file" id="btn">
-        <p><span><input type="checkbox"></span>I hereby declare the above details are correct.</p>
-        <button type="submit" id="btn">Register</button>
-    </form><br>
-    <button onclick="getLocation()" id="btn">Locate Me!</button></div>
-    <script src="./map.js"></script>
+<body><center>
+    <form method="post">
+        <h1>SHOPKEEPER DETAILS</h1>
+        <input type="text" placeholder="Name" id="name"><br><br>
+        <input type="text" placeholder="Shop Name" id="shpname"><br><br>
+        <input type="text" placeholder="Shop Address" id="address"><br><br>
+        <p id="map"></p><br><br>
+        <input type="number" placeholder="Mobile Number" id="mobnum"><br><br>
+        <input type="text" name="shoplicense" id="shoplicense" placeholder="Shop License Number"><br><br>
+        License Front
+        <input type="file" name="frontlicense" id="frontlicense" placeholder="License Front"><br><br>
+        License Back
+        <input type="file" name="backlicense" id="backlicense" placeholder="License Back"><br><br>
+        Shop Photo Front
+        <input type="file" name="shoppic" id="shoppic"><br><br>
+        Shop Owner Image
+        <input type="file" name="shopowner" id="shopowner"><br><br>
+        <input type="checkbox" name="tandc" id="tandc">
+        By Clicking here you agree to our <a href="">Terms and Conditions.</a><br><br>
+        <input type="submit" onclick="store()" value="Submit" name="" id="">
+    </form>
+    <button onclick="getLocation()">Locate Me!</button><br><br>
+</center>
+
 </body>
 </html>

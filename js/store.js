@@ -35,10 +35,10 @@ function store(){
   MobileNumber: mobnum,
   License_number:license_number
 });
-var storage = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"FrontImage");
-var storage1 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"BackImage");
-var storage2 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"ShopImage");
-var storage3 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"OwnerImage");
+var storage = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"FrontImage.jpg");
+var storage1 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"BackImage.jpg");
+var storage2 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"ShopImage.jpg");
+var storage3 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"OwnerImage.jpg");
 var metadata = {
   contentType: 'image/jpeg',
 };

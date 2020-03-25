@@ -12,7 +12,7 @@ function initMap() {
         infoWindow.open(map);
         map.setCenter(pos);
         var marker = new google.maps.Marker({position:pos,draggable: true,map: map,title: 'Shop Location'});
-        marker.addListener('click', function(){
+        marker.addListener('position_changed', function(){
             console.log('qwertyu');
             map.setCenter(marker.getPosition());
         });

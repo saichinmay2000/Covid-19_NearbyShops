@@ -21,7 +21,7 @@ firebase.auth().onAuthStateChanged(user => {
       root.child("FrontImg").once("value").then(function(snap){
           var pro = snap.child("progress").val();
 
-          if(name=="" && Address=="" && pro==""){
+          if(name!=null && Address!=null && pro!=null){
               location.replace("Main.html");
           }
       })

@@ -6,7 +6,6 @@
             var Address = snap.child("Address").val();   
             var Phone = snap.child("MobileNumber").val(); 
             document.getElementById("UserName").innerHTML = name;
-            document.getElementById("UserName1").innerHTML = name;
             document.getElementById("Address").innerHTML = Address;
             document.getElementById("Phone").innerHTML = Phone;
             document.getElementById("UserID").innerHTML = user.uid;   

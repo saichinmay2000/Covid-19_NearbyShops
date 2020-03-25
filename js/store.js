@@ -178,7 +178,6 @@ uploadTask.on('state_changed', function(snapshot){
         })
         });
         });
-        window.open("Main.html");
       }
       else{
         window.alert("Enter all the fields");

@@ -10,6 +10,10 @@
 <script src="./js/index.js"></script>
 <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
    
   <script type="text/javascript">  
    var uiConfig = {  
@@ -18,7 +22,6 @@
             return true;
           },
           uiShown: function() {
-            document.getElementById('loader').style.display = 'none';
           }
         },
         signInFlow: 'popup',
@@ -32,17 +35,28 @@
    var ui = new firebaseui.auth.AuthUI(firebase.auth());  
    ui.start('#firebaseui-auth-container', uiConfig);  
 </script>  
+
  <div></div>  
  <body>  
       <h1 align="center" style="color:#000; font-family: cursive;">Welcome to</h1>
       <h1 align="center" style="color:#000; font-family: cursive;">Book your Token</h1>
+      <div class="container">
+        <br>
+        <div class="row">
+          <div class="col">
+            <h3>Login in with Shop Owner</h3>
+            <div id="firebaseui-auth-container"></div></div>
+            <div class="col">
+              <h3>Login in with customer</h3>
+              <button>Login in with customer</button>
+            </div>
+        </div>
+      </div>
        <div id="firebaseui-auth-container"></div>
        <div align="center">
         <h2>COVID-19 Measures</h2>
         <p>Precautions to be taken</p>
         
-        <div id="firebaseui-auth-container"></div>
-        <div id="loader">Loading...</div>
         <div class="slideshow-container">
         
         <div class="mySlides fade">

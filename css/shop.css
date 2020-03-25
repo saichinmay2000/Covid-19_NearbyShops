@@ -1,6 +1,6 @@
 .mention{
     text-align: center;
-    width: 300px;
+    width: 400px;
     background: #fff;
     padding: 20px;
     margin: 0 auto 10%;  
@@ -8,8 +8,8 @@
 .look{
   border-radius: 20px;
   padding: 10px;
-  margin: 10px 0;
   width: 100%;
+  margin-top: 20px;
   border: 1px solid #999;
 }
 #dis_text{
@@ -18,13 +18,31 @@
   color: #aaa;
 }
 #btn:hover{
-  background-color: #00b28f;
+  background-color: #0000ff;
 }
 #btn{
   padding: 10px;
   color: white;
-  background-color: #009578;
+  background-color: #00aaff;
   border: 1px solid #000;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#side_heading{
+  font-family: sans-serif;
+  font-size: medium;
+  text-align: left;
+  margin-top: 15px;;
+  margin-bottom: -10px;
+}
+
+#register_button{
+  margin: 30px;
+  border-radius: 6px;
+  padding: 10px 30px;
+  border: #000000;
+  color: #fff;
+  background-color: #00aaff;
+
 }

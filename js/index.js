@@ -10,21 +10,6 @@
     measurementId: "G-YDD47BBRYH"
 };  
 firebase.initializeApp(firebaseConfig);  
-firebase.auth().onAuthStateChanged(user => {
-  var root =  firebase.database().ref(user.uid).child("Shop Details");
-  root.on('value',snap=>{
-      snap.forEach(snap=>{
-         Name = snap.child("Name").val();
-         Shop_name = snap.child("ShopName").val();
-         if(Name!="" && Shop_name!=""){
-          window.location.href="Main.html";
-         }
-         else{
-          window.location.href="shopreg.html";
-         }
-       })   
-    });
-
-  });
-
+document.getElementById("Progress").style.display = "none";
+document.getElementById("btn12").style.display = "none";
 })()

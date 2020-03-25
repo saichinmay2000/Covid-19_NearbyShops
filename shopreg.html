@@ -6,9 +6,13 @@
     <title>Shop Registration</title>
     <link rel="stylesheet" href="./css/shop.css">
     <script src="./js/store.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script> 
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="./js/virefyaccount.js"></script>
-    <script src="./js/gmap.js"
-    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
+    <script src="./js/gmap.js"></script>
     <style>
     #map{
         margin-top: 30px;
@@ -18,7 +22,24 @@
     </style>
 </head>
 <body>
-    <div class="mention">
+  <div class="container" id="Progress">
+    <div class="progress">
+    <div class="progress-bar progress-bar-striped" id="myProgress1" style="width:0%"></div>
+  </div>
+  <br>
+  <div class="progress">
+    <div class="progress-bar bg-success progress-bar-striped" id="myProgress2" style="width:0%"></div>
+  </div>
+  <br>
+  <div class="progress">
+    <div class="progress-bar bg-info progress-bar-striped" id="myProgress3" style="width:0%"></div>
+  </div>
+  <br>
+  <div class="progress">
+    <div class="progress-bar bg-warning progress-bar-striped" id="myProgress4" style="width:0%"></div>
+  </div>
+</div>
+<div class="mention" id="details">
         <u><h1 style='font-family: sans-serif; margin-bottom: 30px;color: #00aaff;stroke: black;stroke-width: 100px'>Shop Registration Form</h1></u>
     <form>
         <p id='side_heading'>Name</p>
@@ -42,6 +63,13 @@
         <p id='side_heading'><span><input type="checkbox"></span>I hereby declare that the above details are correct.</p>
         <button type="button" onclick="store()" class="signup"  name="submit" id='register_button'>Register</button>
     </form><br>
+     <button onclick="getLocation()">Locate Me!</button> <br> 
+</div>
+<br>
+<div class="container" id="btn12">
+  <center>
+  <button onclick="NextPage()" class="btn btn-outline-primary">Go to Next page</button>
+</center>
 </div>
 <script src="./js/map.js"></script>
 <script src="./js/index.js"></script>

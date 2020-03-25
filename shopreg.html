@@ -7,26 +7,41 @@
     <link rel="stylesheet" href="./css/shop.css">
     <script src="./js/store.js"></script>
     <script src="./js/virefyaccount.js"></script>
+    <script src="./js/gmap.js"
     <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
+    <style>
+    #map{
+        margin-top: 30px;
+        height: 400px;
+        width: 100%;
+    }
+    </style>
 </head>
 <body>
     <div class="mention">
-        <h1>Register Here</h1>
+        <u><h1 style='font-family: sans-serif; margin-bottom: 30px;color: #00aaff;stroke: black;stroke-width: 100px'>Shop Registration Form</h1></u>
     <form>
+        <p id='side_heading'>Name</p>
         <input type="text" class="look" name="username" id="username" placeholder="Name" required><br>
+        <p id='side_heading'>Shop Name</p>
         <input type="text" class="look" name="shopname" id="shopname" placeholder="Shop Name" required><br>
+        <p id='side_heading'>Shop Address</p>
         <textarea name="address" id="address" class="look" cols="30" rows="10" placeholder="Address of the shop" required></textarea><br>
-        <p id="map"></p><br>
+        <p id='side_heading'>Shop Location</p>
+        <div id="map"></div>
+        <p id='side_heading'>Phone Number</p>
         <input type="tel" class="look" name="phone" id="phone" pattern="[0-9]{10}" placeholder="Phone Number" required>
+        <p id='side_heading'>License Number</p>
         <input type="text" class="look" name="license_number" id="license_number" placeholder="Shop License Number" required>
-        Shop Owner Image<input type="file" id="btn" onchange="Owner()">
-        Shop Image<input type="file" id="btn" onchange="Shop()">
-        License Front<input type="file" id="btn" onchange="Front()">
-        License Back<input type="file" id="btn" onchange="Back()">
-        <p><span><input type="checkbox"></span>I hereby declare that the above details are correct.</p>
-        <button type="button" onclick="store()" class="signup" name="submit">Register</button>
+        <p id='side_heading'>Shop Owner Image</p><br><input type="file" id="btn" onchange="Owner()">
+        <p id='side_heading'>Shop Image</p><br><input type="file" id="btn" onchange="Shop()">
+        <p id='side_heading'>License Front</p><br><input type="file" id="btn" onchange="Front()">
+        <p id='side_heading'>License Back</p><br><input type="file" id="btn" onchange="Back()">
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Mp-nbpxvDIUmjL9MWCDil6AypsFcCVQ&callback=initMap"></script>
+
+        <p id='side_heading'><span><input type="checkbox"></span>I hereby declare that the above details are correct.</p>
+        <button type="button" onclick="store()" class="signup"  name="submit" id='register_button'>Register</button>
     </form><br>
-    <button onclick="getLocation()">Locate Me!</button>
 </div>
 <script src="./js/map.js"></script>
 <script src="./js/index.js"></script>

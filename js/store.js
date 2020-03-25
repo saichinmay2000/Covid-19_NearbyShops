@@ -18,23 +18,23 @@ function Owner(){
 
 function store(){
   firebase.auth().onAuthStateChanged(user => {
-  var name = document.getElementById("name").value;
-  var shpname = document.getElementById("shpname").value;
+  var name = document.getElementById("username").value;
+  var shpname = document.getElementById("shopname").value;
   var address = document.getElementById("address").value;
-  var mobnum = document.getElementById("mobnum").value;
-  var shoplicense = document.getElementById("shoplicense").value;
-  var frontlicense = document.getElementById("frontlicense").value;
-  var backlicense = document.getElementById("backlicense").value;
-  var shoppic = document.getElementById("shoppic").value;
-  var shopowner = document.getElementById("shopowner").value;
-  if(name!="" && shpname!="" && address!="" && mobnum!="" && shoplicense!="" && frontlicense!="" && backlicense!="" && shoppic!="" && shopowner!=""){
+  var mobnum = document.getElementById("phone").value;
+  var license_number = document.getElementById("license_number").value;
+  var ShopOwner = document.getElementById("btn").value;
+  var ShopImg1 = document.getElementById("btn").value;
+  var LicFrn = document.getElementById("btn").value;
+  var LicBac = document.getElementById("btn").value;
+  if(name!="" && shpname!="" && address!="" && mobnum!="" && license_number!="" && ShopOwner!="" && ShopImg1!="" && LicFrn!="" && LicBac!=""){
   var root = firebase.database().ref(user.uid).child("Shop Details");
   firebase.database().ref(user.uid).child("Shop Details").set({
   Name: name,
   ShopName:shpname,
   Address: address,
   MobileNumber: mobnum,
-  ShopLiscense:shoplicense
+  License_number:license_number
 });
 var storage = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"FrontImage");
 var storage1 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"BackImage");

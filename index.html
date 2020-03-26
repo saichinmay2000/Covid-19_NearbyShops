@@ -91,9 +91,12 @@
        <script src="./js/slider.js"></script>
        <script>
          firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
+        if (user.email) {
               window.location.href="shopreg.html";
                 } 
+                else if(user.phoneNumber){
+                  window.location.href="PhoneDash.html";
+                }
           });
 
           

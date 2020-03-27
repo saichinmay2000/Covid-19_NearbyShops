@@ -12,12 +12,18 @@ function initMap() {
         infoWindow.open(map);
         map.setCenter(pos);
         var marker = new google.maps.Marker({position:pos,draggable: true,map: map,title: 'Shop Location'});
+        console.log(pos);
+        
         marker.addListener('position_changed', function(){
-            console.log('qwertyu');
+            console.log(marker.getPosition().toString());
+            
             map.setCenter(marker.getPosition());
         });
+
         }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());});
+            handleLocationError(true, infoWindow, map.getCenter());
+        });
+        
     } else {
         handleLocationError(false, infoWindow, map.getCenter());}
 }
@@ -27,4 +33,5 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: The Geolocation service failed.' :
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
+    
 }

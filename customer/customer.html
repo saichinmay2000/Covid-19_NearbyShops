@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Get Items
+        </title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="customer.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="customer.js"></script>
+    </head>
+    <body>
+        <!--Navbar -->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Select your items</a>
+              </div>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+              </ul>
+            </div>
+          </nav>
+    <!--/.Navbar -->
+    <h2 class="title text-center">No Tokens were created!</h2>
+    <h2 class="title text-center">Choose Your Store</h2>
+    <div class="container rounded mb-2 shop">
+          <div class="description">
+            <div class="row">
+              <div class="col-lg-6">
+                <img src="shop.jpg" alt="shop pic" id="Rectangle_2" name="Rectangle_2" height="500px" weight="300px">
+              </div>
+              <div  class="col-lg-6">
+                <h3 id="shop_name" name="shop_name" class="text">Shop Name</h3>
+                <p class="text">Shop Category</p>
+                <h4 class="text">4333 Edwards Rd undefined Erie, Oklahoma 14355 United States</h4>
+                <button type="button" class="btn btn-primary order" data-toggle="modal" data-target="#myModal">Order Now</button>
+                <br>
+                <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#demo">details</button><br>
+              </div>
+              <div id="demo" class="collapse">
+                <hr>
+                <div class="col-lg-6">
+                  <img src="map.jpg" alt="shop map" id="Rectangle_5" name="Rectangle_5" height="500px" weight="270px">
+                </div>
+                <div class="col-lg-6">
+                  <div class="container shop_details">
+                    <div class="row">
+                    <div class="col-lg-4">
+                      <h4 class="text">Shop Keeper Name</h4>
+                      <h6 class="text">Phone Number</h6>
+                      <h6  class="text">E-Mail</h6>
+                    </div>
+                    <div class="col-lg-8">
+                      <img src="shopkeper.jpg" alt="shop Keeper" id="Rectangle_4" name="Rectangle_4" height="100px" weight="160px" class="shop_kepeer_photo">
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Place Your Order</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div data-role="dynamic-fields">
+                          <div class="form-inline">
+                              <div class="form-group">
+                                  <label class="sr-only" for="field-name">Item Name</label>
+                                  <input type="text" class="form-control" id="field-name" placeholder="Field Name">
+                              </div>
+                              <span>-</span>
+                              <div class="form-group">
+                                  <label class="sr-only" for="field-value">Quantity</label>
+                                  <input type="text" class="form-control" id="field-value" placeholder="Field Value">
+                              </div>
+                              <button class="btn btn-danger" data-role="remove">
+                                  <span class="glyphicon glyphicon-remove"></span>
+                              </button>
+                              <button class="btn btn-primary" data-role="add">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </div>  <!-- /div.form-inline -->
+                      </div>  <!-- /div[data-role="dynamic-fields"] -->
+                  </div>  <!-- /div.col-md-12 -->
+              </div>  <!-- /div.row -->
+          </div>
+          <div class="row order_submit">
+            <button type="button" class="btn btn-default center-block" data-dismiss="modal">Submit</button>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    </body>
+</html>

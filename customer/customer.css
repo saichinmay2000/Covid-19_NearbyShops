@@ -1,0 +1,70 @@
+.title{
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    color: #000000;
+}
+.text{
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    color: #000000;
+}
+.shop{
+    background: #FFFFFF;
+    border: 3px solid #1C4FB4;
+    box-shadow: 0px 1px 30px rgba(0, 0, 0, 0.18);
+    border-radius: 10px;
+}
+.order{
+    float: right;
+}
+.shop_details{
+    background: #FFFFFF;
+    border: 2px solid #B41C1C;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin-left: 10px ;
+    max-width:550px;
+    margin-top: 10px;
+    margin-bottom: 7.5px;
+}
+.shop_kepeer_photo{
+    border: 2px solid #000000;
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 7.5px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+html, body {
+    padding-top: 20px;
+}
+
+[data-role="dynamic-fields"] > .form-inline + .form-inline {
+    margin-top: 0.5em;
+}
+
+[data-role="dynamic-fields"] > .form-inline [data-role="add"] {
+    display: none;
+}
+
+[data-role="dynamic-fields"] > .form-inline:last-child [data-role="add"] {
+    display: inline-block;
+}
+
+[data-role="dynamic-fields"] > .form-inline:last-child [data-role="remove"] {
+    display: none;
+}
+.order_submit{
+    padding-top: 10px;
+}
+hr { 
+    display: block;
+    margin-bottom: 0.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    border-width: 1px;
+    opacity: 0.2;
+    border: 1.5px solid #000000;
+  } 

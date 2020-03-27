@@ -13,7 +13,7 @@ function initMap() {
         map.setCenter(pos);
         var marker = new google.maps.Marker({position:pos,draggable: true,map: map,title: 'Shop Location'});
         marker.addListener('position_changed', function(){
-            console.log('qwertyu');
+            
             map.setCenter(marker.getPosition());
         });
         }, function() {

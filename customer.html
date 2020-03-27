@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Get Items
+        </title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/customer.js"></script>
+<link rel="stylesheet" href="./css/customer.css">
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">ShopKepper</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="Main.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+            
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <a class="nav-link fa fa-user-circle-o" data-toggle="modal" data-target="#exampleModal" id="phone">
+              skjdfhkjsf  </a>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="Logout()">Logout</button>
+    
+          </form>
+        </div>
+      </nav>
+    <!--/.Navbar --> 
+    <div class="container-fuild" style="margin-top: 60px;">
+    <h2 class="title text-center" >No Tokens were created!</h2>
+    <h2 class="title text-center">Choose Your Store</h2>
+  <center>
+      <div id="app" class="container" style="overflow: scroll;  max-height: 300px; max-width: 1000px;overflow-x: auto;">
+        <table class="table table-light table-striped table-hover" >
+          <thead>
+              <tr>
+                  <th>Photo</th>
+                  <th>Shop Name</th>
+                  <th>Name</th>
+                  <th>Contact ID</th>
+                  <th>Address</th>
+                  <th>Order</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td data-label="Photo"></td>
+                  <td data-label="Shop Name">IQC36631</td>
+                   <td data-label="Name">20.183 MH/s</td>
+                  <td data-label="Contact Id">Lifetime</td>
+                  <td data-label="Address">$46.59</td>
+                  <td data-label=""><a href="#" class="btn btn__active">ORDER</a></td>
+              </tr>
+              
+            <!-- <tr>
+                <td></td>
+                  <td data-label="Contact ID">IQC36632</td>
+                  <td data-label="Power">23.6190 MH/s</td>
+                  <td data-label="Expiration">07.01.2022</td>
+                  <td data-label="Value">$90.72</td>
+                  <td data-label=""><a href="#" class="btn btn__active">ORDER</a></td>
+              </tr>
+              <tr>
+                <td></td>
+                  <td data-label="Contact ID">IQC36633</td>
+                  <td data-label="Power">20.463 MH/s</td>
+                  <td data-label="Expiration">01.02.2020</td>
+                  <td data-label="Value">$60.41</td>
+                  <td data-label=""><a href="#" class="btn btn__pledged">ORDER</a></td>
+              </tr>
+              <tr>
+                <td></td>
+                  <td data-label="Contact ID">IQC36634</td>
+                  <td data-label="Power">46.7378 MH/s</td>
+                  <td data-label="Expiration">08.01.2021</td>
+                  <td data-label="Value">$18.93</td>
+                  <td data-label=""><a href="#" class="btn btn__pledged">ORDER</a></td>
+              </tr>
+              <tr>
+                <td></td>
+                  <td data-label="Contact ID">IQC36635</td>
+                  <td data-label="Power">20.8476 MH/s</td>
+                  <td data-label="Expiration">17.11.2021</td>
+                  <td data-label="Value">$11.49</td>
+                  <td data-label=""><a href="#" class="btn btn__pledged">ORDER</a></td>
+              </tr>-->
+          </tbody>
+      </table>
+      </div>
+</center>
+    </body>
+</html>

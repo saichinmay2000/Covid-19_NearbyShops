@@ -25,11 +25,11 @@
           }
         },
         signInFlow: 'popup',
-    signInSuccessUrl: 'PhoneDash.html',  
+    signInSuccessUrl: 'customer.html',  
     signInOptions: [  
      firebase.auth.PhoneAuthProvider.PROVIDER_ID  
     ],  
-    tosUrl: 'PhoneDash.html'  
+    tosUrl: 'customer.html'  
    };  
    var ui = new firebaseui.auth.AuthUI(firebase.auth());  
    ui.start('#firebaseui-auth-container', uiConfig);  

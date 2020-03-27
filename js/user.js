@@ -3,6 +3,7 @@
     firebase.auth().onAuthStateChanged(user => {
         document.getElementById("email").innerHTML=user.email;
         
+        
         var root =  firebase.database().ref(user.uid).child("Shop Details");
         root.once("value").then(function(snap){
           var veri = snap.child("verify").val();

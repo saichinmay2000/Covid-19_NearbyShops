@@ -12,6 +12,7 @@
           deco.style.fontStyle='bold';
           deco.style.backgroundColor = "LimeGreen";
           deco.style.borderRadius = "10px";
+          deco.style.width="70px";
           console.log(veri);
           
         })

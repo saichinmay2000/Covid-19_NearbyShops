@@ -33,7 +33,8 @@ function store(){
   ShopName:shpname,
   Address: address,
   MobileNumber: mobnum,
-  License_number:license_number
+  License_number:license_number,
+  verify:"Not verifed"
 });
 var storage = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"FrontImage.jpg");
 var storage1 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"BackImage.jpg");
@@ -161,3 +162,4 @@ uploadTask.on('state_changed', function(snapshot){
 function NextPage(){
   location.replace("Main.html");
 }
+

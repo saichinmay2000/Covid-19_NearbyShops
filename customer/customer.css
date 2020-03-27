@@ -4,6 +4,12 @@
     font-weight: bold;
     color: #000000;
 }
+.text{
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    color: #000000;
+}
 .shop{
     background: #FFFFFF;
     border: 3px solid #1C4FB4;
@@ -53,3 +59,12 @@ html, body {
 .order_submit{
     padding-top: 10px;
 }
+hr { 
+    display: block;
+    margin-bottom: 0.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    border-width: 1px;
+    opacity: 0.2;
+    border: 1.5px solid #000000;
+  } 

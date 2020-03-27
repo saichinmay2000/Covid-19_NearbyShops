@@ -14,9 +14,8 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+   
   <script type="text/javascript">  
-   var ui = new firebaseui.auth.AuthUI(firebase.auth());  
    var uiConfig = {  
     callbacks: {
           signInSuccessWithAuthResult: function(authResult, redirectUrl) {
@@ -26,16 +25,14 @@
           }
         },
         signInFlow: 'popup',
-    signInSuccessUrl: 'shopreg.html',  
+    signInSuccessUrl: 'PhoneDash.html',  
     signInOptions: [  
-     firebase.auth.GoogleAuthProvider.PROVIDER_ID,  
-     firebase.auth.EmailAuthProvider.PROVIDER_ID  
+     firebase.auth.PhoneAuthProvider.PROVIDER_ID  
     ],  
-    tosUrl: 'shopreg.html'  
-   }; 
-   ui.start('#firebaseui-auth-container', uiConfig); 
-
- 
+    tosUrl: 'PhoneDash.html'  
+   };  
+   var ui = new firebaseui.auth.AuthUI(firebase.auth());  
+   ui.start('#firebaseui-auth-container', uiConfig);  
 </script>  
 
  <div></div>  
@@ -43,16 +40,9 @@
       <h1 align="center" style="color:#000; font-family: cursive;">Welcome to</h1>
       <h1 align="center" style="color:#000; font-family: cursive;">Book your Token</h1>
       <div class="container">
-        <br>
-        <div class="row">
-          <div class="col">
-            <h3>Store Login</h3>
-            <div id="firebaseui-auth-container"></div></div>
-            <div class="col">
-              <h3>Customer Login</h3>
-              <a href="phone.html"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login/Register</button></a>
-            </div>
-        </div>
+        
+        <div id="firebaseui-auth-container"></div>
+        
       </div>
        <div id="firebaseui-auth-container"></div>
        <div align="center">
@@ -91,15 +81,10 @@
        <script src="./js/slider.js"></script>
        <script>
          firebase.auth().onAuthStateChanged(function(user) {
-        if (user.email) {
-              window.location.href="shopreg.html";
+        if (user.phoneNumber) {
+              window.location.href="PhoneDash.html";
                 } 
-                else if(user.phoneNumber){
-                  window.location.href="PhoneDash.html";
-                }
           });
-
-          
        </script>
  </body>  
 </html>

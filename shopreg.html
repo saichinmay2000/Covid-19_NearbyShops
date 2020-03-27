@@ -11,7 +11,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="./js/virefyaccount.js"></script>
     <script src="./js/gmap.js"></script>
     <style>
     #map{
@@ -19,10 +18,13 @@
         height: 400px;
         width: 100%;
     }
+    .top{
+      margin-top: 150px;
+    }
     </style>
 </head>
 <body>
-  <div class="container" id="Progress">
+  <div class="container top" id="Progress">
     <div class="progress">
     <div class="progress-bar progress-bar-striped" id="myProgress1" style="width:0%"></div>
   </div>
@@ -41,7 +43,7 @@
 </div>
 <div class="mention" id="details">
         <u><h1 style='font-family: sans-serif; margin-bottom: 30px;color: #00aaff;stroke: black;stroke-width: 100px'>Shop Registration Form</h1></u>
-    <form>
+   
         <p id='side_heading'>Name</p>
         <input type="text" class="look" name="username" id="username" placeholder="Name" required><br>
         <p id='side_heading'>Shop Name</p>
@@ -49,8 +51,7 @@
         <p id='side_heading'>Shop Address</p>
         <textarea name="address" id="address" class="look" cols="30" rows="10" placeholder="Address of the shop" required></textarea><br>
         <p id='side_heading'>Shop Location</p>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-        <div id="map"></div>
+        <div id="map"></div><br>
         <p id='side_heading'>Phone Number</p>
         <input type="tel" class="look" name="phone" id="phone" pattern="[0-9]{10}" placeholder="Phone Number" required>
         <p id='side_heading'>License Number</p>
@@ -63,7 +64,7 @@
 
         <p id='side_heading'><span><input type="checkbox"></span>I hereby declare that the above details are correct.</p>
         <button type="button" onclick="store()" class="signup"  name="submit" id='register_button'>Register</button>
-    </form><br>
+    <br>
 </div>
 <br>
 <div class="container" id="btn12">
@@ -71,7 +72,6 @@
   <button onclick="NextPage()" class="btn btn-outline-primary">Go to Next page</button>
 </center>
 </div>
-<script src="./js/map.js"></script>
 <script src="./js/index.js"></script>
 </body>
 </html>

@@ -33,12 +33,13 @@ function store(){
   ShopName:shpname,
   Address: address,
   MobileNumber: mobnum,
-  License_number:license_number
+  License_number:license_number,
+  verify:"Not verifed"
 });
-var storage = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"FrontImage");
-var storage1 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"BackImage");
-var storage2 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"ShopImage");
-var storage3 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"OwnerImage");
+var storage = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"FrontImage.jpg");
+var storage1 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"BackImage.jpg");
+var storage2 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"ShopImage.jpg");
+var storage3 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"OwnerImage.jpg");
 var metadata = {
   contentType: 'image/jpeg',
 };
@@ -54,6 +55,8 @@ uploadTask.on('state_changed', function(snapshot){
   //console.log('Upload is ' + progress1 + '% done');
   
   document.getElementById("myProgress1").style.width = progress1+"%";
+  document.getElementById("myProgress1").innerHTML = progress1+"%";
+
   switch (snapshot.state) {
     case firebase.storage.TaskState.PAUSED: // or 'paused'  
       console.log('Upload is paused');
@@ -77,6 +80,7 @@ uploadTask.on('state_changed', function(snapshot){
      progress2 = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
     //console.log('Upload is ' + progress2 + '% done');
     document.getElementById("myProgress2").style.width = progress2+"%";
+    document.getElementById("myProgress2").innerHTML = progress2+"%";
     switch (snapshot.state) {
       case firebase.storage.TaskState.PAUSED: // or 'paused'  
           console.log('Upload is paused');
@@ -99,6 +103,7 @@ uploadTask.on('state_changed', function(snapshot){
        progress3 = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       //console.log('Upload is ' + progress3 + '% done');
       document.getElementById("myProgress3").style.width = progress3+"%";
+      document.getElementById("myProgress3").innerHTML = progress3+"%";
       switch (snapshot.state) {
         case firebase.storage.TaskState.PAUSED: // or 'paused'  
           console.log('Upload is paused');
@@ -121,6 +126,7 @@ uploadTask.on('state_changed', function(snapshot){
          progress4 = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         //console.log('Upload is ' + progress4 + '% done');
         document.getElementById("myProgress4").style.width = progress4+"%";
+        document.getElementById("myProgress4").innerHTML = progress4+"%";
         switch (snapshot.state) {
           case firebase.storage.TaskState.PAUSED: // or 'paused'  
             console.log('Upload is paused');
@@ -156,3 +162,4 @@ uploadTask.on('state_changed', function(snapshot){
 function NextPage(){
   location.replace("Main.html");
 }
+

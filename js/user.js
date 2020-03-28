@@ -1,5 +1,6 @@
 
 (function(){
+  
     firebase.auth().onAuthStateChanged(user => {
         document.getElementById("email").innerHTML=user.email;
         
@@ -12,7 +13,7 @@
           
           var veri = snap.child("verify").val();
           var deco = document.getElementById("veri");
-          if(veri==="Verifed"){
+          if(veri==="Verified"){
           deco.innerHTML=veri;
           deco.style.color='white';
           deco.style.fontStyle='bold';
@@ -32,7 +33,11 @@
         //})
       })
       });
-})()
+      
+    
+
+      
+    })()
 function Logout(){
     firebase.auth().signOut().then(function() {
   // Sign-out successful.

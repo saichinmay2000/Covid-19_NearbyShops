@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="./css/profile.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./js/dataverify.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
-    <script src="./js/index.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
+     <script src="./js/index.js"></script>
+     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+     <script src="./js/user.js"></script>
+     <script src="./js/dataverify.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="Main.html">Home</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
@@ -36,7 +38,7 @@
               <a class="nav-link" href="#">Orders</a>
             </li>
           </ul>
-            <button class="btn btn-outline-success my-2 my-sm-0">LogOut</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="Logout()">Logout</button>
         </div>
       </nav>
 
@@ -139,7 +141,7 @@
                             
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <img src="imgs/default_pic.jpg" class="img-thumbnail" id="shop" width="100000px" alt="">
+                                <img src="imgs/default_pic.jpg" class="img-thumbnail" id="owner" width="100000px" alt="">
                             </div>
                             
                             <!-- Modal footer -->
@@ -165,7 +167,7 @@
                             
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <img src="imgs/shop_lic.jpg" class="img-thumbnail" id="shop" width="100000px" alt="">
+                                <img src="imgs/shop_lic.jpg" class="img-thumbnail" id="front" width="100000px" alt="">
                             </div>
                             
                             <!-- Modal footer -->
@@ -191,7 +193,7 @@
                             
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <img src="imgs/shop_lic.jpg" class="img-thumbnail" id="shop" width="100000px" alt="">
+                                <img src="imgs/shop_lic.jpg" class="img-thumbnail" id="back" width="100000px" alt="">
                             </div>
                             
                             <!-- Modal footer -->
@@ -228,5 +230,7 @@
             </div>-->
     </form> 
 </div>
+
+
 </body>
 </html>

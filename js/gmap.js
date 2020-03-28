@@ -1,4 +1,4 @@
-var map, infoWindow;
+var map, infoWindow,newress;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},
@@ -13,15 +13,22 @@ function initMap() {
         map.setCenter(pos);
         var marker = new google.maps.Marker({position:pos,draggable: true,map: map,title: 'Shop Location'});
         console.log(pos);
-        
+        firebase.auth().onAuthStateChanged(user => {
         marker.addListener('position_changed', function(){
             console.log(marker.getPosition().toString());
-            
-            map.setCenter(marker.getPosition());
+            newres=marker.getPosition().toString();
+                 map.setCenter(marker.getPosition());
+                 var root= firebase.database().ref().child("ShopLocation").child(user.uid);
+                 root.set({
+                    ShopLocation:marker.getPosition().toString()
+                 });
+
+        });
         });
 
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
+            
         });
         
     } else {
@@ -35,3 +42,5 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
     
 }
+
+

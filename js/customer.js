@@ -76,8 +76,6 @@ var finLat,finLong;
     })
 
 
-
-
       });
 
 
@@ -91,4 +89,56 @@ function Logout(){
   });
   }
 
-  
+  var ProfileImg;
+  function profile1(){
+      ProfileImg = event.target.files[0];
+      console.log(ProfileImg.name);
+    }
+    var link;
+    function update1(){
+      firebase.auth().onAuthStateChanged(user => {
+    document.getElementById("progre").style.display="block";
+    var storage = firebase.storage().ref("/Profile/"+"/"+user.uid+"/"+"Profile");
+        var uploadTask = storage.put(ProfileImg);
+        var progress1;
+        uploadTask.on('state_changed', function(snapshot){
+           progress1 = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          document.getElementById("myProgress1").style.width = progress1+"%";
+          document.getElementById("myProgress1").innerHTML = progress1+"%";
+        
+          switch (snapshot.state) {
+            case firebase.storage.TaskState.PAUSED: // or 'paused'  
+              console.log('Upload is paused');
+              break;
+            case firebase.storage.TaskState.RUNNING: // or 'running'
+              console.log('Upload is running');
+              break;
+          }
+          }, function(error) {
+          }, function() {
+          uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL1) {
+            firebase.database().ref("Customers").child(user.uid).child("Profile").set({
+              URL:downloadURL1,
+              progress:progress1
+            });
+            link=downloadURL1;  
+          });
+          });
+      });
+    document.getElementById("save").style.display="block";
+    document.getElementById("update").style.display="none";
+  }
+  function SaveChange(){
+    firebase.auth().onAuthStateChanged(user => {
+      var name = document.getElementById("newname").value;
+      var email = document.getElementById("newemail").value;
+      var address = document.getElementById("newaddress").value;
+      firebase.database().ref("Customers").child(user.uid).set({
+        Name:name,
+        Email:email,
+        Address:address,
+        URL:link
+      })
+    })
+    
+  }

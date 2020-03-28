@@ -14,8 +14,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
     <script src="./js/index.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <script src="./js/user.js"></script>
-    <script src="./js/dataverify.js"></script>
+    <script src="./js/customer.js"></script>
+    <script src="./js/addcustdetails.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,13 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="Main.html">Home</a>
+                <a class="nav-link" href="customer.html">Home</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Orders</a>
+              <a class="nav-link" href="customerprofile.html">Profile <span class="sr-only">(current)</span></a>
             </li>
           </ul>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="Logout()">Logout</button>
@@ -44,7 +41,7 @@
     <form method="post">
         <div class="row">
             <div class="col-lg-4 profile-img photo" >
-                    <img class="img-thumbnail" src="imgs/default_pic.jpg" id="Owner" alt="shop owner"/>
+                    <img class="img-thumbnail" src="imgs/default_pic.jpg" id="profile" alt="shop owner"/>
             </div>
             <div class="col-lg-8 text" > 
                 <div class="tab-content profile-tab" id="myTabContent">
@@ -112,21 +109,29 @@
                         <form role="form">
                             <div class="form-group">
                                 <label for="inputName">Name</label>
-                                <input type="text" class="form-control" id="inputName" placeholder="Enter your name"/>
+                                <input type="text" class="form-control" id="newname" placeholder="Enter your name"/>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail">Email</label>
-                                <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email"/>
+                                <input type="email" class="form-control" id="newemail" placeholder="Enter your email"/>
                             </div>
                             <div class="form-group">
-                                <label for="inputMessage">Message</label>
-                                <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
+                                <label for="inputMessage">Address</label>
+                                <textarea class="form-control" id="newaddress" placeholder="Enter your Address"></textarea>
                             </div>
+                            <div class="form-group">
+                                <label for="inputMessage">Upload Profile</label>
+                                <input type="file" name="" id="Profile" onchange="profile1()">
+                            </div>
+                            <div class="progress" id="progre" style="display: none;">
+                                <div class="progress-bar progress-bar-striped" id="myProgress1" style="width:0%"></div>
+                              </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" onclick="update1()"  id="update" class="btn btn-primary">Update Image </button>
+                      <button type="button" onclick="SaveChange()" style="display: none;" data-dismiss="modal" id="save" class="btn btn-primary">Save changes</button>
                     </div>
                   </div>
                 </div>

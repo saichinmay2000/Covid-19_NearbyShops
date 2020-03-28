@@ -15,6 +15,17 @@ function Owner(){
   OwnerImg = event.target.files[0];
   console.log(OwnerImg.name);
 }
+var lat,long;
+function showPosition() {
+  if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+         lat=position.coords.latitude;
+         long= position.coords.longitude;
+      });
+  } else {
+      alert("Sorry, your browser does not support HTML5 geolocation.");
+  }
+}
 function store(){
   firebase.auth().onAuthStateChanged(user => {
   var name = document.getElementById("username").value;
@@ -34,7 +45,9 @@ function store(){
   Address: address,
   MobileNumber: mobnum,
   License_number:license_number,
-  verify:"Not verifed"
+  verify:"Not verifed",
+  Latitude:lat,
+  Longitude:long
 });
 var storage = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"FrontImage.jpg");
 var storage1 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"BackImage.jpg");

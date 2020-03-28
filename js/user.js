@@ -4,8 +4,12 @@
         document.getElementById("email").innerHTML=user.email;
         
         
-        var root =  firebase.database().ref(user.uid).child("Shop Details");
+        var root =  firebase.database().ref(user.uid);
         root.once("value").then(function(snap){
+          snap.forEach(function(childSnapshot) {
+            var childKey = childSnapshot.key;
+          console.log(childKey);
+          
           var veri = snap.child("verify").val();
           var deco = document.getElementById("veri");
           deco.innerHTML=veri;
@@ -14,9 +18,10 @@
           deco.style.backgroundColor = "LimeGreen";
           deco.style.borderRadius = "10px";
           deco.style.width="70px";
-          console.log(veri);
+          console.log(childSnapshot.val());
           
         })
+      })
       });
 })()
 function Logout(){

@@ -4,14 +4,15 @@
         document.getElementById("email").innerHTML=user.email;
         
         
-        var root =  firebase.database().ref(user.uid);
+        var root =  firebase.database().ref(user.uid).child("Shop Details");
         root.once("value").then(function(snap){
-          snap.forEach(function(childSnapshot) {
-            var childKey = childSnapshot.key;
-          console.log(childKey);
+        //  snap.forEach(function(childSnapshot) {
+          //  var childKey = childSnapshot.key;
+          //console.log(childKey);
           
           var veri = snap.child("verify").val();
           var deco = document.getElementById("veri");
+          if(veri==="Verifed"){
           deco.innerHTML=veri;
           deco.style.color='white';
           deco.style.fontStyle='bold';
@@ -19,8 +20,16 @@
           deco.style.borderRadius = "10px";
           deco.style.width="70px";
           console.log(childSnapshot.val());
-          
-        })
+        }
+        else{
+          deco.innerHTML=veri;
+          deco.style.color='white';
+          deco.style.fontStyle='bold';
+          deco.style.backgroundColor = "red";
+          deco.style.borderRadius = "10px";
+          deco.style.width="100px";
+        }
+        //})
       })
       });
 })()

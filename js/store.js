@@ -49,6 +49,10 @@ function store(){
   Latitude:lat,
   Longitude:long
 });
+firebase.database().ref("Locations").child(user.uid).set({
+  Latitude:lat,
+  Longitude:long
+});
 var storage = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"FrontImage.jpg");
 var storage1 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"BackImage.jpg");
 var storage2 = firebase.storage().ref("/Images/"+"/"+user.uid+"/"+"ShopImage.jpg");

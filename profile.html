@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <link rel="stylesheet" href="./css/profile.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
-     <script src="./js/index.js"></script>
-     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-     <script src="./js/user.js"></script>
-     <script src="./js/dataverify.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="./js/user.js"></script>
+    <script src="./js/dataverify.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -98,57 +96,42 @@
             <hr>
             <h4 class="text-center">Shop Details Images</h4>
             <div class="text-center"> 
-                <button type="button" class="btn btn-primary order" data-toggle="modal" data-target="#shop_photo">Shop Photo</button>
-                <button type="button" class="btn btn-primary order" data-toggle="modal" data-target="#shop_keeper">Owner Image</button>
-                <button type="button" class="btn btn-primary order" data-toggle="modal" data-target="#front_lic_image">Front Lic Image</button>
-                <button type="button" class="btn btn-primary order" data-toggle="modal" data-target="#back_lic_image">Back Lic Image</button> 
+                <button type="button" class="btn btn-primary order button" data-toggle="modal" data-target="#shop_photo">Shop Photo</button>
+                <button type="button" class="btn btn-primary order button" data-toggle="modal" data-target="#shop_keeper">Owner Image</button>
+                <button type="button" class="btn btn-primary order button" data-toggle="modal" data-target="#front_lic_image">Front Lic Image</button>
+                <button type="button" class="btn btn-primary order button" data-toggle="modal" data-target="#back_lic_image">Back Lic Image</button> 
             
-                                <!-- The Modal -->
-                    <div class="modal" id="shop_photo">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                        
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                            <h4 class="modal-title">Shop Image</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            
-                            <!-- Modal body -->
-                            <div class="modal-body">
-                                <img src="imgs/shop_pic.jpg" class="img-thumbnail" id="shop" width="100000px" alt="">
-                            </div>
-                            
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            </div>
-                            
+                <div class="modal" id="shop_photo">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h4 class="modal-title">Shop Image</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
+                        <div class="modal-body">
+                            <img src="imgs/shop_pic.jpg" class="img-thumbnail" id="shop" width="100000px" alt="">
                         </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>                        
                     </div>
+                    </div>
+                </div>  
 
 
                     <div class="modal" id="shop_keeper">
                         <div class="modal-dialog">
                         <div class="modal-content">
-                        
-                            <!-- Modal Header -->
                             <div class="modal-header">
                             <h4 class="modal-title">Shop Keeper</h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
-                            
-                            <!-- Modal body -->
                             <div class="modal-body">
                                 <img src="imgs/default_pic.jpg" class="img-thumbnail" id="owner" width="100000px" alt="">
                             </div>
-                            
-                            <!-- Modal footer -->
                             <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
-                            
                         </div>
                         </div>
                     </div>
@@ -158,23 +141,16 @@
                     <div class="modal" id="front_lic_image">
                         <div class="modal-dialog">
                         <div class="modal-content">
-                        
-                            <!-- Modal Header -->
                             <div class="modal-header">
                             <h4 class="modal-title">Front Lic Image</h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
-                            
-                            <!-- Modal body -->
                             <div class="modal-body">
                                 <img src="imgs/shop_lic.jpg" class="img-thumbnail" id="front" width="100000px" alt="">
                             </div>
-                            
-                            <!-- Modal footer -->
                             <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            </div>
-                            
+                            </div> 
                         </div>
                         </div>
                     </div>
@@ -184,53 +160,24 @@
                     <div class="modal" id="back_lic_image">
                         <div class="modal-dialog">
                         <div class="modal-content">
-                        
-                            <!-- Modal Header -->
                             <div class="modal-header">
                             <h4 class="modal-title">Back Lic Image</h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
-                            
-                            <!-- Modal body -->
                             <div class="modal-body">
                                 <img src="imgs/shop_lic.jpg" class="img-thumbnail" id="back" width="100000px" alt="">
                             </div>
-                            
-                            <!-- Modal footer -->
                             <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
-                            
                         </div>
                         </div>
                     </div>
 
 
             </div> 
-            <!--
-            <div class="row">
-                    <div class="col-lg-6 profile-work">
-                        <p>Shop Image</p>
-                        <img src="imgs/shop_pic.jpg" class="img-thumbnail" id="shop" width="300px" alt="">
-                    </div>
-                    <div class="col-lg-6 profile-work">
-                        <p>Owner Image</p>
-                        <img src="imgs/default_pic.jpg" class="img-thumbnail" id="owner" width="145px" alt="">
-                    </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 profile-work">
-                    <p>Front Lic Image</p>
-                    <img src="imgs/shop_lic.jpg" id="front" width="100px" alt="">
-                </div>
-                <div class="col-lg-6 profile-work">
-                    <p>Back Lic Image</p>
-                    <img src="imgs/shop_lic.jpg" id="back" width="100px" alt="">
-                </div>
-            </div>-->
     </form> 
 </div>
-
 
 </body>
 </html>

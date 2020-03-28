@@ -39,7 +39,8 @@ var finLat,finLong;
           var address = snap.child("Address").val();
           var shopName = snap.child("ShopName").val();
           var PhoneNum = snap.child("MobileNumber").val();
-
+          root.ref(childKey).child("Shop Details").child("ShopImg").once("value").then(function(snap){
+            var imglink = snap.child("URL").val();
 
           //console.log(name);
           //console.log(address);
@@ -60,12 +61,13 @@ var finLat,finLong;
           else{
             res = "<button onclick = \"deleterow(id)\"  class=\"btn btn__pledged\">Order</button>";
           }
+          cel1.innerHTML="<img src=\""+ imglink+"\" alt=\"\" style=\"width: 100px;\">"
           cel2.innerHTML=name;
           cel3.innerHTML=shopName;
           cel4.innerHTML=PhoneNum;
           cel5.innerHTML=address;
           cel6.innerHTML =  res;
-          
+        })
         })
         }
       }

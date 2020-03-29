@@ -1,10 +1,15 @@
 (function(){
   var productname = "AIzaSyCrXaMutwiZ5wkQnZlN46XGnQpx1kVqhqM";
   var firebaseConfig = {
-    apiKey: eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('2 3=[\'e\'];(5(0,4){2 1=5(8){d(--8){0[\'c\'](0[\'b\']())}};1(++4)}(3,a));2 7=5(0,4){0=0-6;2 1=3[0];9 1};7(\'6\');',15,15,'_0x465cb8|_0x468f89|var|_0x34bb|_0x34bb9c|function|0x0|_0x468f|_0x1e94f3|return|0x18b|shift|push|while|AIzaSyCrXaMutwiZ5wkQnZlN46XGnQpx1kVqhqM'.split('|'),0,{})),
-    databaseURL: "https://shopkeeper-4f9d9.firebaseio.com",
-    storageBucket: "shopkeeper-4f9d9.appspot.com",
-    authDomain: "shopkeeper-4f9d9.firebaseapp.com"
+    //apiKey: eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('2 3=[\'e\'];(5(0,4){2 1=5(8){d(--8){0[\'c\'](0[\'b\']())}};1(++4)}(3,a));2 7=5(0,4){0=0-6;2 1=3[0];9 1};7(\'6\');',15,15,'_0x465cb8|_0x468f89|var|_0x34bb|_0x34bb9c|function|0x0|_0x468f|_0x1e94f3|return|0x18b|shift|push|while|AIzaSyCrXaMutwiZ5wkQnZlN46XGnQpx1kVqhqM'.split('|'),0,{})),
+    apiKey: "AIzaSyCrXaMutwiZ5wkQnZlN46XGnQpx1kVqhqM",
+  authDomain: "shopkeeper-4f9d9.firebaseapp.com",
+  databaseURL: "https://shopkeeper-4f9d9.firebaseio.com",
+  projectId: "shopkeeper-4f9d9",
+  storageBucket: "shopkeeper-4f9d9.appspot.com",
+  messagingSenderId: "555084841662",
+  appId: "1:555084841662:web:a29abe40ba32d98ad914ef",
+  measurementId: "G-YDD47BBRYH"
 };  
 firebase.initializeApp(firebaseConfig);  
 /*

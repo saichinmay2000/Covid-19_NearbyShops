@@ -1,6 +1,6 @@
-<!DOCTYPE html>
 <html>
 <head>
+	<script src="js/gmap.js"></script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="#">SociDist Shopping</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> </button>
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li class="nav-item active"> <a class="nav-link" href="#" id="home">Home <span class="sr-only">(current)</span></a> </li>
@@ -42,6 +42,7 @@
 	<div class="collapse" id="shop_details_more_coll">
   <div class="row" id="shop_details_more">
 	<div class="col-6" id="sh_map"></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Mp-nbpxvDIUmjL9MWCDil6AypsFcCVQ&callback=initMap"></script>
 	  <div class="col-6" id="shop_keeper_details">
 		  <div class="row" id="sh_det">
 		<div class="col-9 my-auto">
@@ -52,7 +53,7 @@
 				<p class="card-subtitle" id="sk_email">saichinmaytripurari@gmail.com</p></div>
 	    </div>
 		  </div>
-			  <div class="col-3 my-auto"><img class="img" id="sh_img" src="images/Rectangle 4.png"/></div>
+			  <div class="col-3 my-auto"><img class="img" id="sk_img" src="images/Rectangle 4.png"/></div>
 			  </div>
       </div>
   </div>

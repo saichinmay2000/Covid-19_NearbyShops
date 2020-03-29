@@ -1,5 +1,7 @@
 (function(){
     firebase.auth().onAuthStateChanged(user => {
+        
+
         var root =  firebase.database().ref().child(user.uid).child("Shop Details");
        root.once("value").then(function(snap){
             var name = snap.child("Name").val();

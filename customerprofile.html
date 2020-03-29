@@ -14,9 +14,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
     <script src="./js/index.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <script src="./js/user.js"></script>
-    <script src="./js/dataverify.js"></script>
-    
+    <script src="./js/customer.js"></script>
+    <script src="./js/addcustdetails.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -28,10 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="Main.html">Home</a>
+                <a class="nav-link" href="customer.html">Home</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="customerprofile.html">Profile <span class="sr-only">(current)</span></a>
             </li>
           </ul>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="Logout()">Logout</button>
@@ -42,7 +41,7 @@
     <form method="post">
         <div class="row">
             <div class="col-lg-4 profile-img photo" >
-                    <img class="img-thumbnail" src="imgs/default_pic.jpg" id="Owner" alt="shop owner"/>
+                    <img class="img-thumbnail" src="imgs/default_pic.jpg" id="profile" alt="shop owner"/>
             </div>
             <div class="col-lg-8 text" > 
                 <div class="tab-content profile-tab" id="myTabContent">
@@ -92,85 +91,51 @@
             </div>
             </div>
             <hr>
-            <h4 class="text-center">Shop Details Images</h4>
+            <!--<h4  class="text-center">Edit Profile</h4>-->
             <div class="text-center"> 
-                <button type="button" class="btn btn-primary order button" data-toggle="modal" data-target="#shop_photo">Shop Photo</button>
-                <button type="button" class="btn btn-primary order button" data-toggle="modal" data-target="#shop_keeper">Owner Image</button>
-                <button type="button" class="btn btn-primary order button" data-toggle="modal" data-target="#front_lic_image">Front Lic Image</button>
-                <button type="button" class="btn btn-primary order button" data-toggle="modal" data-target="#back_lic_image">Back Lic Image</button> 
-            
-                <div class="modal" id="shop_photo">
-                    <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h4 class="modal-title">Shop Image</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="imgs/shop_pic.jpg" class="img-thumbnail" id="shop" width="100000px" alt="">
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>                        
+                <button type="button" class="btn btn-primary order button" data-toggle="modal" data-target="#editProfile">Edit Profile</button>
+                 
+                <div class="modal fade" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                     </div>
+                    <div class="modal-body">
+                        <p class="statusMsg"></p>
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="inputName">Name</label>
+                                <input type="text" class="form-control" id="newname" placeholder="Enter your name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" id="newemail" placeholder="Enter your email"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMessage">Address</label>
+                                <textarea class="form-control" id="newaddress" placeholder="Enter your Address"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMessage">Upload Profile</label>
+                                <input type="file" name="" id="Profile" onchange="profile1()">
+                            </div>
+                            <div class="progress" id="progre" style="display: none;">
+                                <div class="progress-bar progress-bar-striped" id="myProgress1" style="width:0%"></div>
+                              </div>
+                        </form>
                     </div>
-                </div>  
-
-
-                    <div class="modal" id="shop_keeper">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h4 class="modal-title">Shop Keeper</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="imgs/default_pic.jpg" class="img-thumbnail" id="owner" width="100000px" alt="">
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" onclick="update1()"  id="update" class="btn btn-primary">Update Image </button>
+                      <button type="button" onclick="SaveChange()" style="display: none;" data-dismiss="modal" id="save" class="btn btn-primary">Save changes</button>
                     </div>
-
-
-
-                    <div class="modal" id="front_lic_image">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h4 class="modal-title">Front Lic Image</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="imgs/shop_lic.jpg" class="img-thumbnail" id="front" width="100000px" alt="">
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            </div> 
-                        </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="modal" id="back_lic_image">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h4 class="modal-title">Back Lic Image</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="imgs/shop_lic.jpg" class="img-thumbnail" id="back" width="100000px" alt="">
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+                  </div>
+                </div>
+              </div>
 
 
             </div> 

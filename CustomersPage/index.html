@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SociDist Shopping</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="#">SociDist Shopping</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item active"> <a class="nav-link" href="#" id="home">Home <span class="sr-only">(current)</span></a> </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item active"> <a class="nav-link" href="#" id="profile">Profile <span class="sr-only">(current)</span></a> </li>
+    </ul>
+  </div>
+</nav>
+<div class="jumbotron jumbotron-fluid text-center">
+  <h1 class="display-4">No Tokens were created!<br>
+    Choose Your Store</h1>
+</div>
+<div class="container-fluid" id="shop_details_container">
+  <div class="row" id="shop_details_less">
+    <div class="col-4 my-auto" id="shop_img"> <img id="s_img" class="img" alt="Placeholder image" src="images/Rectangle 2.png"> </div>
+    <div class="col-8 my-auto" id="shop_details">
+      <div class="card col-8">
+        <div class="card-body">
+          <h5 class="card-title" id="s_name">Chinmay Shop</h5>
+          <h6 class="card-subtitle mb-2 text-muted" id="s_cat">Kirana and General</h6>
+          <p class="card-text" id="s_addr">8-46/2,JP Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>
+        </div>
+      </div>
+	<button class="btn btn-primary" id="order_now">Order Now</button>
+    </div>
+  </div>
+	<button class="btn-text collapsed" id="details_btn" data-toggle="collapse" role="button" data-target="#shop_details_more_coll" aria-expanded="false" aria-controls="collapseExample"><span id="md">+More Details</span><span id="ld">-Less Details</span></button>
+	<div class="collapse" id="shop_details_more_coll">
+  <div class="row" id="shop_details_more">
+	<div class="col-6" id="sh_map"></div>
+	  <div class="col-6" id="shop_keeper_details">
+		  <div class="row" id="sh_det">
+		<div class="col-9 my-auto">
+	    <div class="card col-md-4 my-auto" id="sk_card">
+			<div class="card-body" id="sk_card_body">
+		      <h5 class="card-title" id="sk_name">Chinmay Sai T</h5>
+		      <p class="card-subtitle" id="sk_phone">+91 9100903791</p>
+				<p class="card-subtitle" id="sk_email">saichinmaytripurari@gmail.com</p></div>
+	    </div>
+		  </div>
+			  <div class="col-3 my-auto"><img class="img" id="sh_img" src="images/Rectangle 4.png"/></div>
+			  </div>
+      </div>
+  </div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.4.1.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap-4.4.1.js"></script>
+</body>
+</html>

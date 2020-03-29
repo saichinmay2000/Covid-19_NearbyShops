@@ -49,9 +49,10 @@ var finLat,finLong;
           var count=1;
           var button = document.createElement('input');
 
+           // button.onclick=GetTableValues(childKey)
         button.setAttribute('type', 'button');
         button.setAttribute('value', 'Order');
-        button.setAttribute('onclick', 'GetTableValues()');
+        button.setAttribute('onclick', 'GetTableValues(\''+childKey+'\')');
           var table  = document.getElementsByTagName("table")[0];
           var newrow = table.insertRow(1);
           var cel1 = newrow.insertCell(0);
@@ -132,8 +133,7 @@ function Logout(){
           });
           });
       });
-    document.getElementById("save").style.display="block";
-    document.getElementById("update").style.display="none";
+    document.getElementById("upload").style.display="none";
   }
   function SaveChange(){
     firebase.auth().onAuthStateChanged(user => {
@@ -150,9 +150,61 @@ function Logout(){
     
   }
 
-  function GetTableValues(){
+  function GetTableValues(vale){
 
-    console.log("sdkjhbjasgbjag");
-    
+    var ro = firebase.database();
+    ro.ref(vale).child("Shop Details").once("value").then(function(snap){
+      var name = snap.child("Name").val();
+      var shop = snap.child("ShopName").val();
+      document.getElementById("shopName").innerHTML=shop;
+      document.getElementById("ownerName").innerHTML=name;
+      
+    submit(name,shop);
+    document.getElementById("upload").style.display="block";
+    document.getElementById("app").style.display="none";
+    })
+    document.getElementById("upload").style.display="block";
+    document.getElementById("app").style.display="none";
+  
+  }
+  function submit(a,b){
+    document.getElementById("upload").style.display="none";
+    document.getElementById("app").style.display="block";
 
+    var name = document.getElementById("name").value;
+    var date =document.getElementById("date").value;
+    var itms = document.getElementById("items").value;
+    var sname=a;
+    var sown = b;
+    var num=3;
+    firebase.auth().onAuthStateChanged(user1 => {
+      var root = firebase.database().ref("Locations");
+      var root1 = firebase.database();
+      root.once("value").then(function(snap){
+        snap.forEach(function(childSnapshot) {
+          var childKey = childSnapshot.key;
+          root1.ref(childKey).child("Shop Details").once("value").then(function(snap1){
+            var ShopName = snap1.child("ShopName").val();
+            var OwnName = snap1.child("Name").val();
+            console.log(OwnName);
+            console.log(sname);
+            
+            console.log(OwnName==sname);
+            console.log(OwnName==sname && ShopName==sown);
+            
+            if(OwnName==sname && ShopName==sown){
+              firebase.database().ref("Orders").child(user1.uid).child(childKey).set({
+                Name:name,
+                Date:date,
+                Items:itms,
+                URL:childKey
+              })
+              
+            }
+            
+          })
+        })
+    })
+
+  })
   }

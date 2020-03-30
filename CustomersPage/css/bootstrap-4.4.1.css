@@ -491,21 +491,23 @@ mark,
   display: inline-block;
 }
 
-#shop_img img{
+#shop_img{
 	width: 100%;
-	border-radius: 10px;
 	height: auto;
-	margin: 16px 1px 16px 1px;
+	padding: 0;
+	padding-top: 1rem;
+	padding-left: 0.5rem;
+	margin-right: -0.5rem;
 }
 
 #sk_img{
 }
 
 .container-fluid#shop_details_container{
-	border-width: medium;
 	border: solid medium #1C4FB4;
 	border-radius: 10px;
 	width: auto;
+	margin: 30px 16px;
 }
 
 .figure-img {
@@ -7000,9 +7002,7 @@ button.bg-dark:focus {
   border-radius: 0.25rem !important;
 }
 
-#s_img{
-	margin-top: 1rem;
-}
+
 
 .rounded-top {
   border-top-left-radius: 0.25rem !important;
@@ -10362,3 +10362,10 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+#sk_img_div {
+	width: 100%;
+	height: auto;
+	padding: 0;
+	padding: 0 1rem;
+}

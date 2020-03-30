@@ -33,23 +33,26 @@
         //})
       })
 
-
-
       var root =  firebase.database();
       var root1 =  firebase.database().ref("Orders");
       root1.once("value").then(function(snap){
           snap.forEach(function(childSnapshot) {
             var childKey = childSnapshot.key;
+            
             root1.child(childKey).once("value").then(function(snap1){
               snap1.forEach(function(childSnapshot1) {
                 if(user.uid==childSnapshot1.key){
                   root1.child(childKey).child(childSnapshot1.key).once("value").then(function(snap2){
                     console.log(snap2.val());
+                    console.log(childSnapshot1.key);
+                    
                     var date = snap2.child("Date").val();
                     var Name = snap2.child("Name").val();
                     var Itms = snap2.child("Items").val();
                     var button = document.createElement('input');
-
+                   root.ref("Customers").child(childKey).once("value").then(function(snap){
+                      var Address = snap.child("Address").val();
+                      
                     // button.onclick=GetTableValues(childKey)
                   button.setAttribute('type', 'button');
                   button.setAttribute('value', 'Send to customer');
@@ -68,20 +71,21 @@
                    
                     cel1.innerHTML=1
                     cel2.innerHTML=Name;
+                    cel3.innerHTML=Address;
                     cel4.innerHTML=date;
                     cel5.innerHTML = "<input type=\"checkbox\" name=\"Done\" /> Done";
                     cel6.innerHTML=Itms;
                     cel7.appendChild(button);
                   })
+               })
               console.log(childSnapshot1.key);
                 }
               })
             })
     })
   })
-
-
-      });
+  
+});
 
 
     })()

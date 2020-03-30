@@ -114,6 +114,7 @@ function Logout(){
           document.getElementById("myProgress1").style.width = progress1+"%";
           document.getElementById("myProgress1").innerHTML = progress1+"%";
         
+    document.getElementById("save").style.display="block";
           switch (snapshot.state) {
             case firebase.storage.TaskState.PAUSED: // or 'paused'  
               console.log('Upload is paused');
@@ -130,12 +131,20 @@ function Logout(){
               progress:progress1
             });
             link=downloadURL1;  
+            SaveChange(link);
           });
           });
       });
-    document.getElementById("upload").style.display="none";
+      
+    document.getElementById("update").style.display="none";
   }
-  function SaveChange(){
+  function SaveChange(a){
+    
+    document.getElementById("save").style.display="block";
+    document.getElementById("update").style.display="none";
+
+    console.log(a);
+    
     firebase.auth().onAuthStateChanged(user => {
       var name = document.getElementById("newname").value;
       var email = document.getElementById("newemail").value;

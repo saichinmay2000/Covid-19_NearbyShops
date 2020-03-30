@@ -494,19 +494,14 @@ mark,
 #shop_img img{
 	width: 100%;
 	border-radius: 10px;
-	height: 100%;
+	height: auto;
 	margin: 16px 1px 16px 1px;
 }
 
 #sk_img{
-	width: 100%;
-	border-radius: 10px;
-	height: auto;
-	margin: 16px 0px 16px -16px;
 }
 
 .container-fluid#shop_details_container{
-	margin: 30px 60px 20px 60px;
 	border-width: medium;
 	border: solid medium #1C4FB4;
 	border-radius: 10px;
@@ -7003,6 +6998,10 @@ button.bg-dark:focus {
 
 .rounded {
   border-radius: 0.25rem !important;
+}
+
+#s_img{
+	margin-top: 1rem;
 }
 
 .rounded-top {

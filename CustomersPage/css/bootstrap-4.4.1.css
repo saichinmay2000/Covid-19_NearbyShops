@@ -510,6 +510,10 @@ mark,
 	margin: 30px 16px;
 }
 
+.container-fluid#shop_details_container:hover{
+	box-shadow: 0px 0px 0.5rem #000000;
+}
+
 .figure-img {
   margin-bottom: 0.5rem;
   line-height: 1;

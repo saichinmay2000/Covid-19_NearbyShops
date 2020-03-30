@@ -278,6 +278,11 @@ button::-moz-focus-inner,
   border-style: none;
 }
 
+@font-face{
+	font-family: company-font;
+	src: url("../fonts/ARLRDBD.TTF")
+}
+
 input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
@@ -413,7 +418,7 @@ h6, .h6 {
   font-size: 4.5vw;
   font-weight: 300;
   line-height: 1.2;
-  font-family: Arial Rounded Mt;
+  font-family: company-font;
 }
 
 hr {
@@ -4384,7 +4389,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-brand {
-  font-family: Arial Rounded MT;
+  font-family: company-font;
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
@@ -4801,20 +4806,20 @@ input[type="button"].btn-block {
 }
 
 .card-title {
-	font-family: Arial Rounded MT;
+	font-family: company-font;
 	font-size: 4vw;
   	margin-bottom: 0.75rem;
 }
 
 .card-subtitle {
-	font-family: Arial Rounded MT;
+	font-family: company-font;
   margin-top: -0.375rem;
 	font-size: 1.5vw;
   margin-bottom: 0.5rem;
 }
 
 .card-text:last-child {
-	font-family: Arial Rounded MT;
+	font-family: company-font;
 	font-size: 2vw;
   margin-bottom: 0;
 }
@@ -4842,13 +4847,13 @@ input[type="button"].btn-block {
 }
 
 .card-title#sk_name {
-	font-family: Arial Rounded MT;
+	font-family: company-font;
 	font-size: 2.5vw;
   margin-bottom: 0.75rem;
 }
 
 .card-subtitle#sk_email#sk_phone {
-	font-family: Arial Rounded MT;
+	font-family: company-font;
   margin-top: 0.25rem;
 	font-size: 1.25vw;
   margin-bottom: 0;
@@ -5102,7 +5107,7 @@ input[type="button"].btn-block {
 }
 
 #order_now{
-	font-family: Arial Rounded MT;
+	font-family: company-font;
 	font-size: 2vw;
 	margin: 8px 16px 0px 0px;
 	width: 100%;
@@ -10375,5 +10380,5 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 #token_stat {
-	font-family: Arial Rounded MT;
+	font-family: company-font;
 }

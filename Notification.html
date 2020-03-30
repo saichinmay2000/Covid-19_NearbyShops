@@ -15,8 +15,8 @@
  <script src="alert/dist/sweetalert-dev.js"></script>
   <link rel="stylesheet" href="alert/dist/sweetalert.css">
 <script src="./js/index.js"></script>
-<script src="./js/customer.js"></script>
 <link rel="stylesheet" href="./css/customer.css">
+<script src="./js/custoNotify.js"></script>
     </head>
     <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -28,13 +28,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="customer.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="customer.html">Home </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="customerprofile.html">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Notification.html">Notifications</a>
+              <a class="nav-link" href="Notification.html">Notifications <span class="sr-only">(current)</span></a>
             </li>
             
           </ul>
@@ -48,8 +48,8 @@
       </nav>
     <!--/.Navbar --> 
     <div class="container-fuild" style="margin-top: 60px;">
-    <h2 class="title text-center" >No Tokens were created!</h2>
-    <h2 class="title text-center">Choose Your Store</h2>
+    <h2 class="title text-center" >Your Notifications</h2>
+    <h2 class="title text-center">From the Store</h2>
   <center>
       <div id="app" class="container" style="overflow: scroll;  max-height: 400px; max-width: 1000px;overflow-x: auto;">
         <table class="table table-light table-striped table-hover" >
@@ -57,30 +57,29 @@
               <tr>
                   <th>Photo</th>
                   <th>Shop Name</th>
-                  <th>Name</th>
                   <th>Contact ID</th>
-                  <th>Address</th>
                   <th>Order</th>
-                  <th></th>
+                  <th>Pick Up</th>
+                  <th>Delivered</th>
               </tr>
           </thead>
           <tbody>
               <tr>
                   <td data-label="Photo"></td>
                   <td data-label="Shop Name">IQC36631</td>
-                   <td data-label="Name">20.183 MH/s</td>
                   <td data-label="Contact Id">Lifetime</td>
                   <td data-label="Address">$46.59</td>
-                  <td data-label=""><a href="#" class="btn btn__active">ORDER</a></td>
+                  <td data-label="Address">Not Picked</td>
+                  <td data-label=""><a href="#" class="btn btn__active">Check</a></td>
               </tr>
               
              <tr>
                 <td></td>
                   <td data-label="Contact ID">IQC36632</td>
                   <td data-label="Power">23.6190 MH/s</td>
-                  <td data-label="Expiration">07.01.2022</td>
                   <td data-label="Value">$90.72</td>
-                  <td data-label=""><a href="#" class="btn btn__pledged">ORDER</a></td>
+                  <td data-label="Address">Not Picked</td>
+                  <td data-label=""><a href="#" class="btn btn__pledged">Check</a></td>
               </tr>
               <!--<tr>
                 <td></td>

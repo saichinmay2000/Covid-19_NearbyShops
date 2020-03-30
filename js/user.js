@@ -47,7 +47,7 @@
                     console.log(childSnapshot1.key);
                     root.ref("Notifications").child(user.uid).child(childKey).once("value").then(function(snap){
                       var order = snap.child("Order").val();
-
+                      var pick = snap.child("Picked up").val();
                     
                     var date = snap2.child("Date").val();
                     var Name = snap2.child("Name").val();
@@ -70,20 +70,29 @@
                     var cel5 = newrow.insertCell(4);
                     var cel6 = newrow.insertCell(5);
                     var cel7 = newrow.insertCell(6);
-                    var res;
+                    var cel8 = newrow.insertCell(7);
+                    var res,res1;
                     if(order==="Done"){
-                      res = "Delivered Order"
+                      res = "Delivered Order";
                     }
                     else{
                      res = "<input type=\"checkbox\" name=\"Done\" id=\"done\" /> Done";
+                    }
+
+                    if(pick==="Picked up"){
+                      res1 = "Picked Up";
+                    }
+                    else{
+                      res1 = "<input type=\"checkbox\" name=\"Done\" id=\"pick\" /> Picked";
                     }
                     cel1.innerHTML=1
                     cel2.innerHTML=Name;
                     cel3.innerHTML=Address;
                     cel4.innerHTML=date;
                     cel5.innerHTML = res;
-                    cel6.innerHTML=Itms;
-                    cel7.appendChild(button);
+                    cel6.innerHTML = res1;
+                    cel7.innerHTML=Itms;
+                    cel8.appendChild(button);
                   })
                })
               })
@@ -112,12 +121,14 @@ function Logout(){
     
     firebase.auth().onAuthStateChanged(user => {
     var done=document.getElementById("done").checked;
+    var pick=document.getElementById("pick").checked;
     firebase.database().ref("Notifications").child(user.uid).child(a).once("value").then(function(snap){
       var order = snap.child("Order").val();
-      if(order === "Done"){
+      var pick = snap.child("PickUp").val();
+      if(order === "Done" || pick==="Picked up"){
         alert("Order is Delivered Already")
       }
-    else if(done===true){
+    else if(done===true || pick===true){
     var root =  firebase.database();
     var root1 =  firebase.database().ref("Orders");
     root1.once("value").then(function(snap){
@@ -132,7 +143,8 @@ function Logout(){
                   var Name = snap2.child("Name").val();
                   root.ref("Notifications").child(user.uid).child(childKey).set({
                     Name:Name,
-                    Order:"Done"
+                    Order:"Done",
+                    PickUp:"Picked up"
                   })
                 })
               }

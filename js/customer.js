@@ -179,7 +179,6 @@ function Logout(){
   function submit(a,b){
     document.getElementById("upload").style.display="none";
     document.getElementById("app").style.display="block";
-
     var name = document.getElementById("name").value;
     var date =document.getElementById("date").value;
     var itms = document.getElementById("items").value;

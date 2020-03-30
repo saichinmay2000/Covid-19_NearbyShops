@@ -10369,3 +10369,7 @@ a.text-dark:hover, a.text-dark:focus {
 	padding: 0;
 	padding: 0 1rem;
 }
+
+#token_stat {
+	font-family: Arial Rounded MT;
+}

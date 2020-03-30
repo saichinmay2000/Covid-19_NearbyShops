@@ -45,6 +45,9 @@
                   root1.child(childKey).child(childSnapshot1.key).once("value").then(function(snap2){
                     console.log(snap2.val());
                     console.log(childSnapshot1.key);
+                    root.ref("Notifications").child(user.uid).child(childKey).once("value").then(function(snap){
+                      var order = snap.child("Order").val();
+
                     
                     var date = snap2.child("Date").val();
                     var Name = snap2.child("Name").val();
@@ -56,7 +59,7 @@
                     // button.onclick=GetTableValues(childKey)
                   button.setAttribute('type', 'button');
                   button.setAttribute('value', 'Send to customer');
-                  button.setAttribute('onclick', 'GetTableValues(\''+childKey+'\')');
+                  button.setAttribute('onclick', 'Send(\''+childKey+'\')');
                   button.setAttribute("class", "btn btn-info btn-xs");
                     var table  = document.getElementsByTagName("table")[0];
                     var newrow = table.insertRow(1);
@@ -68,16 +71,22 @@
                     var cel6 = newrow.insertCell(5);
                     var cel7 = newrow.insertCell(6);
                     var res;
-                   
+                    if(order==="Done"){
+                      res = "Delivered Order"
+                    }
+                    else{
+                     res = "<input type=\"checkbox\" name=\"Done\" id=\"done\" /> Done";
+                    }
                     cel1.innerHTML=1
                     cel2.innerHTML=Name;
                     cel3.innerHTML=Address;
                     cel4.innerHTML=date;
-                    cel5.innerHTML = "<input type=\"checkbox\" name=\"Done\" /> Done";
+                    cel5.innerHTML = res;
                     cel6.innerHTML=Itms;
                     cel7.appendChild(button);
                   })
                })
+              })
               console.log(childSnapshot1.key);
                 }
               })
@@ -98,4 +107,45 @@ function Logout(){
   });
   }
 
+
+  function Send(a){
+    
+    firebase.auth().onAuthStateChanged(user => {
+    var done=document.getElementById("done").checked;
+    firebase.database().ref("Notifications").child(user.uid).child(a).once("value").then(function(snap){
+      var order = snap.child("Order").val();
+      if(order === "Done"){
+        alert("Order is Delivered Already")
+      }
+    else if(done===true){
+    var root =  firebase.database();
+    var root1 =  firebase.database().ref("Orders");
+    root1.once("value").then(function(snap){
+        snap.forEach(function(childSnapshot) {
+          var childKey = childSnapshot.key;
+          root1.child(childKey).once("value").then(function(snap1){
+            snap1.forEach(function(childSnapshot1) {
+              if(user.uid==childSnapshot1.key){
+                root1.child(childKey).child(childSnapshot1.key).once("value").then(function(snap2){
+                  console.log(snap2.val());
+                  console.log(childSnapshot1.key);
+                  var Name = snap2.child("Name").val();
+                  root.ref("Notifications").child(user.uid).child(childKey).set({
+                    Name:Name,
+                    Order:"Done"
+                  })
+                })
+              }
+            })
+          })
+        })
+      })
+  }
+  else{
+    alert("if done Check/Click the check box");
+    
+  }
+})
+})
+  }
   

@@ -79,7 +79,7 @@
                      res = "<input type=\"checkbox\" name=\"Done\" id=\"done\" /> Done";
                     }
 
-                    if(pick==="Picked up"){
+                    if(pick==="Picked"){
                       res1 = "Picked Up";
                     }
                     else{

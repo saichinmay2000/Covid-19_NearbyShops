@@ -19,6 +19,7 @@ var finLat,finLong;
     firebase.auth().onAuthStateChanged(user => {
         document.getElementById("phone").innerHTML=user.phoneNumber;
         var root =  firebase.database();
+        var rot = root.ref("Notifications");
         var root1 =  firebase.database().ref("Locations");
         root1.once("value").then(function(snap){
             snap.forEach(function(childSnapshot) {
@@ -30,6 +31,17 @@ var finLat,finLong;
                   if(long1<=east && long1>=west){
                     finLat=lat1;
                     finLong=long1;
+                    rot.ref("Notifications").once("value").then(function(snap){
+                      snap.forEach(function(childSnapshot) {
+                        var childKey = childSnapshot.key;
+                        rot.child(childKey).child(user.uid).once("value").then(function(snap1){
+                          var Name = snap1.child("Name").val();
+                          var Order = snap1.child("Order").val();
+                          
+                          if(Order==="Done"){
+                            alert("You Have A Notification");
+
+                          }
                 //console.log(finLat);
                 //console.log(finLong);
               
@@ -77,10 +89,14 @@ var finLat,finLong;
           cel6.appendChild(button);
         })
         })
+      })
+    })
+  })
         }
       }
         })
       })
+      
     })
 
 

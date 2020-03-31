@@ -19,6 +19,7 @@ var finLat,finLong;
     firebase.auth().onAuthStateChanged(user => {
         document.getElementById("phone").innerHTML=user.phoneNumber;
         var root =  firebase.database();
+        var rot = root.ref("Notifications");
         var root1 =  firebase.database().ref("Locations");
         root1.once("value").then(function(snap){
             snap.forEach(function(childSnapshot) {
@@ -26,10 +27,21 @@ var finLat,finLong;
               root1.child(childKey).once("value").then(function(snap1){
                 var lat1 = snap1.child("Latitude").val();
                 var long1 = snap1.child("Longitude").val();
+               rot.child(childKey).child(user.uid).once("value").then(function(snap){
+                 var order = snap.child("Order").val();
+                 
                 if(lat1>=south && lat1<=north ){
                   if(long1<=east && long1>=west){
                     finLat=lat1;
                     finLong=long1;
+                    if(order==="Done"){
+                      alert("You Have A Notification");
+                    
+                          
+                          //if(Order==="Done"){
+                           /// alert("You Have A Notification");
+//
+                         // }
                 //console.log(finLat);
                 //console.log(finLong);
               
@@ -79,8 +91,13 @@ var finLat,finLong;
         })
         }
       }
+    }
+    })
+  //})
+//})
         })
       })
+      
     })
 
 

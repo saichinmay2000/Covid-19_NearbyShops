@@ -30,6 +30,7 @@ var finLat,finLong;
                 if(Order==="Done"){
                 //console.log(finLat);
                 //console.log(finLong);
+                alert("You Have A Notification");
               
           
          root.ref(childKey).child("Shop Details").once("value").then(function(snap){
@@ -86,3 +87,13 @@ var finLat,finLong;
 
 
 })()
+
+
+function Logout(){
+  firebase.auth().signOut().then(function() {
+// Sign-out successful.
+location.replace("index.html")
+}).catch(function(error) {
+// An error happened.
+});
+}

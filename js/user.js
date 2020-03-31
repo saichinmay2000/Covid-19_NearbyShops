@@ -47,7 +47,7 @@
                     console.log(childSnapshot1.key);
                     root.ref("Notifications").child(user.uid).child(childKey).once("value").then(function(snap){
                       var order = snap.child("Order").val();
-                      var pick = snap.child("Picked up").val();
+                      var pick = snap.child("PickUp").val();
                     
                     var date = snap2.child("Date").val();
                     var Name = snap2.child("Name").val();

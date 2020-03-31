@@ -7,6 +7,7 @@
 <title>SociDist Shopping</title>
 <!-- Bootstrap -->
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="#">SociDist Shopping</a>
@@ -26,7 +27,8 @@
 </div>
 <div class="container-fluid" id="shop_details_container">
   <div class="row" id="shop_details_less">
-    <div class="col-4 my-auto" id="shop_img"> <img id="s_img" class="rounded img-fluid" alt="Placeholder image" src="images/Rectangle 2.png"> </div>
+    <div class="col-4 my-auto" id="shop_img"> 
+		<img id="s_img" class="rounded img-fluid" alt="Placeholder image" src="images/Rectangle 2.png"> </div>
     <div class="col-8 my-auto" id="shop_details">
       <div class="card col-8">
         <div class="card-body">
@@ -35,7 +37,7 @@
           <p class="card-text" id="s_addr">8-46/2,JP Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>
         </div>
       </div>
-	<button class="btn btn-primary" id="order_now">Order Now</button>
+	<button class="btn btn-primary" id="order_now" data-toggle="modal" data-target="#item_form">Order Now</button>
     </div>
   </div>
 	<button class="btn-text collapsed" id="details_btn" data-toggle="collapse" role="button" data-target="#shop_details_more_coll" aria-expanded="false" aria-controls="collapseExample"><span id="md">+More Details</span><span id="ld">-Less Details</span></button>
@@ -59,6 +61,47 @@
   </div>
 	</div>
 </div>
+	
+<div class="modal fade" id="item_form">
+	<div class="modal-dialog modal-xl">
+		<div class="modal-content">
+			
+			<div class="modal-header">
+				<h5 class="modal-title">Add items your cart</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			
+			<div class="modal-body">
+				<div class="form-row" id="item1" style="padding: 0.5rem 0">
+					<div class="col-4 my-auto">
+						<input class="form-control" id="item_name_1" placeholder="Item Name">
+					</div>
+				  <div class="col-2 my-auto" style="padding: 0 0;">
+					  <input class="form-control" type="number" id="item_quantity_1" placeholder="Quantity">
+				  </div>
+					  <div class="col-2 my-auto" style="padding: 0 0;">
+						   <select class="custom-select" id="item_unit">
+								<option selected>units</option>
+								<option value="1">kg</option>
+								<option value="2">litres</option>
+								<option value="3">grams</option>
+							  </select>
+					</div>
+				  <div class="col-2 my-auto" style="position: relative;overflow: hidden;display: inline-block;">
+					  <button class="btn-icon"><i class="fa fa-camera"></i> Image</button>
+					  <input type="file" style="font-size: 100px;position: absolute;left: 0;top: 0;opacity: 0;">
+				  </div>
+				  <div class="col-2 my-auto">
+					  <button class="btn-icon" style="background-color: white; border: solid thin #000000;color: black"><i class="fa fa-remove"></i> Clear</button>					  
+				  </div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery-3.4.1.min.js"></script>

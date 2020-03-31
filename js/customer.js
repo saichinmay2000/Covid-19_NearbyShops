@@ -31,7 +31,7 @@ var finLat,finLong;
                   if(long1<=east && long1>=west){
                     finLat=lat1;
                     finLong=long1;
-                    rot.ref("Notifications").once("value").then(function(snap){
+                    rot.once("value").then(function(snap){
                       snap.forEach(function(childSnapshot) {
                         var childKey = childSnapshot.key;
                         rot.child(childKey).child(user.uid).once("value").then(function(snap1){

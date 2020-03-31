@@ -96,7 +96,6 @@
                   })
                })
               })
-              console.log(childSnapshot1.key);
                 }
               })
             })
@@ -125,10 +124,34 @@ function Logout(){
     firebase.database().ref("Notifications").child(user.uid).child(a).once("value").then(function(snap){
       var order = snap.child("Order").val();
       var pick = snap.child("PickUp").val();
-      if(order === "Done" || pick==="Picked up"){
+      if(order === "Done" && pick==="Picked"){
         alert("Order is Delivered Already")
       }
-    else if(done===true || pick===true){
+    else if(done===true){
+    var root =  firebase.database();
+    var root1 =  firebase.database().ref("Orders");
+    root1.once("value").then(function(snap){
+        snap.forEach(function(childSnapshot) {
+          var childKey = childSnapshot.key;
+          root1.child(childKey).once("value").then(function(snap1){
+            snap1.forEach(function(childSnapshot1) {
+              if(user.uid==childSnapshot1.key){
+                root1.child(childKey).child(childSnapshot1.key).once("value").then(function(snap2){
+                  console.log(snap2.val());
+                  console.log(childSnapshot1.key);
+                  var Name = snap2.child("Name").val();
+                  root.ref("Notifications").child(user.uid).child(childKey).set({
+                    Name:Name,
+                    Order:"Done"
+                  })
+                })
+              }
+            })
+          })
+        })
+      })
+  }
+  else if(pick===true && done==="Done"){
     var root =  firebase.database();
     var root1 =  firebase.database().ref("Orders");
     root1.once("value").then(function(snap){
@@ -144,7 +167,7 @@ function Logout(){
                   root.ref("Notifications").child(user.uid).child(childKey).set({
                     Name:Name,
                     Order:"Done",
-                    PickUp:"Picked up"
+                    PickUp:"Picked"
                   })
                 })
               }

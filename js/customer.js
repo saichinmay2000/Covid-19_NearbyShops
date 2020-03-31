@@ -27,21 +27,21 @@ var finLat,finLong;
               root1.child(childKey).once("value").then(function(snap1){
                 var lat1 = snap1.child("Latitude").val();
                 var long1 = snap1.child("Longitude").val();
+               rot.child(childKey).child(user.uid).once("value").then(function(snap){
+                 var order = snap.child("Order").val();
+                 
                 if(lat1>=south && lat1<=north ){
                   if(long1<=east && long1>=west){
                     finLat=lat1;
                     finLong=long1;
-                    rot.once("value").then(function(snap){
-                      snap.forEach(function(childSnapshot) {
-                        var childKey = childSnapshot.key;
-                        rot.child(childKey).child(user.uid).once("value").then(function(snap1){
-                          var Name = snap1.child("Name").val();
-                          var Order = snap1.child("Order").val();
+                    if(order==="Done"){
+                      alert("You Have A Notification");
+                    
                           
-                          if(Order==="Done"){
-                            alert("You Have A Notification");
-
-                          }
+                          //if(Order==="Done"){
+                           /// alert("You Have A Notification");
+//
+                         // }
                 //console.log(finLat);
                 //console.log(finLong);
               
@@ -89,11 +89,12 @@ var finLat,finLong;
           cel6.appendChild(button);
         })
         })
-      })
-    })
-  })
         }
       }
+    }
+    })
+  //})
+//})
         })
       })
       

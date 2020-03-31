@@ -30,6 +30,7 @@ var finLat,finLong;
                 if(Order==="Done"){
                 //console.log(finLat);
                 //console.log(finLong);
+                alert("You Have A Notification");
               
           
          root.ref(childKey).child("Shop Details").once("value").then(function(snap){

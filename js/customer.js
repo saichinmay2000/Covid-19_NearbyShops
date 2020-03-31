@@ -34,8 +34,7 @@ var finLat,finLong;
                   if(long1<=east && long1>=west){
                     finLat=lat1;
                     finLong=long1;
-                    if(order==="Done"){
-                      alert("You Have A Notification");
+                   
                     
                           
                           //if(Order==="Done"){
@@ -90,7 +89,7 @@ var finLat,finLong;
         })
         })
         }
-      }
+      
     }
     })
   //})

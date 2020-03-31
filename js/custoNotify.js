@@ -72,8 +72,7 @@ var finLat,finLong;
           cel2.innerHTML=shopName;
           cel3.innerHTML=PhoneNum;
           cel4.innerHTML=Order;
-          cel5.innerHTML = "Not Picked";
-          cel6.appendChild(button);
+          cel5.appendChild(button);
         })
         })
         }

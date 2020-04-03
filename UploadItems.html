@@ -16,6 +16,7 @@
 <script src="./js/customer.js"></script>
 <link rel="stylesheet" href="./css/customer.css">
 <script src="./js/gmap.js"></script>
+<link rel="stylesheet" href="./css/uploaditms.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     </head>
@@ -48,74 +49,49 @@
         </div>
       </nav>
     <!--/.Navbar --> 
-    <div class="container-fuild" style="margin-top: 60px;">
+    <center>
+      <div class="container-fuild" style="margin-top: 60px;">
+        <br><br><br>
+      <h2 class="title text-center">Upload Your Store Items</h2>
       <br><br><br>
-    <h2 class="title text-center">Choose Your Store</h2>
-    <br><br><br>
-  <center>
-      <div id="app" class="container" style="overflow: scroll;  max-height: 400px; max-width: 1000px;overflow-x: auto;">
-        <table class="table table-light table-striped table-hover" >
-          <thead>
-              <tr>
-                  <th>Photo</th>
-                  <th>Shop Name</th>
-                  <th>Name</th>
-                  <th>Contact ID</th>
-                  <th>Shop Location</th>
-                  <th>Address</th>
-                  <th>Order</th>
-                  <th></th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td data-label="Photo"></td>
-                  <td data-label="Shop Name">IQC36631</td>
-                   <td data-label="Name">20.183 MH/s</td>
-                  <td data-label="Contact Id">Lifetime</td>
-                  <td data-label="Address">$46.59</td>
-                  <td data-label="Address">$46.59</td>
-                  <td data-label=""><a href="#" class="btn btn__active">ORDER</a></td>
-              </tr>
-              
-             <tr>
-                <td></td>
-                  <td data-label="Contact ID">IQC36632</td>
-                  <td data-label="Power">23.6190 MH/s</td>
-                  <td data-label="Expiration">07.01.2022</td>
-                  <td data-label="Value">$90.72</td>
-                  <td data-label="Address">$46.59</td>
-                  <td data-label=""><a href="#" class="btn btn__pledged">ORDER</a></td>
-              </tr>
-              <!--<tr>
-                <td></td>
-                  <td data-label="Contact ID">IQC36633</td>
-                  <td data-label="Power">20.463 MH/s</td>
-                  <td data-label="Expiration">01.02.2020</td>
-                  <td data-label="Value">$60.41</td>
-                  <td data-label=""><a href="#" class="btn btn__pledged">ORDER</a></td>
-              </tr>
-              <tr>
-                <td></td>
-                  <td data-label="Contact ID">IQC36634</td>
-                  <td data-label="Power">46.7378 MH/s</td>
-                  <td data-label="Expiration">08.01.2021</td>
-                  <td data-label="Value">$18.93</td>
-                  <td data-label=""><a href="#" class="btn btn__pledged">ORDER</a></td>
-              </tr>
-              <tr>
-                <td></td>
-                  <td data-label="Contact ID">IQC36635</td>
-                  <td data-label="Power">20.8476 MH/s</td>
-                  <td data-label="Expiration">17.11.2021</td>
-                  <td data-label="Value">$11.49</td>
-                  <td data-label=""><a href="#" class="btn btn__pledged">ORDER</a></td>
-              </tr>-->
-          </tbody>
-      </table>
-      </div>
-      
-      
-</center>
+      <div class="row">
+        <div class="container">
+          <div class="col-3">
+            <div class="row-3">
+              <h3  id="">Shop Name:- </h3>
+          <h3  id="shopName">Shop Name:- </h3>
+            </div>
+          </div>
+          <div class="col-3">
+            <h3 id="">Owner Name:- </h3>
+            <h3 id="ownName">Owner Name:- </h3>
+            </div>
+            
+          <div class="col-3">
+            <h3 id="">Shop Location:- </h3>
+            <h3 id="shopName">Shop Location:- </h3>
+            </div>
+  
+            
+            <div class="col-3 input-effect">
+              <input class="effect-16" type="text" placeholder="">
+                <label>Enter your Name</label>
+                <span class="focus-border"></span>
+            </div>
+            <div class="col-3">
+              <input class="effect-16" type="text" placeholder="">
+              <label>Enter No of Items</label>
+                <span class="focus-border"></span>
+            </div>
+            <div class="col-3">
+              <input class="effect-12" type="file" placeholder="Placeholder Text">
+                <span class="focus-border"></span>
+            </div>
+           
+            <button type="button" class="btn btn-primary float-center text-uppercase shadow-sm">Submit</button>
+        </div>
+    </div>
+  
+  </center>
     </body>
 </html>

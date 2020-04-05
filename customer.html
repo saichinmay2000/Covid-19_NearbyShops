@@ -15,9 +15,6 @@
 <script src="./js/index.js"></script>
 <script src="./js/customer.js"></script>
 <link rel="stylesheet" href="./css/customer.css">
-<script src="./js/gmap.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
     </head>
     <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -34,9 +31,6 @@
             <li class="nav-item">
               <a class="nav-link" href="customerprofile.html">Profile</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Notification.html">Notifications</a>
-            </li>
             
           </ul>
           <form class="form-inline my-2 my-lg-0">
@@ -49,9 +43,8 @@
       </nav>
     <!--/.Navbar --> 
     <div class="container-fuild" style="margin-top: 60px;">
-      <br><br><br>
+    <h2 class="title text-center" >No Tokens were created!</h2>
     <h2 class="title text-center">Choose Your Store</h2>
-    <br><br><br>
   <center>
       <div id="app" class="container" style="overflow: scroll;  max-height: 400px; max-width: 1000px;overflow-x: auto;">
         <table class="table table-light table-striped table-hover" >
@@ -61,7 +54,6 @@
                   <th>Shop Name</th>
                   <th>Name</th>
                   <th>Contact ID</th>
-                  <th>Shop Location</th>
                   <th>Address</th>
                   <th>Order</th>
                   <th></th>
@@ -74,7 +66,6 @@
                    <td data-label="Name">20.183 MH/s</td>
                   <td data-label="Contact Id">Lifetime</td>
                   <td data-label="Address">$46.59</td>
-                  <td data-label="Address">$46.59</td>
                   <td data-label=""><a href="#" class="btn btn__active">ORDER</a></td>
               </tr>
               
@@ -84,7 +75,6 @@
                   <td data-label="Power">23.6190 MH/s</td>
                   <td data-label="Expiration">07.01.2022</td>
                   <td data-label="Value">$90.72</td>
-                  <td data-label="Address">$46.59</td>
                   <td data-label=""><a href="#" class="btn btn__pledged">ORDER</a></td>
               </tr>
               <!--<tr>
@@ -115,7 +105,17 @@
       </table>
       </div>
       
-      
+      <div class="conatiner" id="upload" style="display: none;">
+        <div class="upload">
+          <br>
+          Shop Name:- <p id="shopName"></p>
+          Shop Owner Name:- <p id="ownerName"></p>
+          Enter your Name <input type="text" name="" id="name"><br>
+          Enter the Date <input type="date" name="" id="date"><br>
+          Enter the no of items <input type="number" name="" id="items"><br>
+          <input type="button" value="Submit" onclick="submit()">
+        </div>
+      </div>
 </center>
     </body>
 </html>

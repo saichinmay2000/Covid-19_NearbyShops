@@ -19,7 +19,6 @@ var finLat,finLong;
     firebase.auth().onAuthStateChanged(user => {
         document.getElementById("phone").innerHTML=user.phoneNumber;
         var root =  firebase.database();
-        var rot = root.ref("Notifications");
         var root1 =  firebase.database().ref("Locations");
         root1.once("value").then(function(snap){
             snap.forEach(function(childSnapshot) {
@@ -27,21 +26,10 @@ var finLat,finLong;
               root1.child(childKey).once("value").then(function(snap1){
                 var lat1 = snap1.child("Latitude").val();
                 var long1 = snap1.child("Longitude").val();
-               rot.child(childKey).child(user.uid).once("value").then(function(snap){
-                 var order = snap.child("Order").val();
-                 
                 if(lat1>=south && lat1<=north ){
                   if(long1<=east && long1>=west){
                     finLat=lat1;
                     finLong=long1;
-                   
-                    
-                          document.cookie = "lat="+finLat;
-                          document.cookie = "long="+finLong;
-                          //if(Order==="Done"){
-                           /// alert("You Have A Notification");
-//
-                         // }
                 //console.log(finLat);
                 //console.log(finLong);
               
@@ -51,8 +39,6 @@ var finLat,finLong;
           var address = snap.child("Address").val();
           var shopName = snap.child("ShopName").val();
           var PhoneNum = snap.child("MobileNumber").val();
-          document.getElementById("shopName").innerHTML=shopName;
-          document.getElementById("ownName").innerHTML=name;
           root.ref(childKey).child("Shop Details").child("ShopImg").once("value").then(function(snap){
             var imglink = snap.child("URL").val();
 
@@ -66,7 +52,7 @@ var finLat,finLong;
            // button.onclick=GetTableValues(childKey)
         button.setAttribute('type', 'button');
         button.setAttribute('value', 'Order');
-        button.setAttribute('onclick', 'GetTableValues()');
+        button.setAttribute('onclick', 'GetTableValues(\''+childKey+'\')');
           var table  = document.getElementsByTagName("table")[0];
           var newrow = table.insertRow(1);
           var cel1 = newrow.insertCell(0);
@@ -75,7 +61,6 @@ var finLat,finLong;
           var cel4 = newrow.insertCell(3);
           var cel5 = newrow.insertCell(4);
           var cel6 = newrow.insertCell(5);
-          var cel7 = newrow.insertCell(6);
           var res;
           if(count<=10 && count >=1){
           
@@ -88,20 +73,14 @@ var finLat,finLong;
           cel2.innerHTML=name;
           cel3.innerHTML=shopName;
           cel4.innerHTML=PhoneNum;
-          cel5.innerHTML="<div id=\"map\"></div>";
-          cel6.innerHTML=address;
-          cel7.appendChild(button);
+          cel5.innerHTML=address;
+          cel6.appendChild(button);
         })
         })
         }
-      
-    }
-    })
-  //})
-//})
+      }
         })
       })
-      
     })
 
 
@@ -135,7 +114,6 @@ function Logout(){
           document.getElementById("myProgress1").style.width = progress1+"%";
           document.getElementById("myProgress1").innerHTML = progress1+"%";
         
-    document.getElementById("save").style.display="block";
           switch (snapshot.state) {
             case firebase.storage.TaskState.PAUSED: // or 'paused'  
               console.log('Upload is paused');
@@ -152,20 +130,12 @@ function Logout(){
               progress:progress1
             });
             link=downloadURL1;  
-            SaveChange(link);
           });
           });
       });
-      
-    document.getElementById("update").style.display="none";
+    document.getElementById("upload").style.display="none";
   }
-  function SaveChange(a){
-    
-    document.getElementById("save").style.display="block";
-    document.getElementById("update").style.display="none";
-
-    console.log(a);
-    
+  function SaveChange(){
     firebase.auth().onAuthStateChanged(user => {
       var name = document.getElementById("newname").value;
       var email = document.getElementById("newemail").value;
@@ -180,13 +150,27 @@ function Logout(){
     
   }
 
-  function GetTableValues(){
+  function GetTableValues(vale){
 
-   location.replace("UploadItems.html");
+    var ro = firebase.database();
+    ro.ref(vale).child("Shop Details").once("value").then(function(snap){
+      var name = snap.child("Name").val();
+      var shop = snap.child("ShopName").val();
+      document.getElementById("shopName").innerHTML=shop;
+      document.getElementById("ownerName").innerHTML=name;
+      
+    submit(name,shop);
+    document.getElementById("upload").style.display="block";
+    document.getElementById("app").style.display="none";
+    })
+    document.getElementById("upload").style.display="block";
+    document.getElementById("app").style.display="none";
+  
   }
   function submit(a,b){
     document.getElementById("upload").style.display="none";
     document.getElementById("app").style.display="block";
+
     var name = document.getElementById("name").value;
     var date =document.getElementById("date").value;
     var itms = document.getElementById("items").value;
@@ -224,79 +208,3 @@ function Logout(){
 
   })
   }
-
-  var map, infoWindow,newress;
-function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 15
-    });
-    infoWindow = new google.maps.InfoWindow;
-    var lat1=unescape(document.cookie);
-    var cook = document.cookie.split(';').map(cook => cook.split('=')).reduce((accumulator,[key,value])=> ({...accumulator,[key.trim()]: decodeURIComponent(value)}),{});
-    console.log(cook);
-    
-    getCookie();
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {lat: Number(cook.lat),lng: Number(cook.long)};
-        infoWindow.open(map);
-        map.setCenter(pos);
-        var marker = new google.maps.Marker({position:pos,draggable: true,map: map,title: 'Shop Location'});
-        console.log(pos);
-        firebase.auth().onAuthStateChanged(user => {
-        marker.addListener('position_changed', function(){
-            console.log(marker.getPosition().toString());
-            newres=marker.getPosition().toString();
-                 map.setCenter(marker.getPosition());
-                 console.log(marker.getPosition().toString());
-                 
-                 var root= firebase.database().ref().child("ShopLocation").child(user.uid);
-                 root.set({
-                    ShopLocation:marker.getPosition().toString()
-                 });
-
-        });
-        });
-
-        }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-            
-        });
-        
-    } else {
-        handleLocationError(false, infoWindow, map.getCenter());}
-}
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
-        'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
-    
-}
-
-function getCookie() 
-{
-    if (document.cookie.length != 0) 
-    {
-        var cookiesArray = document.cookie.split(";");
-        for (var i = 0; i [ cookiesArray.length]; i++) 
-        {
-            var nameValueArray = cookiesArray[i].split("=");
-            if (nameValueArray[0] == "lat") 
-            {
-                console.log(nameValueArray[1]);
-            }
-            else if (nameValueArray[0] == "long") 
-            {
-              console.log(nameValueArray[1]);
-            }
-        }
-    }
-    else 
-    {
-        alert("No cookies found");
-    }
-}
- 

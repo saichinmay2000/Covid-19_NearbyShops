@@ -36,7 +36,8 @@ var finLat,finLong;
                     finLong=long1;
                    
                     
-                          
+                          document.cookie = "lat="+finLat;
+                          document.cookie = "long="+finLong;
                           //if(Order==="Done"){
                            /// alert("You Have A Notification");
 //
@@ -223,3 +224,79 @@ function Logout(){
 
   })
   }
+
+  var map, infoWindow,newress;
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 15
+    });
+    infoWindow = new google.maps.InfoWindow;
+    var lat1=unescape(document.cookie);
+    var cook = document.cookie.split(';').map(cook => cook.split('=')).reduce((accumulator,[key,value])=> ({...accumulator,[key.trim()]: decodeURIComponent(value)}),{});
+    console.log(cook);
+    
+    getCookie();
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {lat: Number(cook.lat),lng: Number(cook.long)};
+        infoWindow.open(map);
+        map.setCenter(pos);
+        var marker = new google.maps.Marker({position:pos,draggable: true,map: map,title: 'Shop Location'});
+        console.log(pos);
+        firebase.auth().onAuthStateChanged(user => {
+        marker.addListener('position_changed', function(){
+            console.log(marker.getPosition().toString());
+            newres=marker.getPosition().toString();
+                 map.setCenter(marker.getPosition());
+                 console.log(marker.getPosition().toString());
+                 
+                 var root= firebase.database().ref().child("ShopLocation").child(user.uid);
+                 root.set({
+                    ShopLocation:marker.getPosition().toString()
+                 });
+
+        });
+        });
+
+        }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+            
+        });
+        
+    } else {
+        handleLocationError(false, infoWindow, map.getCenter());}
+}
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+        'Error: The Geolocation service failed.' :
+        'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+    
+}
+
+function getCookie() 
+{
+    if (document.cookie.length != 0) 
+    {
+        var cookiesArray = document.cookie.split(";");
+        for (var i = 0; i [ cookiesArray.length]; i++) 
+        {
+            var nameValueArray = cookiesArray[i].split("=");
+            if (nameValueArray[0] == "lat") 
+            {
+                console.log(nameValueArray[1]);
+            }
+            else if (nameValueArray[0] == "long") 
+            {
+              console.log(nameValueArray[1]);
+            }
+        }
+    }
+    else 
+    {
+        alert("No cookies found");
+    }
+}
+ 

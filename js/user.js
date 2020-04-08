@@ -60,7 +60,7 @@
                   button.setAttribute('value', 'Send to customer');
                   button.setAttribute('onclick', 'Send(\''+childKey+'\')');
                   button.setAttribute("class", "btn btn-info btn-xs");
-                    var table  = document.getElementsByTagName("table")[0];
+                    var table  = document.getElementsByTagName("table1")[0];
                     var newrow = table.insertRow(1);
                     var cel1 = newrow.insertCell(0);
                     var cel2 = newrow.insertCell(1);

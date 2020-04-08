@@ -16,15 +16,18 @@ function Owner(){
   console.log(OwnerImg.name);
 }
 var lat,long;
+
 function showPosition() {
-  if(navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-         lat=position.coords.latitude;
-         long= position.coords.longitude;
-      });
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition1);
   } else {
-      alert("Sorry, your browser does not support HTML5 geolocation.");
+    console.log("Geolocation is not supported by this browser.");
   }
+}
+
+function showPosition1(position) {
+ lat=position.coords.latitude;
+  long=position.coords.longitude;
 }
 function store(){
   firebase.auth().onAuthStateChanged(user => {
@@ -45,7 +48,7 @@ function store(){
   Address: address,
   MobileNumber: mobnum,
   License_number:license_number,
-  verify:"Not verifed",
+  verify:"Not verified",
   Latitude:lat,
   Longitude:long
 });

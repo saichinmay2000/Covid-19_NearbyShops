@@ -8,10 +8,10 @@ var finLat,finLong;
            lat=position.coords.latitude;
            long= position.coords.longitude;
            long=long-0.08;
-          north = lat+(1/earth)*(180/pi);
-          south = lat-(1/earth)*(180/pi);
-          east = long+(1/earth)*(180/pi)/Math.cos(lat*pi/180);
-          west = long-(1/earth)*(180/pi)/Math.cos(lat*pi/180);
+          north = lat+(2/earth)*(180/pi);
+          south = lat-(2/earth)*(180/pi);
+          east = long+(2/earth)*(180/pi)/Math.cos(lat*pi/180);
+          west = long-(2/earth)*(180/pi)/Math.cos(lat*pi/180);
           
 
         });

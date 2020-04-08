@@ -46,6 +46,10 @@ var finLat,finLong;
           //console.log(address);
           //console.log(shopName);
           //console.log(PhoneNum);
+          var button = document.createElement('input');
+          button.setAttribute('type','button');
+          button.setAttribute('value','Order');
+          button.setAttribute('onclick','GetTableValues(\''+childKey+'\')');
           var count=1;
           var table  = document.getElementsByTagName("table")[0];
           var newrow = table.insertRow(1);
@@ -57,15 +61,16 @@ var finLat,finLong;
           var cel6 = newrow.insertCell(5);
           var res;
           if(count<=10 && count >=1){
-           res = "<button onclick = \"deleterow(id)\"  class=\"btn btn__active\">Order</button>";}
+           button.setAttribute('class','btn btn__active');
+          }
           else{
-            res = "<button onclick = \"deleterow(id)\"  class=\"btn btn__pledged\">Order</button>";
+            button.setAttribute('class','btn btn__pledged');
           }
           cel2.innerHTML=name;
           cel3.innerHTML=shopName;
           cel4.innerHTML=PhoneNum;
           cel5.innerHTML=address;
-          cel6.innerHTML =  res;
+          cel6.appendChild(button);
 
         })
         }

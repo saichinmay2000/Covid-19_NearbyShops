@@ -24,8 +24,8 @@ function initMap() {
                  
                  var root= firebase.database().ref().child("Locations").child(user.uid);
                  root.set({
-                    Lat:arr[0],
-                    Long:arr[1]
+                    Latitude:arr[0],
+                    Longitude:arr[1]
                  });
 
         });

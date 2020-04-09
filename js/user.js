@@ -20,7 +20,6 @@
           deco.style.backgroundColor = "LimeGreen";
           deco.style.borderRadius = "10px";
           deco.style.width="70px";
-          console.log(childSnapshot.val());
         }
         else{
           deco.innerHTML=veri;
@@ -38,65 +37,53 @@
       root1.once("value").then(function(snap){
           snap.forEach(function(childSnapshot) {
             var childKey = childSnapshot.key;
-            
             root1.child(childKey).once("value").then(function(snap1){
               snap1.forEach(function(childSnapshot1) {
                 if(user.uid==childSnapshot1.key){
                   root1.child(childKey).child(childSnapshot1.key).once("value").then(function(snap2){
-                    console.log(snap2.val());
-                    console.log(childSnapshot1.key);
-                    root.ref("Notifications").child(user.uid).child(childKey).once("value").then(function(snap){
-                      var order = snap.child("Order").val();
                     
                     var date = snap2.child("Date").val();
                     var Name = snap2.child("Name").val();
                     var Itms = snap2.child("Items").val();
                     var button = document.createElement('input');
-                   root.ref("Customers").child(childKey).once("value").then(function(snap){
-                      var Address = snap.child("Address").val();
                       
                     // button.onclick=GetTableValues(childKey)
                   button.setAttribute('type', 'button');
-                  button.setAttribute('value', 'Send to customer');
-                  button.setAttribute('onclick', 'Send(\''+childKey+'\')');
+                  button.setAttribute('value', 'Bill It');
+                  button.setAttribute('onclick', 'Bill(\''+childKey+'\')');
                   button.setAttribute("class", "btn btn-info btn-xs");
-                    var table  = document.getElementsByTagName("table1")[0];
+                    var table  = document.getElementsByClassName("table1")[0];
                     var newrow = table.insertRow(1);
                     var cel1 = newrow.insertCell(0);
                     var cel2 = newrow.insertCell(1);
                     var cel3 = newrow.insertCell(2);
-                    var cel4 = newrow.insertCell(3);
-                    var cel5 = newrow.insertCell(4);
-                    var cel6 = newrow.insertCell(5);
-                    var cel7 = newrow.insertCell(6);
                     var res,res1;
-                    if(order==="Done"){
-                      res = "Delivered Order";
-                    }
-                    else{
-                     res = "<input type=\"checkbox\" name=\"Done\" id=\"done\" /> Done";
-                    }
-
                    
-                    cel1.innerHTML=1
-                    cel2.innerHTML=Name;
-                    cel3.innerHTML=Address;
-                    cel4.innerHTML=date;
-                    cel5.innerHTML = res;
-                    cel6.innerHTML=Itms;
-                    cel7.appendChild(button);
-                  })
-               })
+                    cel1.innerHTML=Name
+                    cel2.innerHTML=Itms;
+                    cel3.appendChild(button);
               })
                 }
               })
             })
+            root.ref("Approval").child(childKey).child(user.uid).once("value").then(function(snap){
+              var table  = document.getElementsByClassName("table2")[0];
+              var newrow = table.insertRow(1);
+              var cel1 = newrow.insertCell(0);
+              var cel2 = newrow.insertCell(1);
+              var cel3 = newrow.insertCell(2);
+             
+              cel1.innerHTML=snap.child("Name").val();
+              cel2.innerHTML=snap.child("Items").val();
+              cel3.innerHTML = snap.child("Price").val();
+              console.log(snap.child("Name").val());
+              
+            })
+            
     })
   })
-  
+
 });
-
-
     })()
 function Logout(){
     firebase.auth().signOut().then(function() {
@@ -108,46 +95,23 @@ function Logout(){
   }
 
 
-  function Send(a){
-    
+  function Bill(a){
+    var Name,Itms;
+    var root = firebase.database();
     firebase.auth().onAuthStateChanged(user => {
-    var done=document.getElementById("done").checked;
-    firebase.database().ref("Notifications").child(user.uid).child(a).once("value").then(function(snap){
-      var order = snap.child("Order").val();
-      var pick = snap.child("PickUp").val();
-      if(order === "Done" ){
-        alert("Order is Delivered Already")
-      }
-    else if(done===true){
-    var root =  firebase.database();
-    var root1 =  firebase.database().ref("Orders");
-    root1.once("value").then(function(snap){
-        snap.forEach(function(childSnapshot) {
-          var childKey = childSnapshot.key;
-          root1.child(childKey).once("value").then(function(snap1){
-            snap1.forEach(function(childSnapshot1) {
-              if(user.uid==childSnapshot1.key){
-                root1.child(childKey).child(childSnapshot1.key).once("value").then(function(snap2){
-                  console.log(snap2.val());
-                  console.log(childSnapshot1.key);
-                  var Name = snap2.child("Name").val();
-                  root.ref("Notifications").child(user.uid).child(childKey).set({
-                    Name:Name,
-                    Order:"Done"
-                  })
-                })
-              }
-            })
-          })
-        })
-      })
-  }
- 
-  else{
-    alert("if done Check/Click the check box");
+    root.ref("Orders").child(a).child(user.uid).once("value").then(function(snap){
+       Name = snap.child("Name").val();
+       Itms = snap.child("Items").val();
+    root.ref("Approval").child(a).child(user.uid).set({
+      Name:Name,
+      Items:Itms,
+      Price:"1500",
+      Approve:"Not"
+    })
+    root.ref("Orders").child(a).child(user.uid).remove();
+   
+  })
     
-  }
-})
-})
+  })
   }
   

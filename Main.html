@@ -67,7 +67,7 @@
         <tr>
           <td>1</td>
           <td>Doe</td>
-          <td><button class="btn btn-info btn-xs">Bill It</button></td>
+          <td><button class="btn btn-info btn-xs" data-toggle="modal" data-target="#item_form">Bill It</button></td>
         </tr>
         <tr>
           <td>1</td>
@@ -170,5 +170,270 @@
 </div>
 </div>
 </div>
+
+<div class="modal fade" id="item_form">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: greenyellow;">
+          <h2 class="modal-title" style="text-align: center;width: 100%;">Ordered Items</h2>
+      </div>
+      <div class="modal-body">
+          
+          <!--Heading-->
+          <div class="form-row" id="heading" style="font-weight: bold;margin-top: -0.75rem;padding: 0 0;border-bottom: dashed #000000 thin;">
+            
+            <div class="col-1 my-auto" style="padding: 0 0;">
+            </div>
+            <div class="col-4 my-auto" style="padding: 0 0;">
+                <input class="form-control-plaintext text-left" style="font-weight: bold" readonly id="item_name_1" value="Product">
+            </div>
+    
+            <div class="col-3 my-auto" style="padding: 0 0;">
+              <input class="form-control-plaintext text-center" style="font-weight: bold" readonly id="item_quantity_1" value="Quantity">
+            </div>
+    
+            <div class="col-4 my-auto" style="padding: 0 0;">
+              <input class="form-control-plaintext text-right" style="font-weight: bold" readonly id="item_price_1" value="Price">
+            </div>
+          </div>
+          
+         <!--Item 1-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          
+          <div class="col-1 my-auto" style="padding: 0 0;">
+              <i class="fa fa-picture-o"></i>
+          </div>
+          <div class="col-4 my-auto" style="padding: 0 0;">
+              <input class="form-control-plaintext text-left" readonly id="item_name_1" value="Rice">
+          </div>
+
+          <div class="col-3 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext text-center" readonly id="item_quantity_1" value="5 kg">
+          </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number" id="item_price_1" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 2-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          
+          <div class="col-1 my-auto" style="padding: 0 0;">
+              <i class="fa fa-picture-o"></i>
+          </div>
+          <div class="col-4 my-auto" style="padding: 0 0;">
+              <input class="form-control-plaintext text-left" readonly id="item_name_2" value="Wheat">
+          </div>
+  
+          <div class="col-3 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext text-center" readonly id="item_quantity_2" value="12 kg">
+          </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_2" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 3-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+              <i class="fa fa-picture-o"></i>
+          </div>
+          <div class="col-4 my-auto" style="padding: 0 0;">
+                    <input class="form-control-plaintext text-left" readonly id="item_name_3" value="Oil">
+          </div>
+  
+          <div class="col-3 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext text-center" readonly id="item_quantity_3" value="1 l">
+          </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_3" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 4-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+              <i class="fa fa-picture-o"></i>
+          </div>
+          <div class="col-4 my-auto" style="padding: 0 0;">
+                    <input class="form-control-plaintext text-left" readonly id="item_name_4" value="Soap">
+          </div>
+  
+          <div class="col-3 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext text-center" readonly id="item_quantity_4" value="1">
+          </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_4" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 5-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+              <i class="fa fa-picture-o"></i>
+          </div>
+          <div class="col-4 my-auto" style="padding: 0 0;">
+                    <input class="form-control-plaintext text-left" readonly id="item_name_5" value="Sanitiser">
+          </div>
+  
+          <div class="col-3 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext text-center" readonly id="item_quantity_5" value="2">
+          </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_5" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 6-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+              <i class="fa fa-picture-o"></i>
+          </div>
+          <div class="col-4 my-auto" style="padding: 0 0;">
+                    <input class="form-control-plaintext text-left" readonly id="item_name_6" value="Dal">
+          </div>
+  
+          <div class="col-3 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext text-center" readonly id="item_quantity_6" value="1 kg">
+          </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_6" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 7-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+              <i class="fa fa-picture-o"></i>
+          </div>
+          <div class="col-4 my-auto" style="padding: 0 0;">
+                    <input class="form-control-plaintext text-left" readonly id="item_name_7" value="Curd">
+          </div>
+  
+          <div class="col-3 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext text-center" readonly id="item_quantity_7" value="1 kg">
+          </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_7" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 8-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+              <i class="fa fa-picture-o"></i>
+          </div>
+          <div class="col-4 my-auto" style="padding: 0 0;">
+                    <input class="form-control-plaintext text-left" readonly id="item_name_8" value="Milk">
+          </div>
+  
+          <div class="col-3 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext text-center" readonly id="item_quantity_8" value="2 l">
+          </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_8" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 9-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+              <i class="fa fa-picture-o"></i>
+          </div>
+          <div class="col-4 my-auto" style="padding: 0 0;">
+                    <input class="form-control-plaintext text-left" readonly id="item_name_9" value="Hand Wash">
+          </div>
+  
+          <div class="col-3 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext text-center" readonly id="item_quantity_9" value="1">
+          </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_9" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 10-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+              <i class="fa fa-picture-o"></i>
+          </div>
+          <div class="col-4 my-auto" style="padding: 0 0;">
+                    <input class="form-control-plaintext text-left" readonly id="item_name_10" value="Pepper">
+          </div>
+  
+          <div class="col-3 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext text-center" readonly id="item_quantity_10" value="100 g">
+          </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_10" placeholder="Price">
+          </div>
+        </div>   
+      </div>
+      <div class="modal-footer"><h2 style="font-size: 2vw;">Total: Rs.7090</h2>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 </body>
 </html>

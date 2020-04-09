@@ -1,0 +1,30 @@
+
+                    
+<!--    <div class="row company_font" style="font-size: 1.5vw;"><div class="col-sm-1 text-center" >#</div><div class="col-sm-4 text-left" >Item Name</div><div class="col-sm-3 text-center" >Quantity</div><div class="col-sm-4 text-right" >Price</div></div>
+
+    <div class="row" style="font-weight: 500;font-size: 1.5vw;"><div class="col-sm-1 text-center"">1</div><div class="col-sm-4 text-left" style="padding-left: 8px;">Rice</div><div class="col-sm-3 text-center">5 kg</div><div class="col-sm-4 text-right">Rs.2000</div></div>
+    <div class="row" style="font-weight: 500;font-size: 1.5vw;"><div class="col-sm-1 text-center"">2</div><div class="col-sm-4 text-left" style="padding-left: 8px;">Wheat</div><div class="col-sm-3 text-center">2 kg</div><div class="col-sm-4 text-right">Rs.2000</div></div>
+    <div class="row" style="font-weight: 500;font-size: 1.5vw;"><div class="col-sm-1 text-center"">3</div><div class="col-sm-4 text-left" style="padding-left: 8px;">Oil</div><div class="col-sm-3 text-center">1 litre</div><div class="col-sm-4 text-right">Rs.2000</div></div>
+    <div class="row" style="font-weight: 500;font-size: 1.5vw;"><div class="col-sm-1 text-center"">4</div><div class="col-sm-4 text-left" style="padding-left: 8px;">Soap</div><div class="col-sm-3 text-center">1</div><div class="col-sm-4 text-right">Rs.2000</div></div>
+    <div class="row" style="font-weight: 500;font-size: 1.5vw;"><div class="col-sm-1 text-center"">5</div><div class="col-sm-4 text-left" style="padding-left: 8px;">Sanitiser</div><div class="col-sm-3 text-center">2</div><div class="col-sm-4 text-right">Rs.2000</div></div>
+    <div class="row" style="font-weight: 500;font-size: 1.5vw;"><div class="col-sm-1 text-center"">6</div><div class="col-sm-4 text-left" style="padding-left: 8px;">Dal</div><div class="col-sm-3 text-center">1 kg</div><div class="col-sm-4 text-right">Rs.2000</div></div>
+    <div class="row" style="font-weight: 500;font-size: 1.5vw;"><div class="col-sm-1 text-center"">7</div><div class="col-sm-4 text-left" style="padding-left: 8px;">Curd</div><div class="col-sm-3 text-center">1 kg</div><div class="col-sm-4 text-right">Rs.2000</div></div>
+    <div class="row" style="font-weight: 500;font-size: 1.5vw;"><div class="col-sm-1 text-center"">8</div><div class="col-sm-4 text-left" style="padding-left: 8px;">Milk</div><div class="col-sm-3 text-center">2 litre</div><div class="col-sm-4 text-right">Rs.000</div></div>
+    <div class="row" style="font-weight: 500;font-size: 1.5vw;"><div class="col-sm-1 text-center"">9</div><div class="col-sm-4 text-left" style="padding-left: 8px;">Hand Wash</div><div class="col-sm-3 text-center">1</div><div class="col-sm-4 text-right">Rs.500</div></div>
+    <div class="row" style="font-weight: 500;font-size: 1.5vw;"><div class="col-sm-1 text-center"">10</div><div class="col-sm-4 text-left" style="padding-left: 8px;">Pepper</div><div class="col-sm-3 text-center">100 g</div><div class="col-sm-4 text-right">Rs.1200</div></div>
+
+                    <div class="row py-1 mx-auto bg-white border my-4"><div class="col-12 px-1 my-auto text-center"><h3 class="company_font" style="font-size: 3vw;">Total: Rs.7090</h3></div></div>-->
+
+                    <!--<table class="table table-borderless" style="margin-top: 16px;">
+                        <thead class="text-center company_font"><th style="border-bottom: solid thin;">#</th><th style="border-bottom: solid thin ;">Item Name</th><th style="border-bottom: solid thin ;">Quantity</th><th style="border-bottom: solid thin ;">Price</th></thead>
+                        <tr style="font-weight: 500;;"><td class="text-center" style="padding: 8px 0px;">1</td><td class="text-left" style="padding-left: 8px;">Rice</td><td class="text-center">5 kg</td><td class="text-right">Rs.2000</td></tr>
+                        <tr style="font-weight: 500;;"><td class="text-center" style="padding: 8px 0px;">2</td><td class="text-left" style="padding-left: 8px;">Wheat</td><td class="text-center">2 kg</td><td class="text-right">Rs.2000</td></tr>
+                        <tr style="font-weight: 500;;"><td class="text-center" style="padding: 8px 0px;">3</td><td class="text-left" style="padding-left: 8px;">Oil</td><td class="text-center">1 litre</td><td class="text-right">Rs.2000</td></tr>
+                        <tr style="font-weight: 500;;"><td class="text-center" style="padding: 8px 0px;">4</td><td class="text-left" style="padding-left: 8px;">Soap</td><td class="text-center">1</td><td class="text-right">Rs.2000</td></tr>
+                        <tr style="font-weight: 500;;"><td class="text-center" style="padding: 8px 0px;">5</td><td class="text-left" style="padding-left: 8px;">Sanitiser</td><td class="text-center">2</td><td class="text-right">Rs.2000</td></tr>
+                        <tr style="font-weight: 500;;"><td class="text-center" style="padding: 8px 0px;">6</td><td class="text-left" style="padding-left: 8px;">Dal</td><td class="text-center">1 kg</td><td class="text-right">Rs.2000</td></tr>
+                        <tr style="font-weight: 500;;"><td class="text-center" style="padding: 8px 0px;">7</td><td class="text-left" style="padding-left: 8px;">Curd</td><td class="text-center">1 kg</td><td class="text-right">Rs.2000</td></tr>
+                        <tr style="font-weight: 500;;"><td class="text-center" style="padding: 8px 0px;">8</td><td class="text-left" style="padding-left: 8px;">Milk</td><td class="text-center">2 litre</td><td class="text-right">Rs.400</td></tr>
+                        <tr style="font-weight: 500;;"><td class="text-center" style="padding: 8px 0px;">9</td><td class="text-left" style="padding-left: 8px;">Hand Wash</td><td class="text-center">1</td><td class="text-right">Rs.500</td></tr>
+                        <tr style="font-weight: 500;;"><td class="text-center" style="padding: 8px 0px;">10</td><td class="text-left" style="padding-left: 8px;">Pepper</td><td class="text-center">100 grams</td><td class="text-right">Rs.1200</td></tr>
+                    </table>-->

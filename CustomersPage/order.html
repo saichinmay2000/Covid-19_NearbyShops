@@ -1,0 +1,289 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="js/gmap.js"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SociDist Shopping</title>
+        <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        </head>
+    </head>
+    <body>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary"> <a class="navbar-brand" href="#">SociDist Shopping</a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"> <a class="nav-link" href="#" id="home">Home <span class="sr-only">(current)</span></a> </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item active"> <a class="nav-link" href="#" id="profile">Profile <span class="sr-only">(current)</span></a> </li>
+                </ul>
+                </div>
+            </nav>
+
+        <div class="jumbotron jumbotron-fluid text-center">
+            <h1 class="display-4" style="font-size: 3.5vw;">Your Token Number : 5 </h1>
+            <h1 class="display-4" style="font-size: 3.5vw;">Present Token Number : 3  </h1>
+        </div>
+
+        <hr style="width: 80%;" color="black">
+
+        <div class="row mx-4 my-2">
+            <div class="col-sm-5">
+                <div class="container text-center" style="height: 100%;width: 100%;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: greenyellow;">
+                            <h2 class="modal-title" style="text-align: center;width: 100%;">Ordered Items</h2>
+                        </div>
+                        <div class="modal-body">
+                            
+                            <!--Heading-->
+                            <div class="form-row" id="heading" style="font-weight: bold;margin-top: -0.75rem;padding: 0 0;border-bottom: dashed #000000 thin;">
+                              
+                              <div class="col-1 my-auto" style="padding: 0 0;">
+                                  <input class="form-control-plaintext" style="font-weight: bold" readonly value="#">
+                              </div>
+                              <div class="col-4 my-auto" style="padding: 0 0;">
+                                  <input class="form-control-plaintext text-left" style="font-weight: bold" readonly id="item_name_1" value="Product">
+                              </div>
+                      
+                              <div class="col-3 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext text-center" style="font-weight: bold" readonly id="item_quantity_1" value="Quantity">
+                              </div>
+                      
+                              <div class="col-4 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext text-right" style="font-weight: bold" readonly id="item_price_1" value="Price">
+                              </div>
+                            </div>
+                              
+                            
+                           <!--Item 1-->
+                          <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+                            
+                            <div class="col-1 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext" readonly value="1">
+                            </div>
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext text-left" readonly id="item_name_1" value="Rice">
+                            </div>
+
+                            <div class="col-3 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-center" readonly id="item_quantity_1" value="5 kg">
+                            </div>
+                    
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-right" readonly id="item_price_1" value="Rs.2500">
+                            </div>
+                          </div>
+                            
+                          <!--Item 2-->
+                          <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+                            
+                            <div class="col-1 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext" readonly value="2">
+                            </div>
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext text-left" readonly id="item_name_2" value="Wheat">
+                            </div>
+                    
+                            <div class="col-3 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-center" readonly id="item_quantity_2" value="12 kg">
+                            </div>
+                    
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-right" readonly id="item_price_2" value="Rs.2000">
+                            </div>
+                          </div>
+                            
+                          <!--Item 3-->
+                          <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+                            <div class="col-1 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext" readonly value="3">
+                            </div>
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                                      <input class="form-control-plaintext text-left" readonly id="item_name_3" value="Oil">
+                            </div>
+                    
+                            <div class="col-3 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-center" readonly id="item_quantity_3" value="1 l">
+                            </div>
+                    
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-right" readonly id="item_price_3" value="Rs.250">
+                            </div>
+                          </div>
+                            
+                          <!--Item 4-->
+                          <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+                            <div class="col-1 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext" readonly value="4">
+                            </div>
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                                      <input class="form-control-plaintext text-left" readonly id="item_name_4" value="Soap">
+                            </div>
+                    
+                            <div class="col-3 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-center" readonly id="item_quantity_4" value="1">
+                            </div>
+                    
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-right" readonly id="item_price_4" value="Rs.150">
+                            </div>
+                          </div>
+                            
+                          <!--Item 5-->
+                          <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+                            <div class="col-1 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext" readonly value="5">
+                            </div>
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                                      <input class="form-control-plaintext text-left" readonly id="item_name_5" value="Sanitiser">
+                            </div>
+                    
+                            <div class="col-3 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-center" readonly id="item_quantity_5" value="2">
+                            </div>
+                    
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-right" readonly id="item_price_5" value="Rs.100">
+                            </div>
+                          </div>
+                            
+                          <!--Item 6-->
+                          <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+                            <div class="col-1 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext" readonly value="6">
+                            </div>
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                                      <input class="form-control-plaintext text-left" readonly id="item_name_6" value="Dal">
+                            </div>
+                    
+                            <div class="col-3 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-center" readonly id="item_quantity_6" value="1 kg">
+                            </div>
+                    
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-right" readonly id="item_price_6" value="Rs.90">
+                            </div>
+                          </div>
+                            
+                          <!--Item 7-->
+                          <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+                            <div class="col-1 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext" readonly value="7">
+                            </div>
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                                      <input class="form-control-plaintext text-left" readonly id="item_name_7" value="Curd">
+                            </div>
+                    
+                            <div class="col-3 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-center" readonly id="item_quantity_7" value="1 kg">
+                            </div>
+                    
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-right" readonly id="item_price_7" value="Rs.200">
+                            </div>
+                          </div>
+                            
+                          <!--Item 8-->
+                          <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+                            <div class="col-1 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext" readonly value="8">
+                            </div>
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                                      <input class="form-control-plaintext text-left" readonly id="item_name_8" value="Milk">
+                            </div>
+                    
+                            <div class="col-3 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-center" readonly id="item_quantity_8" value="2 l">
+                            </div>
+                    
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-right" readonly id="item_price_8" value="Rs.100">
+                            </div>
+                          </div>
+                            
+                          <!--Item 9-->
+                          <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+                            <div class="col-1 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext" readonly value="9">
+                            </div>
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                                      <input class="form-control-plaintext text-left" readonly id="item_name_9" value="Hand Wash">
+                            </div>
+                    
+                            <div class="col-3 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-center" readonly id="item_quantity_9" value="1">
+                            </div>
+                    
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-right" readonly id="item_price_9" value="Rs.500">
+                            </div>
+                          </div>
+                            
+                          <!--Item 10-->
+                          <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+                            <div class="col-1 my-auto" style="padding: 0 0;">
+                                <input class="form-control-plaintext" readonly value="10">
+                            </div>
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                                      <input class="form-control-plaintext text-left" readonly id="item_name_10" value="Pepper">
+                            </div>
+                    
+                            <div class="col-3 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-center" readonly id="item_quantity_10" value="100 g">
+                            </div>
+                    
+                            <div class="col-4 my-auto" style="padding: 0 0;">
+                              <input class="form-control-plaintext text-right" readonly id="item_price_10" value="Rs.1200">
+                            </div>
+                          </div>
+                            
+                        </div>
+                        <div class="modal-footer" style="background-color: greenyellow;"><h3 class="company_font" style="font-size: 2vw;">Total: Rs.7090</h3>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="row" id="shop_details_cont" style="margin-bottom: 1rem;">
+                    <div align="center" class="col-5 py-0 my-auto" id="shop_img"> <img id="s_img" class="rounded img-fluid" alt="value image" src="images/Rectangle 2.png"> </div>
+                    <div class="col-7" id="shop_details" style="margin: 1.75rem 0rem;">
+                      <div class="card col-7 my-auto">
+                        <div class="card-body">
+                          <h5 class="card-title" id="s_name" style="font-size: 2vw; margin-bottom: 0.5rem;">Chinmay Shop</h5>
+                          <h6 class="card-subtitle mb-2 text-muted" id="s_cat" style="font-size: 1.2vw; margin-bottom: 0.25rem;">Kirana and General</h6>
+                          <p class="card-text" id="s_addr" style="font-size: 1.5vw; margin-bottom: 0.5rem;">8-46/2,JP Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                
+                <div id="shop_keeper_detail_cont" style="width:80%;border: solid #f90000 thin;border-radius: 1rem; padding: 0.75rem 0.5rem;float: right;;">
+                    <div class="row" id="sk_det">
+                      <div class="col-9 my-auto">
+                        <div class="card col-md-8 my-auto" id="sk_card" style="background-color: white;">
+                          <div class="card-body" id="sk_card_body" style="background-color: white;padding: 0px;">
+                            <h5 class="card-title" id="sk_name" style="font-size: 1.75vw; margin-bottom: 0.5rem;">Chinmay Sai T</h5>
+                            <p class="card-subtitle" id="sk_phone" style="font-size: 1.2vw; margin-bottom: 0.25rem;">+91 9100903791</p>
+                            <p class="card-subtitle" id="sk_email" style="font-size: 1.2vw; margin-bottom: 0.25rem;">saichinmaytripurari@gmail.com</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-3 my-auto" id="sk_img_div"><img class="rounded img-fluid" id="sk_img" src="images/Rectangle 4.png"/></div>
+                    </div>
+                </div>
+                
+                <div id="sh_map" style="width:100%;height: 75%;border: solid #00ff00 thin;border-radius: 1rem; padding: 0rem 0rem;float: left;margin-top: 1rem;">
+                </div>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Mp-nbpxvDIUmjL9MWCDil6AypsFcCVQ&callback=initMap"></script>
+
+            </div>
+        </div>
+    </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</html>

@@ -283,6 +283,11 @@ button::-moz-focus-inner,
 	src: url("../fonts/ARLRDBD.TTF")
 }
 
+@font-face{
+	font-family: cursive;
+	src: url("../fonts/DancingScript-VariableFont_wght.ttf")
+}
+
 input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
@@ -497,15 +502,17 @@ mark,
 }
 
 #shop_img{
-	width: 100%;
-	height: auto;
-	padding: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  align-content: center;
 	padding-top: 1rem;
 	padding-left: 0.5rem;
 	margin-right: -0.5rem;
 }
 
-#sk_img{
+#s_img{
+  object-fit: scale-down;
 }
 
 .container-fluid#shop_details_container{
@@ -4822,7 +4829,6 @@ input[type="button"].btn-block {
 }
 
 .card#sk_card {
-  position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -5111,7 +5117,6 @@ input[type="button"].btn-block {
 }
 
 #sh_det{
-	height: 100%;
 	background: lightgreen;
 	border-bottom-right-radius: 10px;
 }
@@ -6924,7 +6929,11 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #0057FF !important;
+  background-color: rgb(94, 101, 115) !important;
+}
+
+.company_font{
+  font-family: company-font;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -10387,14 +10396,10 @@ a.text-dark:hover, a.text-dark:focus {
 /*# sourceMappingURL=bootstrap.css.map */
 
 #sk_img_div {
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: 100%;
 	padding: 0;
-	padding: 0 1rem;
-}
-
-#token_stat {
-	font-family: company-font;
+  padding: 0 1rem;
 }
 
 .item_input {
@@ -10408,10 +10413,6 @@ a.text-dark:hover, a.text-dark:focus {
 
 .item_input:focus{
 	outline: none;outline:
-}
-
-.item_add_image {
-	
 }
 
 /* Style buttons */

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="#">SociDist Shopping</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary"> <a class="navbar-brand" href="#">SociDist Shopping</a>
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
@@ -45,7 +45,7 @@
       <div class="col-6" id="sh_map"></div>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Mp-nbpxvDIUmjL9MWCDil6AypsFcCVQ&callback=initMap"></script>
       <div class="col-6" id="shop_keeper_details">
-        <div class="row" id="sh_det">
+        <div class="row" id="sh_det" style="height: 100%;">
           <div class="col-8 my-auto">
             <div class="card col-md-8 my-auto" id="sk_card">
               <div class="card-body" id="sk_card_body">
@@ -61,6 +61,7 @@
     </div>
   </div>
 </div>
+
 <div class="modal fade" id="item_form">
   <div class="modal-dialog modal-dialog-scrollable modal-xl">
     <div class="modal-content">
@@ -69,7 +70,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
       </div>
       <div class="modal-body">
-		<!--Item 1-->
+		 <!--Item 1-->
         <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
           <div class="col-4 my-auto">
 			  <div class="input-group">
@@ -376,6 +377,7 @@
     </div>
   </div>
 </div>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery-3.4.1.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

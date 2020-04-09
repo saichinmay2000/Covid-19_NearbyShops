@@ -17,12 +17,15 @@ function initMap() {
         marker.addListener('position_changed', function(){
             console.log(marker.getPosition().toString());
             newres=marker.getPosition().toString();
+            newres = newres.substring(1, newres.length - 1);
+            var arr = newres.split(",");
                  map.setCenter(marker.getPosition());
-                 console.log(marker.getPosition().toString());
+                 console.log(marker.getPosition());
                  
-                 var root= firebase.database().ref().child("ShopLocation").child(user.uid);
+                 var root= firebase.database().ref().child("Locations").child(user.uid);
                  root.set({
-                    ShopLocation:marker.getPosition().toString()
+                    Lat:arr[0],
+                    Long:arr[1]
                  });
 
         });

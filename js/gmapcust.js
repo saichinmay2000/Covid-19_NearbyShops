@@ -1,7 +1,7 @@
 var map, infoWindow,newress;
 function initMap() {
 	console.log('qwertyu');
-    map = new google.maps.Map(document.getElementById('sh_map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},
     zoom: 15
     });
@@ -16,13 +16,10 @@ function initMap() {
         console.log(pos);
         firebase.auth().onAuthStateChanged(user => {
         marker.addListener('position_changed', function(){
-            console.log(marker.getPosition().toString());
+           
             newres=marker.getPosition().toString();
                  map.setCenter(marker.getPosition());
-                 var root= firebase.database().ref().child("ShopLocation").child(user.uid);
-                 root.set({
-                    ShopLocation:marker.getPosition().toString()
-                 });
+                 
         });
         });
 

@@ -37,11 +37,15 @@
       root1.once("value").then(function(snap){
           snap.forEach(function(childSnapshot) {
             var childKey = childSnapshot.key;
+            
             root1.child(childKey).once("value").then(function(snap1){
               snap1.forEach(function(childSnapshot1) {
+                console.log(user.uid===childSnapshot1.key);
                 if(user.uid==childSnapshot1.key){
-                  root1.child(childKey).child(childSnapshot1.key).once("value").then(function(snap2){
+                  
+                  root1.child(childKey).child(user.uid).once("value").then(function(snap2){
                     
+            console.log(childKey);
                     var date = snap2.child("Date").val();
                     var Name = snap2.child("Name").val();
                     var Itms = snap2.child("Items").val();
@@ -76,7 +80,6 @@
               cel1.innerHTML=snap.child("Name").val();
               cel2.innerHTML=snap.child("Items").val();
               cel3.innerHTML = snap.child("Price").val();
-              console.log(snap.child("Name").val());
               
             })
             
@@ -108,7 +111,6 @@ function Logout(){
       Price:"1500",
       Approve:"Not"
     })
-    root.ref("Orders").child(a).child(user.uid).remove();
    
   })
     

@@ -7,11 +7,16 @@ var finLat,finLong;
         navigator.geolocation.getCurrentPosition(function(position) {
            lat=position.coords.latitude;
            long= position.coords.longitude;
-           long=long-0.08;
           north = lat+(2/earth)*(180/pi);
           south = lat-(2/earth)*(180/pi);
           east = long+(2/earth)*(180/pi)/Math.cos(lat*pi/180);
           west = long-(2/earth)*(180/pi)/Math.cos(lat*pi/180);
+          console.log(north);
+          console.log(south);
+          console.log(east);
+          console.log(west);
+          console.log(lat);
+          console.log(long);
           
 
         });
@@ -28,6 +33,9 @@ var finLat,finLong;
               root1.child(childKey).once("value").then(function(snap1){
                 var lat1 = snap1.child("Latitude").val();
                 var long1 = snap1.child("Longitude").val();
+                console.log(lat1>=south && lat1<=north );
+                
+                
                 if(lat1>=south && lat1<=north ){
                   if(long1<=east && long1>=west){
                     finLat=lat1;
@@ -54,11 +62,6 @@ var finLat,finLong;
           var table  = document.getElementsByTagName("table")[0];
           var newrow = table.insertRow(1);
           var cel1 = newrow.insertCell(0);
-          var cel2 = newrow.insertCell(1);
-          var cel3 = newrow.insertCell(2);
-          var cel4 = newrow.insertCell(3);
-          var cel5 = newrow.insertCell(4);
-          var cel6 = newrow.insertCell(5);
           var res;
           if(count<=10 && count >=1){
            button.setAttribute('class','btn btn__active');
@@ -66,11 +69,8 @@ var finLat,finLong;
           else{
             button.setAttribute('class','btn btn__pledged');
           }
-          cel2.innerHTML=name;
-          cel3.innerHTML=shopName;
-          cel4.innerHTML=PhoneNum;
-          cel5.innerHTML=address;
-          cel6.appendChild(button);
+          cel1.innerHTML="<div class=\"container-fluid\" id=\"shop_details_container\"><div class=\"row\" id=\"shop_details_less\"><div class=\"col-4 my-auto\" id=\"shop_img\"> <img id=\"s_img\" class=\"rounded img-fluid\" alt=\"Placeholder image\" src=\"images/Rectangle 2.png\"> </div>            <div class=\"col-8 my-auto\" id=\"shop_details\">              <div class=\"card col-8\">                <div class=\"card-body\">                  <h5 class=\"card-title\" id=\"Sname\">Chinmay Shop</h5>                  <h6 class=\"card-subtitle mb-2 text-muted\" id=\"s_cat\">Kirana and General</h6>                  <p class=\"card-text\" id=\"s_addr\">8-46/2,JP Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>                </div>              </div>              <button class=\"btn btn-primary\" id=\"order_now\" data-toggle=\"modal\" data-target=\"#item_form\">Order Now</button>            </div>          </div>          <button class=\"btn-text collapsed\" id=\"details_btn\" data-toggle=\"collapse\" role=\"button\" data-target=\"#shop_details_more_coll\" aria-expanded=\"false\" aria-controls=\"collapseExample\"><span id=\"md\">+More Details</span><span id=\"ld\">-Less Details</span></button>          <div class=\"collapse\" id=\"shop_details_more_coll\">            <div class=\"row\" id=\"shop_details_more\">              <div class=\"col-6\" id=\"sh_map\"></div>              <script async defer src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Mp-nbpxvDIUmjL9MWCDil6AypsFcCVQ&callback=initMap\"></script>              <div class=\"col-6\" id=\"shop_keeper_details\">                <div class=\"row\" id=\"sh_det\">                  <div class=\"col-8 my-auto\">                    <div class=\"card col-md-8 my-auto\" id=\"sk_card\">                      <div class=\"card-body\" id=\"sk_card_body\">                        <h5 class=\"card-title\" id=\"sk_name\">Chinmay Sai T</h5>                        <p class=\"card-subtitle\" id=\"sk_phone\">+91 9100903791</p>                        <p class=\"card-subtitle\" id=\"sk_email\">saichinmaytripurari@gmail.com</p>                      </div>                    </div>                  </div>                  <div class=\"col-4 my-auto\" id=\"sk_img_div\"><img class=\"rounded img-fluid\" id=\"sk_img\" src=\"images/Rectangle 4.png\"/></div>                </div>              </div>            </div>          </div>        </div>";
+          
 
         })
         }

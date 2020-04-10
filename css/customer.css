@@ -32,3 +32,9 @@ body {
 .btn__pledged:hover {
   background: #f14044;
 }
+
+#s_img{
+  border: 2px solid gray;
+padding: 15px;
+box-shadow: 5px 10px 8px gray;
+}

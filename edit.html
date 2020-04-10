@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
+  <style>
+      #s_img{
+        border: 2px solid gray;
+        padding: 15px;
+        box-shadow: 5px 10px 8px gray;
+      }
+  </style>
+</head>
+<body>
+    <br><br><br>
+    <table class="table table-light table-striped table-hover" >
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th>  <div class="container-fluid" id="shop_details_container">
+                <div class="row" id="shop_details_less">
+                  <div class="col-4 my-auto" id="shop_img"> <img id="s_img" class="rounded img-fluid" alt="Placeholder image" src="images/Rectangle 2.png"> </div>
+                  <div class="col-8 my-auto" id="shop_details">
+                    <div class="card col-8">
+                      <div class="card-body">
+                        <h5 class="card-title" id="s_name">Chinmay Shop</h5>
+                        <h6 class="card-subtitle mb-2 text-muted" id="s_cat">Kirana and General</h6>
+                        <p class="card-text" id="s_addr">8-46/2,JP Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>
+                      </div>
+                    </div><br>
+                    <button class="btn btn-primary" id="order_now" data-toggle="modal" data-target="#item_form">Order Now</button>
+                  </div>
+                </div>
+              </div></th>
+            </tbody>
+</body>
+</html>

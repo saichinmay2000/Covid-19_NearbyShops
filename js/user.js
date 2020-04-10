@@ -96,6 +96,7 @@ function Logout(){
 
 
   function Bill(a){
+    console.log(a);
     var Name,Itms;
     var root = firebase.database();
     firebase.auth().onAuthStateChanged(user => {

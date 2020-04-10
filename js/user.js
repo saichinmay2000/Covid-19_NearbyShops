@@ -50,7 +50,7 @@
       button.setAttribute("class", "btn btn-info btn-xs");
       button.setAttribute("data-toggle","modal");
       button.setAttribute("data-target","#item_form");
-      if(Name!="" && Itms!=""){
+      if(Name==""){
         var table  = document.getElementsByClassName("table1")[0];
         var newrow = table.insertRow(1);
         var cel1 = newrow.insertCell(0);

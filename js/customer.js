@@ -49,7 +49,8 @@ var finLat,finLong;
           var address = snap.child("Address").val();
           var shopName = snap.child("ShopName").val();
           var PhoneNum = snap.child("MobileNumber").val();
-
+          root.ref(childKey).child("Shop Details").child("ShopImg").once("value").then(function(snap){
+            var shop = snap.child("URL").val();
           //console.log(name);
           //console.log(address);
           //console.log(shopName);
@@ -69,18 +70,18 @@ var finLat,finLong;
           else{
             button.setAttribute('class','btn btn__pledged');
           }
-          cel1.innerHTML="<div class=\"container-fluid\" id=\"shop_details_container\"><div class=\"row\" id=\"shop_details_less\"><div class=\"col-4 my-auto\" id=\"shop_img\"> <img id=\"s_img\" class=\"rounded img-fluid\" alt=\"Placeholder image\" src=\"images/Rectangle 2.png\"> </div>            <div class=\"col-8 my-auto\" id=\"shop_details\">              <div class=\"card col-8\">                <div class=\"card-body\">                  <h5 class=\"card-title\" id=\"Sname\">Chinmay Shop</h5>                  <h6 class=\"card-subtitle mb-2 text-muted\" id=\"s_cat\">Kirana and General</h6>                  <p class=\"card-text\" id=\"s_addr\">8-46/2,JP Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>                </div>              </div>              <button class=\"btn btn-primary\" id=\"order_now\" data-toggle=\"modal\" data-target=\"#item_form\">Order Now</button>            </div>          </div>          <button class=\"btn-text collapsed\" id=\"details_btn\" data-toggle=\"collapse\" role=\"button\" data-target=\"#shop_details_more_coll\" aria-expanded=\"false\" aria-controls=\"collapseExample\"><span id=\"md\">+More Details</span><span id=\"ld\">-Less Details</span></button>          <div class=\"collapse\" id=\"shop_details_more_coll\">            <div class=\"row\" id=\"shop_details_more\">              <div class=\"col-6\" id=\"sh_map\"></div>              <script async defer src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Mp-nbpxvDIUmjL9MWCDil6AypsFcCVQ&callback=initMap\"></script>              <div class=\"col-6\" id=\"shop_keeper_details\">                <div class=\"row\" id=\"sh_det\">                  <div class=\"col-8 my-auto\">                    <div class=\"card col-md-8 my-auto\" id=\"sk_card\">                      <div class=\"card-body\" id=\"sk_card_body\">                        <h5 class=\"card-title\" id=\"sk_name\">Chinmay Sai T</h5>                        <p class=\"card-subtitle\" id=\"sk_phone\">+91 9100903791</p>                        <p class=\"card-subtitle\" id=\"sk_email\">saichinmaytripurari@gmail.com</p>                      </div>                    </div>                  </div>                  <div class=\"col-4 my-auto\" id=\"sk_img_div\"><img class=\"rounded img-fluid\" id=\"sk_img\" src=\"images/Rectangle 4.png\"/></div>                </div>              </div>            </div>          </div>        </div>";
-          
+          cel1.innerHTML="<div class=\"container-fluid\" id=\"shop_details_container\"><div class=\"row\" id=\"shop_details_less\"><div class=\"col-4 my-auto\" id=\"shop_img\"> <img id=\"s_img\" class=\"rounded img-fluid\" alt=\"Placeholder image\" src=\""+shop+"\"> </div>            <div class=\"col-8 my-auto\" id=\"shop_details\">              <div class=\"card col-8\">                <div class=\"card-body\">                  <h5 class=\"card-title\" id=\"Sname\">Chinmay Shop</h5>                  <h6 class=\"card-subtitle mb-2 text-muted\" id=\"s_cat\">Kirana and General</h6>                  <p class=\"card-text\" id=\"s_addr\">8-46/2,JP Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>                </div>              </div>              <button class=\"btn btn-primary\" id=\"order_now\" data-toggle=\"modal\" data-target=\"#item_form\">Order Now</button>            </div>         </div><div class=\"col-8\" id=\"map\"></div>  </div>";
+          document.getElementById("Sname").innerHTML=shopName;
+          document.getElementById("s_addr").innerHTML=address;
 
         })
+        
+  })
         }
       }
         })
       })
     })
-
-
-
       });
 
 

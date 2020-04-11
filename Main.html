@@ -20,7 +20,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="#">ShopKepper</a>
+    <a class="navbar-brand" href="#">Shop Dashboard</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,47 +31,44 @@
           <a class="nav-link" href="Main.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="profile.html">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Delivery.html">Delivery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link  justify-content-center" data-toggle="modal" data-target="#exampleModal" id="veri">Watting </a>
-        </li>
+          <a class="nav-link" href="profile.html">MyProfile</a>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <a class="nav-link fa fa-user-circle-o" data-toggle="modal" data-target="#exampleModal" id="email">
-          skjdfhkjsf  </a>
+        <a class="nav-link fa fa-user-circle-o" data-toggle="modal" data-target="#exampleModal" id="email">shop1@gmail.com</a>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="Logout()">Logout</button>
 
       </form>
     </div>
   </nav>
 <div class="container-fluid" style="margin-top: 60px;"><br>
-  <center><a href="#DashBoard" class="btn btn-info btn-xs">
-    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></center><br>
+  <center></center><br>
   <div class="row">
     <div class="col">
-      <center> <h3>Requests</h3>  </center><br>
+      <center> <h3 style="font-family: Arial, Helvetica, sans-serif;">Requests</h3>  </center><br>
   <div class="conatiner" style="overflow: scroll;  max-height: 200px; max-width: 800px;overflow-x: auto;">  
     <table class="table table-light table-striped table-hover table1" >
       <thead>
         <tr>
           <th>Name</th>
           <th>No of Items</th>
+          <th>Amount</th>
+          <th>Send</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-      
-        
+        <tr>
+        <th>Sumanth</th>
+        <th>10</th>
+        <th>Rs.<input type="number" name="rate" id="rate"></th>
+        <th><input type="button" value="Send" class="btn btn-info" data-target="#item_form" data-toggle="modal"></th>
+      </tr>
       </tbody>
     </table>
   </div>
 </div>
 <div class="col">
-  <center> <h3>Wating for Customer's Approval</h3>  </center><br>
+  <center> <h3 style="font-family: Arial, Helvetica, sans-serif;">Wating for Customer's Approval</h3>  </center><br>
 <div class="conatiner" style="overflow: scroll;  max-height: 200px; max-width: 800px;overflow-x: auto;">  
 <table class="table table-light table-striped table-hover table2" >
   <thead>
@@ -84,13 +81,13 @@
   <tbody>
     <tr>
       <td>Hruthik</td>
-      <td>10</td>
-      <td>3000</td>
+      <td>5</td>
+      <td>1500</td>
     </tr>
     <tr>
       <td>Aravind</td>
       <td>10</td>
-      <td>1500</td>
+      <td>3000</td>
     </tr>
     
   </tbody>
@@ -101,8 +98,8 @@
 </div>
 <hr><br>
 <div class="row">
-  <div class="col"><br>
-    <center> <h3>Tokens</h3>  </center><br>
+  <div class="col">
+    <center> <h3 style="font-family: Arial, Helvetica, sans-serif;" >Tokens</h3>  </center><br>
 <div class="conatiner" style="overflow: scroll;  max-height: 200px; max-width: 800px;overflow-x: auto;">  
   <table class="table table-light table-striped table-hover table3" >
     <thead>
@@ -110,30 +107,51 @@
         <th>Token Number</th>
         <th>Name</th>
         <th>No of Items</th>
-        <th></th>
+        <th>Packed</th>
       </tr>
     </thead>
     <tbody>
-      
-      
+      <tr id="div">
+        <th>1</th>
+        <th>Sumanth</th>
+        <th>10</th>
+        <th><button onclick="myFunction()" class="btn btn-info" id="test">Packed</button></th>
+      </tr>
+      <script>
+        function myFunction()
+        {
+          var x = document.getElementById("div");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        </script>
     </tbody>
   </table>
 </div>
 </div>
-<div class="col"><br>
-  <center> <h3>Waiting for Customer's Arrival</h3>  </center><br>
+<div class="col">
+  <center><h3 style="font-family: Arial, Helvetica, sans-serif;">Waiting for Customer's Arrival</h3></center><br>
 <div class="conatiner" style="overflow: scroll;  max-height: 200px; max-width: 800px;overflow-x: auto;">  
 <table class="table table-light table-striped table-hover table4" >
 <thead>
   <tr>
+    <th>Token</th>
     <th>Name</th>
-    <th>No of Items</th>
     <th>Bill Amount</th>
+    <th>Delivered</th>
     <th></th>
   </tr>
 </thead>
 <tbody>
-  
+  <tr id="div">
+    <th>1</th>
+    <th>Sumanth</th>
+    <th>7090</th>
+    <th><button onclick="myFunction()" class="btn btn-info">Delivered</button></th>
+  </tr>
 </tbody>
 </table>
 </div>

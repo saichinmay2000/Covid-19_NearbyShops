@@ -74,7 +74,7 @@
         
        
     })
-    firebase.database().ref("Approval").on("child_added",function(snap){
+    /*firebase.database().ref("Approval").on("child_added",function(snap){
       var name1 = snap.child("name").val();
       var itms1 = snap.child("Items").val();
       var Pric = snap.child("Price").val();
@@ -88,7 +88,7 @@
     cel2.innerHTML=itms1;
     cel3.innerHTML = Pric;
     
-  })
+  })*/
 })()
 
 (function(){

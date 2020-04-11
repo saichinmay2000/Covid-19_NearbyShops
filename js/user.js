@@ -2,12 +2,7 @@
 (function(){
     firebase.auth().onAuthStateChanged(user => {
         document.getElementById("email").innerHTML=user.email;
-       /*firebase.database().ref("Name").child("name").set({
-          name:"Sumanth",
-          Items:"10",
-          Price:"7090"
-        })*/
-        
+      
         var root12 =  firebase.database().ref(user.uid).child("Shop Details");
         root12.once("value").then(function(snap){
         //  snap.forEach(function(childSnapshot) {
@@ -50,7 +45,9 @@
       button.setAttribute("class", "btn btn-info btn-xs");
       button.setAttribute("data-toggle","modal");
       button.setAttribute("data-target","#item_form");
-      if(Name==""){
+   
+      
+      if(Itms==10){
         var table  = document.getElementsByClassName("table1")[0];
         var newrow = table.insertRow(1);
         var cel1 = newrow.insertCell(0);
@@ -96,10 +93,9 @@
 
 (function(){
   if(delete1()){
-    firebase.database().ref("Name").on("child_removed",function(snap){
-      console.log(snap.val()+" is deleted");
-      
-    })
+    console.log("Delete");
+    
+    
   }
 })
      /* root1.once("value").then(function(snap){
@@ -261,8 +257,8 @@ function Logout(){
       Items:"10",
       Price:"7090"
     })
-   return true;
-    
+    firebase.database().ref("Name").remove();
+    document.getElementsByClassName("table1").refresh();
   }
   
   

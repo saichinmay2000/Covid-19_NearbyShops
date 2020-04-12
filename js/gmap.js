@@ -12,6 +12,12 @@ function initMap() {
         infoWindow.open(map);
         map.setCenter(pos);
         var marker = new google.maps.Marker({position:pos,draggable: true,map: map,title: 'Shop Location'});
+                 
+        var root= firebase.database().ref().child("Locations").child(user.uid);
+        root.set({
+           Latitude:position.coords.latitude.toString,
+           Longitude:position.coords.longitude.toString
+        });
         console.log(pos);
         firebase.auth().onAuthStateChanged(user => {
         marker.addListener('position_changed', function(){
@@ -21,8 +27,6 @@ function initMap() {
             var arr = newres.split(",");
                  map.setCenter(marker.getPosition());
                  console.log(marker.getPosition());
-                 
-                 var root= firebase.database().ref().child("Locations").child(user.uid);
                  root.set({
                     Latitude:arr[0],
                     Longitude:arr[1]
@@ -32,6 +36,8 @@ function initMap() {
         });
 
         }, function() {
+            console.log(position.coords.Latitude);
+            
             handleLocationError(true, infoWindow, map.getCenter());
             
         });

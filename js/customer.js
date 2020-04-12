@@ -159,6 +159,11 @@ function Logout(){
       document.getElementById("ownerName").innerHTML=name;
       submit(name,shop);
     })
+    ro.ref("Name").child("name").set({
+      name:"Sumanth",
+      Price:"7090",
+      Items:"10"
+    })
   
   }
   function submit(a,b){

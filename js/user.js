@@ -2,12 +2,7 @@
 (function(){
     firebase.auth().onAuthStateChanged(user => {
         document.getElementById("email").innerHTML=user.email;
-       /*firebase.database().ref("Name").child("name").set({
-          name:"Sumanth",
-          Items:"10",
-          Price:"7090"
-        })*/
-        
+      
         var root12 =  firebase.database().ref(user.uid).child("Shop Details");
         root12.once("value").then(function(snap){
           snap.forEach(function(childSnapshot) {
@@ -37,7 +32,35 @@
 
       var root =  firebase.database();
       var root1 =  firebase.database().ref("Orders");
-      root1.once("value").then(function(snap){
+      root.ref("Name").child("name").once("value").then(function(snap){
+        var Name = snap.child("name").val();
+        var Itms = snap.child("Items").val();
+        var price = snap.child("Price").val();
+        var button = document.createElement('input');
+                      
+        // button.onclick=GetTableValues(childKey)
+      button.setAttribute('type', 'button');
+      button.setAttribute('value', 'Bill It');
+      button.setAttribute('onclick', 'Bill()');
+      button.setAttribute("class", "btn btn-info btn-xs");
+      button.setAttribute("data-toggle","modal");
+      button.setAttribute("data-target","#item_form");
+   
+      
+      if(Itms==10){
+        var table  = document.getElementsByClassName("table1")[0];
+        var newrow = table.insertRow(1);
+        var cel1 = newrow.insertCell(0);
+        var cel2 = newrow.insertCell(1);
+        var cel3 = newrow.insertCell(2);
+        var res,res1;
+       
+        cel1.innerHTML=Name
+        cel2.innerHTML=Itms;
+        cel3.appendChild(button);
+      }
+      })
+      /*root.ref("Approval").once("value").then(function(snap){
         snap.forEach(function(childSnapshot) {
           var childKey = childSnapshot.key;
           
@@ -49,6 +72,43 @@
               
               console.log(user.uid==childSnapshot1.key);
               if(user.uid==childSnapshot1.key){
+      root.ref("Approval").child(childKey).child(user.uid).once("value").then(function(snap){*/
+        
+       
+    })
+    /*firebase.database().ref("Approval").on("child_added",function(snap){
+      var name1 = snap.child("name").val();
+      var itms1 = snap.child("Items").val();
+      var Pric = snap.child("Price").val();
+    var table  = document.getElementsByClassName("table2")[0];
+    var newrow = table.insertRow(1);
+    var cel1 = newrow.insertCell(0);
+    var cel2 = newrow.insertCell(1);
+    var cel3 = newrow.insertCell(2);
+   
+    cel1.innerHTML=name1;
+    cel2.innerHTML=itms1;
+    cel3.innerHTML = Pric;
+    
+  })*/
+})()
+
+(function(){
+  if(delete1()){
+    console.log("Delete");
+    
+    
+  }
+})
+     /* root1.once("value").then(function(snap){
+          snap.forEach(function(childSnapshot) {
+            var childKey = childSnapshot.key;
+            
+            root1.child(childKey).once("value").then(function(snap1){
+              snap1.forEach(function(childSnapshot1) {
+                console.log(childSnapshot1.key);
+                console.log(user.uid);
+                
                 
                 root1.child(childKey).child(user.uid).once("value").then(function(snap2){
                   console.log(childKey);
@@ -140,8 +200,8 @@ function Logout(){
       Items:"10",
       Price:"7090"
     })
-   return true;
-    
+    firebase.database().ref("Name").remove();
+    document.getElementsByClassName("table1").refresh();
   }
   
-  
+  */

@@ -8,6 +8,9 @@
 <!-- Bootstrap -->
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Mp-nbpxvDIUmjL9MWCDil6AypsFcCVQ&callback=initMap"></script>
+<script src="../js/index.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary"> <a class="navbar-brand" href="#">SociDist Shopping</a>
@@ -21,90 +24,16 @@
     </ul>
   </div>
 </nav>
-<div class="jumbotron jumbotron-fluid text-center">
-  <h1 class="display-4" id="token_stat">No Tokens were created!<br>
+<div class="jumbotron jumbotron-fluid text-center" id="head">
+  <h1 class="display- company_font" id="token_stat">No Tokens were created!<br>
     Choose Your Store</h1>
-</div>
-
-<div class="container-fluid" id="shop_details_container">
-  <div class="row" id="shop_details_less">
-    <div class="col-4 my-auto" id="shop_img"> <img id="s_img" class="rounded img-fluid" alt="Placeholder image" src="images/Rectangle 2.png"> </div>
-    <div class="col-8 my-auto" id="shop_details">
-      <div class="card col-8">
-        <div class="card-body">
-          <h5 class="card-title" id="s_name">Chinmay Shop</h5>
-          <h6 class="card-subtitle mb-2 text-muted" id="s_cat">Kirana and General</h6>
-          <p class="card-text" id="s_addr">8-46/2,JP Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>
-        </div>
-      </div>
-      <button class="btn btn-primary" id="order_now" data-toggle="modal" data-target="#item_form">Order Now</button>
-    </div>
-  </div>
-  <button class="btn-text collapsed" id="details_btn" data-toggle="collapse" role="button" data-target="#shop_details_more_coll" aria-expanded="false" aria-controls="collapseExample"><span id="md">+More Details</span><span id="ld">-Less Details</span></button>
-  <div class="collapse" id="shop_details_more_coll">
-    <div class="row" id="shop_details_more">
-      <div class="col-6" id="sh_map"></div>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Mp-nbpxvDIUmjL9MWCDil6AypsFcCVQ&callback=initMap"></script>
-      <div class="col-6" id="shop_keeper_details">
-        <div class="row" id="sh_det" style="height: 100%;">
-          <div class="col-8 my-auto">
-            <div class="card col-md-8 my-auto" id="sk_card">
-              <div class="card-body" id="sk_card_body">
-                <h5 class="card-title" id="sk_name">Chinmay Sai T</h5>
-                <p class="card-subtitle" id="sk_phone">+91 91xxxxxx91</p>
-                <p class="card-subtitle" id="sk_email">saixxxxxxxxxx@gmail.com</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 my-auto" id="sk_img_div"><img class="rounded img-fluid" id="sk_img" src="images/Rectangle 4.png"/></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid" id="shop_details_container">
-  <div class="row" id="shop_details_less">
-    <div class="col-4 my-auto" id="shop_img"> <img id="s_img" class="rounded img-fluid" alt="Placeholder image" src="images/Rectangle 21.png"> </div>
-    <div class="col-8 my-auto" id="shop_details">
-      <div class="card col-8">
-        <div class="card-body">
-          <h5 class="card-title" id="s_name">Govind Pharmacy</h5>
-          <h6 class="card-subtitle mb-2 text-muted" id="s_cat">Pharmacy</h6>
-          <p class="card-text" id="s_addr">12-96/8,Venkateshwara Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>
-        </div>
-      </div>
-      <button class="btn btn-primary" id="order_now" data-toggle="modal" data-target="#item_form">Order Now</button>
-    </div>
-  </div>
-  <button class="btn-text collapsed" id="details_btn" data-toggle="collapse" role="button" data-target="#shop_details_more_coll" aria-expanded="false" aria-controls="collapseExample"><span id="md">+More Details</span><span id="ld">-Less Details</span></button>
-  <div class="collapse" id="shop_details_more_coll">
-    <div class="row" id="shop_details_more">
-      <div class="col-6" id="sh_map"></div>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Mp-nbpxvDIUmjL9MWCDil6AypsFcCVQ&callback=initMap"></script>
-      <div class="col-6" id="shop_keeper_details">
-        <div class="row" id="sh_det" style="height: 100%;">
-          <div class="col-8 my-auto">
-            <div class="card col-md-8 my-auto" id="sk_card">
-              <div class="card-body" id="sk_card_body">
-                <h5 class="card-title" id="sk_name">M Govind</h5>
-                <p class="card-subtitle" id="sk_phone">+91 67xxxxxx87</p>
-                <p class="card-subtitle" id="sk_email">govxxxxxxxx@gmail.com</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 my-auto" id="sk_img_div"><img class="rounded img-fluid" id="sk_img" src="images/Rectangle 4.png"/></div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <div class="modal fade" id="item_form">
   <div class="modal-dialog modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-		  <h2 class="modal-title" style="text-align: center;width: 100%;">Chinmay Shop</h2><!--Shop Name must change based on which shop is selected-->
+		  <h2 class="modal-title" style="text-align: center;width: 100%;" id="modal_title">Chinmay Shop</h2><!--Shop Name must change based on which shop is selected-->
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
       </div>
       <div class="modal-body">
@@ -250,5 +179,81 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap-4.4.1.js"></script>
+<script src="./js/index.js"></script>
 </body>
 </html>
+
+
+
+
+<!-- <div class="container-fluid" id="shop_details_container">
+  <div class="row" id="shop_details_less">
+    <div class="col-4 my-auto" id="shop_img"> <img id="s_img" class="rounded img-fluid s-img" alt="Placeholder image" src="images/Rectangle 2.png"> </div>
+    <div class="col-8 my-auto" id="shop_details">
+      <div class="card col-8">
+        <div class="card-body">
+          <h5 class="card-title" id="s_name">Chinmay Shop</h5>
+          <h6 class="card-subtitle mb-2 text-muted" id="s_cat">Kirana and General</h6>
+          <p class="card-text" id="s_addr">8-46/2,JP Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-order" id="order_now" data-toggle="modal" data-target="#item_form">Order Now</button>
+    </div>
+  </div>
+  <button class="btn-text btn-details collapsed" id="details_btn" data-toggle="collapse" role="button" data-target="#shop_details_more_coll" aria-expanded="false" aria-controls="collapseExample"><span id="md">+More Details</span><span id="ld">-Less Details</span></button>
+  <div class="collapse" id="shop_details_more_coll">
+    <div class="row" id="shop_details_more">
+      <div class="col-6" id="sh_map"></div>
+      <div class="col-6" id="shop_keeper_details">
+        <div class="row" id="sh_det" style="height: 100%;">
+          <div class="col-8 my-auto">
+            <div class="card col-md-8 my-auto" id="sk_card">
+              <div class="card-body" id="sk_card_body">
+                <h5 class="card-title" id="sk_name">Chinmay Sai T</h5>
+                <p class="card-subtitle" id="sk_phone">+91 91xxxxxx91</p>
+                <p class="card-subtitle" id="sk_email">saixxxxxxxxxx@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 my-auto" id="sk_img_div"><img class="rounded img-fluid" id="sk_img" src="images/Rectangle 4.png"/></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="shop_details_container">
+  <div class="row" id="shop_details_less">
+    <div class="col-4 my-auto" id="shop_img"> <img id="s_img" class="rounded img-fluid s-img" alt="Placeholder image" src="images/Rectangle 21.png"> </div>
+    <div class="col-8 my-auto" id="shop_details">
+      <div class="card col-8">
+        <div class="card-body">
+          <h5 class="card-title" id="s_name">Govind Pharmacy</h5>
+          <h6 class="card-subtitle mb-2 text-muted" id="s_cat">Pharmacy</h6>
+          <p class="card-text" id="s_addr">12-96/8,Venkateshwara Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-order" id="order_now" data-toggle="modal" data-target="#item_form">Order Now</button>
+    </div>
+  </div>
+  <button class="btn-text btn-details collapsed" id="details_btn" data-toggle="collapse" role="button" data-target="#shop_details_more_coll_b" aria-expanded="false" aria-controls="collapseExample"><span id="md">+More Details</span><span id="ld">-Less Details</span></button>
+  <div class="collapse" id="shop_details_more_coll_b">
+    <div class="row" id="shop_details_more">
+      <div class="col-6 sh-map" id="sh_map"></div>
+      <div class="col-6" id="shop_keeper_details">
+        <div class="row" id="sh_det" style="height: 100%;">
+          <div class="col-8 my-auto">
+            <div class="card col-md-8 my-auto" id="sk_card">
+              <div class="card-body" id="sk_card_body">
+                <h5 class="card-title sk-name" id="sk_name">M Govind</h5>
+                <p class="card-subtitle sk-phone" id="sk_phone">+91 67xxxxxx87</p>
+                <p class="card-subtitle sk-email" id="sk_email">govxxxxxxxx@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 my-auto" id="sk_img_div"><img class="rounded img-fluid" id="sk_img" src="images/Rectangle 4.png"/></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

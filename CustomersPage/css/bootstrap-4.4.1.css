@@ -420,7 +420,7 @@ h6, .h6 {
 }
 
 .display-4 {
-  font-size: 4.5vw;
+  font-size: 5.5vw;
   font-weight: 300;
   line-height: 1.2;
   font-family: company-font;
@@ -511,7 +511,7 @@ mark,
 	margin-right: -0.5rem;
 }
 
-#s_img{
+.s-img{
   object-fit: scale-down;
 }
 
@@ -4849,13 +4849,13 @@ input[type="button"].btn-block {
   min-height: 1px;
 }
 
-.card-title#sk_name {
+.sk-name {
 	font-family: company-font;
 	font-size: 2.5vw;
   margin-bottom: 0.75rem;
 }
 
-.card-subtitle#sk_email#sk_phone {
+.sk-email.sk-phone {
 	font-family: company-font;
   margin-top: 0.25rem;
 	font-size: 1.25vw;
@@ -5077,14 +5077,14 @@ input[type="button"].btn-block {
   padding-left: 0.5rem;
 }
 
-#sh_map{	
+.sh-map{	
 	border-top: solid medium #000000;
 	border-bottom-left-radius: 10px;
 	max-height: 200px;
 	width: 100%;
 }
 
-#details_btn{
+.btn-details{
 	width: 100%;
 	font-size: 1.5vw;
 	background: none;
@@ -5096,9 +5096,9 @@ input[type="button"].btn-block {
 	margin-bottom: 1px;
 }
 
-#details_btn:not(.collapsed) #md{display: none;}
-#details_btn.collapsed #ld{display:none;}
-#details_btn:focus{
+.btn-details:not(.collapsed) #md{display: none;}
+.btn-details.collapsed #ld{display:none;}
+.btn-details:focus{
 	outline: none;
 }
 	
@@ -5109,7 +5109,7 @@ input[type="button"].btn-block {
 	border-bottom-right-radius: 10px;
 }
 
-#order_now{
+.btn-order{
 	font-family: company-font;
 	font-size: 2vw;
 	margin: 8px 16px 0px 0px;

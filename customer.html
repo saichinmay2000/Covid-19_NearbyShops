@@ -17,6 +17,7 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Mp-nbpxvDIUmjL9MWCDil6AypsFcCVQ&callback=initMap"></script>
 <link rel="stylesheet" href="./css/customer.css">
 <script src="./js/gmapcust.js"></script>
+<script src="./js/demolog.js"></script>
 <style>
   #map{
       margin-top: 30px;
@@ -104,319 +105,160 @@
         </div>
       </div>
 </center>
-<div class="modal fade" id="item_form">
-  <div class="modal-dialog modal-dialog-scrollable modal-xl">
+<div id="myModal" class="modal fade" role="dialog"><!-- i used style in this to place the modal to the center of the screen -->
+  <div class="modal-dialog ">
     <div class="modal-content">
-      <div class="modal-header">
-		  <h2 class="modal-title" id="ShopName" style="text-align: center;width: 100%;">Chinmay Shop</h2>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-      </div>
-      <div class="modal-body">
-		 <!--Item 1-->
-        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
-          <div class="col-4 my-auto">
-			  <div class="input-group">
-				  <div class="input-group-prepend">
-					<span class="input-group-text">1</span>
-				  </div>
-            		<input class="form-control" id="item_name_1" placeholder="Item Name">
-				</div>
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <input class="form-control" type="number" id="item_quantity_1" placeholder="Quantity">
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <select class="custom-select" id="item_unit_1">
-              <option selected value="units">units</option>
-              <option value="kg">kg</option>
-              <option value="liters">litres</option>
-              <option value="grams">grams</option>
-            </select>
-          </div>
-          <div class="col-2 my-auto" style="position: relative;overflow: hidden;display: inline-block;">
-            <button class="btn-icon" id="item_img_1"><i class="fa fa-camera"></i> Image</button>
-            <input type="file" style="font-size: 100px;position: absolute;left: 0;top: 0;opacity: 0;">
-          </div>
-          <div class="col-2 my-auto">
-            <button class="btn-icon" id="item_clear_1" style="background-color: white; border: solid thin #000000;color: black"><i class="fa fa-remove"></i> Clear</button>
-          </div>
-        </div>
-		  
-		<!--Item 2-->
-        <div class="form-row" id="item_2" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-bottom: dashed #000000 thin">
-          <div class="col-4 my-auto">
-            <div class="input-group">
-				  <div class="input-group-prepend">
-					<span class="input-group-text">2</span>
-				  </div>
-            		<input class="form-control" id="item_name_2" placeholder="Item Name">
-				</div>
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <input class="form-control" type="number" id="item_quantity_2" placeholder="Quantity">
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <select class="custom-select" id="item_unit_2">
-              <option selected value="units">units</option>
-              <option value="kg">kg</option>
-              <option value="liters">litres</option>
-              <option value="grams">grams</option>
-            </select>
-          </div>
-          <div class="col-2 my-auto" style="position: relative;overflow: hidden;display: inline-block;">
-            <button class="btn-icon" id="item_img_2"><i class="fa fa-camera"></i> Image</button>
-            <input type="file" style="font-size: 100px;position: absolute;left: 0;top: 0;opacity: 0;">
-          </div>
-          <div class="col-2 my-auto">
-            <button class="btn-icon" id="item_clear_2" style="background-color: white; border: solid thin #000000;color: black"><i class="fa fa-remove"></i> Clear</button>
-          </div>
-        </div>
-		  
-		<!--Item 3-->
-        <div class="form-row" id="item_3" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
-          <div class="col-4 my-auto">
-            <div class="input-group">
-				  <div class="input-group-prepend">
-					<span class="input-group-text">3</span>
-				  </div>
-            		<input class="form-control" id="item_name_3" placeholder="Item Name">
-				</div>
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <input class="form-control" type="number" id="item_quantity_3" placeholder="Quantity">
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <select class="custom-select" id="item_unit_3">
-              <option selected value="units">units</option>
-              <option value="kg">kg</option>
-              <option value="liters">litres</option>
-              <option value="grams">grams</option>
-            </select>
-          </div>
-          <div class="col-2 my-auto" style="position: relative;overflow: hidden;display: inline-block;">
-            <button class="btn-icon" id="item_img_3"><i class="fa fa-camera"></i> Image</button>
-            <input type="file" style="font-size: 100px;position: absolute;left: 0;top: 0;opacity: 0;">
-          </div>
-          <div class="col-2 my-auto">
-            <button class="btn-icon" id="item_clear_3" style="background-color: white; border: solid thin #000000;color: black"><i class="fa fa-remove"></i> Clear</button>
-          </div>
-        </div>
-		  
-		<!--Item 4-->
-        <div class="form-row" id="item_4" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
-          <div class="col-4 my-auto">
-            <div class="input-group">
-				  <div class="input-group-prepend">
-					<span class="input-group-text">4</span>
-				  </div>
-            		<input class="form-control" id="item_name_4" placeholder="Item Name">
-				</div>
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <input class="form-control" type="number" id="item_quantity_4" placeholder="Quantity">
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <select class="custom-select" id="item_unit_4">
-              <option selected value="units">units</option>
-              <option value="kg">kg</option>
-              <option value="liters">litres</option>
-              <option value="grams">grams</option>
-            </select>
-          </div>
-          <div class="col-2 my-auto" style="position: relative;overflow: hidden;display: inline-block;">
-            <button class="btn-icon" id="item_img_4"><i class="fa fa-camera"></i> Image</button>
-            <input type="file" style="font-size: 100px;position: absolute;left: 0;top: 0;opacity: 0;">
-          </div>
-          <div class="col-2 my-auto">
-            <button class="btn-icon" id="item_clear_4" style="background-color: white; border: solid thin #000000;color: black"><i class="fa fa-remove"></i> Clear</button>
-          </div>
-        </div>
-		  
-		<!--Item 5-->
-        <div class="form-row" id="item_5" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
-          <div class="col-4 my-auto">
-            <div class="input-group">
-				  <div class="input-group-prepend">
-					<span class="input-group-text">5</span>
-				  </div>
-            		<input class="form-control" id="item_name_5" placeholder="Item Name">
-				</div>
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <input class="form-control" type="number" id="item_quantity_5" placeholder="Quantity">
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <select class="custom-select" id="item_unit_5">
-              <option selected value="units">units</option>
-              <option value="kg">kg</option>
-              <option value="liters">litres</option>
-              <option value="grams">grams</option>
-            </select>
-          </div>
-          <div class="col-2 my-auto" style="position: relative;overflow: hidden;display: inline-block;">
-            <button class="btn-icon" id="item_img_5"><i class="fa fa-camera"></i> Image</button>
-            <input type="file" style="font-size: 100px;position: absolute;left: 0;top: 0;opacity: 0;">
-          </div>
-          <div class="col-2 my-auto">
-            <button class="btn-icon" id="item_clear_5" style="background-color: white; border: solid thin #000000;color: black"><i class="fa fa-remove"></i> Clear</button>
-          </div>
-        </div>
-		  
-		<!--Item 6-->
-        <div class="form-row" id="item_6" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
-          <div class="col-4 my-auto">
-            <div class="input-group">
-				  <div class="input-group-prepend">
-					<span class="input-group-text">6</span>
-				  </div>
-            		<input class="form-control" id="item_name_6" placeholder="Item Name">
-				</div>
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <input class="form-control" type="number" id="item_quantity_6" placeholder="Quantity">
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <select class="custom-select" id="item_unit_6">
-              <option selected value="units">units</option>
-              <option value="kg">kg</option>
-              <option value="liters">litres</option>
-              <option value="grams">grams</option>
-            </select>
-          </div>
-          <div class="col-2 my-auto" style="position: relative;overflow: hidden;display: inline-block;">
-            <button class="btn-icon" id="item_img_6"><i class="fa fa-camera"></i> Image</button>
-            <input type="file" style="font-size: 100px;position: absolute;left: 0;top: 0;opacity: 0;">
-          </div>
-          <div class="col-2 my-auto">
-            <button class="btn-icon" id="item_clear_6" style="background-color: white; border: solid thin #000000;color: black"><i class="fa fa-remove"></i> Clear</button>
-          </div>
-        </div>
-		  
-		<!--Item 7-->
-        <div class="form-row" id="item_7" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
-          <div class="col-4 my-auto">
-            <div class="input-group">
-				  <div class="input-group-prepend">
-					<span class="input-group-text">7</span>
-				  </div>
-            		<input class="form-control" id="item_name_7" placeholder="Item Name">
-				</div>
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <input class="form-control" type="number" id="item_quantity_7" placeholder="Quantity">
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <select class="custom-select" id="item_unit_7">
-              <option selected value="units">units</option>
-              <option value="kg">kg</option>
-              <option value="liters">litres</option>
-              <option value="grams">grams</option>
-            </select>
-          </div>
-          <div class="col-2 my-auto" style="position: relative;overflow: hidden;display: inline-block;">
-            <button class="btn-icon" id="item_img_7"><i class="fa fa-camera"></i> Image</button>
-            <input type="file" style="font-size: 100px;position: absolute;left: 0;top: 0;opacity: 0;">
-          </div>
-          <div class="col-2 my-auto">
-            <button class="btn-icon" id="item_clear_7" style="background-color: white; border: solid thin #000000;color: black"><i class="fa fa-remove"></i> Clear</button>
-          </div>
-        </div>
-		  
-		<!--Item 8-->
-        <div class="form-row" id="item_8" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
-          <div class="col-4 my-auto">
-            <div class="input-group">
-				  <div class="input-group-prepend">
-					<span class="input-group-text">8</span>
-				  </div>
-            		<input class="form-control" id="item_name_8" placeholder="Item Name">
-				</div>
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <input class="form-control" type="number" id="item_quantity_8" placeholder="Quantity">
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <select class="custom-select" id="item_unit_8">
-              <option selected value="units">units</option>
-              <option value="kg">kg</option>
-              <option value="liters">litres</option>
-              <option value="grams">grams</option>
-            </select>
-          </div>
-          <div class="col-2 my-auto" style="position: relative;overflow: hidden;display: inline-block;">
-            <button class="btn-icon" id="item_img_8"><i class="fa fa-camera"></i> Image</button>
-            <input type="file" style="font-size: 100px;position: absolute;left: 0;top: 0;opacity: 0;">
-          </div>
-          <div class="col-2 my-auto">
-            <button class="btn-icon" id="item_clear_8" style="background-color: white; border: solid thin #000000;color: black"><i class="fa fa-remove"></i> Clear</button>
-          </div>
-        </div>
-		  
-		<!--Item 9-->
-        <div class="form-row" id="item_9" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
-          <div class="col-4 my-auto">
-            <div class="input-group">
-				  <div class="input-group-prepend">
-					<span class="input-group-text">9</span>
-				  </div>
-            		<input class="form-control" id="item_name_9" placeholder="Item Name">
-				</div>
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <input class="form-control" type="number" id="item_quantity_9" placeholder="Quantity">
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <select class="custom-select" id="item_unit_9">
-              <option selected value="units">units</option>
-              <option value="kg">kg</option>
-              <option value="liters">litres</option>
-              <option value="grams">grams</option>
-            </select>
-          </div>
-          <div class="col-2 my-auto" style="position: relative;overflow: hidden;display: inline-block;">
-            <button class="btn-icon" id="item_img_9"><i class="fa fa-camera"></i> Image</button>
-            <input type="file" style="font-size: 100px;position: absolute;left: 0;top: 0;opacity: 0;">
-          </div>
-          <div class="col-2 my-auto">
-            <button class="btn-icon" id="item_clear_9" style="background-color: white; border: solid thin #000000;color: black"><i class="fa fa-remove"></i> Clear</button>
-          </div>
-        </div>
-		  
-		<!--Item 10-->
-        <div class="form-row" id="item_10" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
-          <div class="col-4 my-auto">
-            <div class="input-group">
-				  <div class="input-group-prepend">
-					<span class="input-group-text">10</span>
-				  </div>
-            		<input class="form-control" id="item_name_10" placeholder="Item Name">
-				</div>
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <input class="form-control" type="number" id="item_quantity_10" placeholder="Quantity">
-          </div>
-          <div class="col-2 my-auto" style="padding: 0 0;">
-            <select class="custom-select" id="item_unit_10">
-              <option selected value="units">units</option>
-              <option value="kg">kg</option>
-              <option value="liters">litres</option>
-              <option value="grams">grams</option>
-            </select>
-            </select>
-          </div>
-          <div class="col-2 my-auto" style="position: relative;overflow: hidden;display: inline-block;">
-            <button class="btn-icon" id="item_img_10"><i class="fa fa-camera"></i> Image</button>
-            <input type="file" style="font-size: 100px;position: absolute;left: 0;top: 0;opacity: 0;">
-          </div>
-          <div class="col-2 my-auto">
-            <button class="btn-icon" id="item_clear_10" style="background-color: white; border: solid thin #000000;color: black"><i class="fa fa-remove"></i> Clear</button>
-          </div>
-        </div>
-		  
-      </div>
-	  <div class="modal-footer">
-			<button class="btn-icon" id="confirm_items" onclick="submit()" style="align-content: flex-end;min-width: 20%;max-width: 25%;background-color: lawngreen"><i class="fa fa-check"></i> Confirm Items</button>
-	  </div>
+    <div class="modal-header">
+<h2 class="modal-title" id="ShopName" style="text-align: center;width: 100%;"> Shop</h2><!--Shop Name must change based on which shop is selected-->
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+</div>
+<div class="modal-body">
+
+<!--Heading-->
+<div class="form-row" id="heading" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+<div class="col my-auto">
+    <p class="text-left company_font" style="font-size:x-large;margin-left: 3rem;margin-bottom: -0.5rem;">Product And Quantity</p>
+</div>
+</div>
+<!-- need custuser(customer username) input here////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+<!--Customer Name-->
+<div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+  <div class="col my-auto">
+  <div class="input-group">
+  <div class="input-group-prepend">
+  <span class="input-group-text">Name:- </span>
+  </div>
+      <h3 id="CustName"></h3>
+  </div>
+  </div>
+  </div>
+<!--Item 1-->
+<div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">1 </span>
+</div>
+    <input class="form-control" id="item_name_1"  name="prod1" placeholder="Example : Rice 5kg">
+</div>
+</div>
+</div>
+
+<!--Item 2-->
+<div class="form-row" id="item_2" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">2 </span>
+</div>
+    <input class="form-control" id="item_name_2"  name="prod2" placeholder="Example : Milk 2litres">
+</div>
+</div>
+</div>
+
+<!--Item 3-->
+<div class="form-row" id="item_3" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">3 </span>
+</div>
+    <input class="form-control" id="item_name_3"  name="prod3" placeholder="Example : Salt 100g">
+</div>
+</div>
+</div>
+
+<!--Item 4-->
+<div class="form-row" id="item_4" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">4 </span>
+</div>
+    <input class="form-control" id="item_name_4"   name="prod4" placeholder="Example : Soap 4">
+</div>
+</div>
+</div>
+<!--Item 5-->
+<div class="form-row" id="item_5" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">5 </span>
+</div>
+    <input class="form-control" id="item_name_5"   name="prod5" placeholder="Example : Hair Oil 250ml">
+</div>
+</div>
+</div>
+
+<!--Item 6-->
+<div class="form-row" id="item_6" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">6 </span>
+</div>
+    <input class="form-control" id="item_name_6"   name="prod6" placeholder="Example : Rice 5kg">
+</div>
+</div>
+</div>
+
+<!--Item 7-->
+<div class="form-row" id="item_7" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">7 </span>
+</div>
+    <input class="form-control" id="item_name_7"   name="prod7" placeholder="Example : Milk 2litres">
+</div>
+</div>
+</div>
+
+<!--Item 8-->
+<div class="form-row" id="item_8" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">8 </span>
+</div>
+    <input class="form-control" id="item_name_8"   name="prod8" placeholder="Example : Salt 100g">
+</div>
+</div>
+</div>
+
+<!--Item 9-->
+<div class="form-row" id="item_9" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">9 </span>
+</div>
+    <input class="form-control" id="item_name_9"   name="prod9" placeholder="Example : Soap 4">
+</div>
+</div>
+</div>
+
+<!--Item 10-->
+<div class="form-row" id="item_10" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">10 </span>
+</div>
+    <input class="form-control" id="item_name_10"   name="prod10" placeholder="Example : Hair Oil 250ml">
+</div>
+</div>
+</div>
+<!--button to insert items and custuser(customer username) once he clicks                           -->
+<!--<input type="submit" value="Order Now" class="btn btn-primary" name="order_now" data-target="#item" data-toggle="modal">-->
+</div>
+<div class="modal-footer">
+<input type="submit" name="order_now" class="btn-icon text-center" data-dismiss="modal" onclick="submit()" id="confirm_items" window. style="align-content: flex-end;min-width: 20%;max-width: 25%;background-color: lawngreen"><i class="fa fa-check"></i> Confirm Items
+
+<!--<button type="button" class="btn btn-default" name="order_now" data-dismiss="modal" style="position: fixed; left: 42%; bottom: 2%;">confirm</button>-->
+</div>
     </div>
   </div>
 </div>

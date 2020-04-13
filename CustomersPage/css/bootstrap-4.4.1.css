@@ -5103,7 +5103,7 @@ input[type="button"].btn-block {
 .sh-map{	
 	border-top: solid medium #000000;
 	border-bottom-left-radius: 10px;
-	min-height: 200px;
+	min-height: 75px;
 	width: 100%;
 }
 
@@ -5128,8 +5128,9 @@ input[type="button"].btn-block {
 #shop_keeper_details{
 	border: solid medium #000000;
 	border-right: none;
-	border-bottom: none;
+  border-bottom: none;
 	border-bottom-right-radius: 10px;
+  background-color: lightgreen;
 }
 
 .btn-order{

@@ -511,7 +511,7 @@ mark,
 }
 
 .s-img{
-  object-fit: scale-down;
+  object-fit: fill;
 }
 
 .container-fluid#shop_details_container{
@@ -10496,7 +10496,7 @@ a.text-dark:hover, a.text-dark:focus {
   }
 
   #token_stat{
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   
   .nav-link {

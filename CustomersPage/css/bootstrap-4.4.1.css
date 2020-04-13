@@ -367,7 +367,7 @@ template {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -420,10 +420,9 @@ h6, .h6 {
 }
 
 .display-4 {
-  font-size: 5.5vw;
+  font-size: 3rem;
   font-weight: 300;
   line-height: 1.2;
-  font-family: company-font;
 }
 
 hr {
@@ -518,12 +517,108 @@ mark,
 .container-fluid#shop_details_container{
 	border: solid medium #1C4FB4;
 	border-radius: 10px;
-	width: auto;
-	margin: 30px 16px;
+  width: auto;
+  word-wrap: break-word;
+	margin: 10px 16px;
 }
 
 .container-fluid#shop_details_container:hover{
-	box-shadow: 0px 0px 0.5rem #000000;
+	box-shadow: 0px 0px 0.25rem #000000;
+}
+
+.nav-link {
+	font-family: company-font;
+  display: block;
+  padding: 0.5rem 1rem;
+	margin: 10px;
+	font-size: 24px;
+	padding: 0px 10px;
+	border: solid thick;
+	border-top: none;
+	border-bottom: none;
+	text-align: center;
+}
+
+@media (max-width: 576px){
+  .container-fluid#shop_details_container{
+    margin : 4 4;
+  }
+
+  .s-name{
+    font-size: 20px;
+  }
+
+  .s-add{
+    font-size: 2vw;
+    margin-bottom: 0px;
+  }
+
+  #token_stat{
+    font-size: 2rem;
+  }
+  
+  .nav-link {
+    font-size: 16px;
+    border: none;
+  }
+}
+
+#token_stat{
+  margin-bottom: 16px;
+}
+
+.s-name{
+  color: black;
+}
+
+.s-name:hover{
+  color: black;
+}
+
+.s-add{
+  font-size: 2vw;
+}
+
+.s-cat{
+  font-size: 2vw;
+}
+
+#shop_details{
+  padding-left: 24px;
+}
+
+.sk-name {
+  font-family: company-font;
+  font-size: 2.5vw;
+  color: black;
+}
+
+.sk-email {
+	font-family: company-font;
+  margin-top: 0.25rem;
+	font-size: 1.5vw;
+  margin-bottom: 0;
+  color: black;
+  /*-webkit-text-stroke: 0.25px black;*/
+}
+
+.sk-phone { 
+	font-family: company-font;
+  margin-top: 0.25rem;
+	font-size: 1.5vw;
+  margin-bottom: 0;
+  color: black;
+  -webkit-text-stroke: 0.25px black;
+}
+
+.sk-phone:hover{
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.sk-email:hover{
+  color: var(--blue);
+  text-decoration: underline;
 }
 
 .figure-img {
@@ -4269,19 +4364,6 @@ input[type="button"].btn-block {
   list-style: none;
 }
 
-.nav-link {
-	font-family: Arial;
-  display: block;
-  padding: 0.5rem 1rem;
-	margin: 10px;
-	font-size: 1.5vw;
-	padding: 0px 10px;
-	border: solid thick;
-	border-top: none;
-	border-bottom: none;
-	text-align: center;
-}
-
 .nav-link:hover {
   text-decoration: none;
 	border-left-color: red;
@@ -4449,11 +4531,11 @@ input[type="button"].btn-block {
 
 .navbar-toggler {
   padding: 0.1rem 0.5rem;
-  font-size: 1.25rem;
-  color: black;
+  font-size: 1.5rem;
+  color: white;
   line-height: 1;
-  background-color: #ffffff;
-  border: 1px solid black;
+  background-color: transparent;
+  border: none;
   border-radius: 0.25rem;
 }
 
@@ -4811,54 +4893,17 @@ input[type="button"].btn-block {
 
 .card-title {
 	font-family: company-font;
-	font-size: 4vw;
-  	margin-bottom: 0.75rem;
+	font-size: 24px;
 }
 
 .card-subtitle {
 	font-family: company-font;
-  margin-top: -0.375rem;
 	font-size: 1.5vw;
-  margin-bottom: 0.5rem;
 }
 
 .card-text:last-child {
 	font-family: company-font;
 	font-size: 2vw;
-  margin-bottom: 0;
-}
-
-.card#sk_card {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 100%;
-  word-wrap: break-word;
-  background-color: lightgreen;
-  background-clip: border-box;
-  border-radius: 0.25rem;
-}
-
-.card-body#sk_card_body {
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-	background: lightgreen;
-	width: 100%;
-	margin-left: 0rem;
-  min-height: 1px;
-}
-
-.sk-name {
-	font-family: company-font;
-	font-size: 2.5vw;
-  margin-bottom: 0.75rem;
-}
-
-.sk-email.sk-phone {
-	font-family: company-font;
-  margin-top: 0.25rem;
-	font-size: 1.25vw;
   margin-bottom: 0;
 }
 

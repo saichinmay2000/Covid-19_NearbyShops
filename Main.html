@@ -20,7 +20,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="#">ShopKepper</a>
+    <a class="navbar-brand" href="#">Shop Dashboard</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,47 +31,43 @@
           <a class="nav-link" href="Main.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="profile.html">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Delivery.html">Delivery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link  justify-content-center" data-toggle="modal" data-target="#exampleModal" id="veri">Watting </a>
-        </li>
+          <a class="nav-link" href="profile.html">MyProfile</a>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <a class="nav-link fa fa-user-circle-o" data-toggle="modal" data-target="#exampleModal" id="email">
-          skjdfhkjsf  </a>
+        <a class="nav-link fa fa-user-circle-o" data-toggle="modal" data-target="#exampleModal" id="email">shop1@gmail.com</a>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="Logout()">Logout</button>
 
       </form>
     </div>
   </nav>
 <div class="container-fluid" style="margin-top: 60px;"><br>
-  <center><a href="#DashBoard" class="btn btn-info btn-xs">
-    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></center><br>
+  <center></center><br>
   <div class="row">
     <div class="col">
-      <center> <h3>Requests</h3>  </center><br>
+      <center> <h3 style="font-family: Arial, Helvetica, sans-serif;">Requests</h3>  </center><br>
   <div class="conatiner" style="overflow: scroll;  max-height: 200px; max-width: 800px;overflow-x: auto;">  
     <table class="table table-light table-striped table-hover table1" >
       <thead>
         <tr>
           <th>Name</th>
           <th>No of Items</th>
+          <!--<th>Amount</th>-->
+          <th> </th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-      
-        
+        <!-- <tr>
+        <th>Sumanth</th>
+        <th>10</th>
+        <th><input type="button" value="Bill It" class="btn btn-info" data-target="#item_form" data-toggle="modal"></th> -->
+      </tr>
       </tbody>
     </table>
   </div>
 </div>
 <div class="col">
-  <center> <h3>Wating for Customer's Approval</h3>  </center><br>
+  <center> <h3 style="font-family: Arial, Helvetica, sans-serif;">Wating for Customer's Approval</h3>  </center><br>
 <div class="conatiner" style="overflow: scroll;  max-height: 200px; max-width: 800px;overflow-x: auto;">  
 <table class="table table-light table-striped table-hover table2" >
   <thead>
@@ -82,15 +78,20 @@
     </tr>
   </thead>
   <tbody>
+    <!-- <tr>
+      <td>Sumanth</td>
+      <td>10</td>
+      <td>7090</td>
+    </tr> -->
     <tr>
       <td>Hruthik</td>
-      <td>10</td>
-      <td>3000</td>
+      <td>5</td>
+      <td>1500</td>
     </tr>
     <tr>
       <td>Aravind</td>
       <td>10</td>
-      <td>1500</td>
+      <td>3000</td>
     </tr>
     
   </tbody>
@@ -101,8 +102,8 @@
 </div>
 <hr><br>
 <div class="row">
-  <div class="col"><br>
-    <center> <h3>Tokens</h3>  </center><br>
+  <div class="col">
+    <center> <h3 style="font-family: Arial, Helvetica, sans-serif;" >Tokens</h3>  </center><br>
 <div class="conatiner" style="overflow: scroll;  max-height: 200px; max-width: 800px;overflow-x: auto;">  
   <table class="table table-light table-striped table-hover table3" >
     <thead>
@@ -110,30 +111,51 @@
         <th>Token Number</th>
         <th>Name</th>
         <th>No of Items</th>
-        <th></th>
+        <th>Packed</th>
       </tr>
     </thead>
     <tbody>
-      
-      
+      <!--<tr id="div">
+        <th>1</th>
+        <th>Sumanth</th>
+        <th>10</th>
+        <th><button onclick="myFunction()" class="btn btn-info" id="test">Packed</button></th>
+      </tr>-->
+      <script>
+        function myFunction()
+        {
+          var x = document.getElementById("div");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        </script>
     </tbody>
   </table>
 </div>
 </div>
-<div class="col"><br>
-  <center> <h3>Waiting for Customer's Arrival</h3>  </center><br>
+<div class="col">
+  <center><h3 style="font-family: Arial, Helvetica, sans-serif;">Waiting for Customer's Arrival</h3></center><br>
 <div class="conatiner" style="overflow: scroll;  max-height: 200px; max-width: 800px;overflow-x: auto;">  
 <table class="table table-light table-striped table-hover table4" >
 <thead>
   <tr>
+    <th>Token</th>
     <th>Name</th>
-    <th>No of Items</th>
     <th>Bill Amount</th>
+    <th>Delivered</th>
     <th></th>
   </tr>
 </thead>
 <tbody>
-  
+  <!-- <tr id="div">
+    <th>1</th>
+    <th>Sumanth</th>
+    <th>7090</th>
+    <th><button onclick="myFunction()" class="btn btn-info">Delivered</button></th>
+  </tr> -->
 </tbody>
 </table>
 </div>
@@ -144,38 +166,314 @@
 <div id="myModal" class="modal fade" role="dialog"><!-- i used style in this to place the modal to the center of the screen -->
   <div class="modal-dialog">
     <div class="modal-content">
-    <div class="modal-header">
-<h2 class="modal-title" id="CustName" style="text-align: center;width: 100%;"> Shop</h2><!--Shop Name must change based on which shop is selected-->
-<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-</div>
-<div class="modal-body">
-
-<!--Heading-->
-<div class="form-row" id="heading" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
-<div class="col my-auto">
-    <p class="text-left company_font" style="font-size:x-large;margin-left: 3rem;margin-bottom: -0.5rem;">Product And Quantity</p>
-</div>
-</div>
-<!-- need custuser(customer username) input here////////////////////////////////////////////////////////////////////////////////////////////////////////////
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
-<!--Item 1-->
-<div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
-          
-  <div class="col-1 my-auto" style="padding: 0 0;">
-    <input class="form-control-plaintext" readonly value="1">
-</div>
-<div class="col-7 my-auto" style="padding: 0 0;">
-    <input class="form-control-plaintext text-left" readonly id="item_name_1" value="Rice 5kg">
-</div>
-
-  <div class="col-4 my-auto" style="padding: 0 0;">
-  <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text">Rs</span>
+      <div class="modal-header" style="background-color: greenyellow;">
+          <h2 class="modal-title" style="text-align: center;width: 100%;">Sumanth</h2>
       </div>
-      <input class="form-control" type="number" id="item_price_1"  placeholder="Price">
+      <div class="modal-body">
+          
+        <h5 class="modal-title bg-light" style="text-align: center;width: 100%;margin-bottom: 0.5rem;">10 items</h5>
+          <!--Heading-->
+          <div class="form-row" id="heading" style="font-weight: bold;padding: 0 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 medium;">
+            
+            <div class="col-1 my-auto" style="padding: 0 0;">
+              <input class="form-control-plaintext" style="font-weight: bold" readonly value="#">
+          </div>
+          <div class="col-7 my-auto" style="padding: 0 0;">
+              <input class="form-control-plaintext text-left" style="font-weight: bold" readonly id="item_name_1" value="Product And Quantity">
+          </div>
+    
+            <div class="col-4 my-auto" style="padding: 0 0;">
+              <input class="form-control-plaintext text-right" style="font-weight: bold" readonly id="item_price_1" value="Price">
+            </div>
+          </div>
+          
+         <!--Item 1-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          
+          <div class="col-1 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext" readonly value="1">
+        </div>
+        <div class="col-7 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext text-left" readonly id="item_name_1" value="Rice 5kg">
+        </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number" id="item_price_1" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 2-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          
+          <div class="col-1 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext" readonly value="2">
+        </div>
+        <div class="col-7 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext text-left" readonly id="item_name_2" value="Wheat 12kg">
+        </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_2" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 3-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext" readonly value="3">
+        </div>
+        <div class="col-7 my-auto" style="padding: 0 0;">
+                  <input class="form-control-plaintext text-left" readonly id="item_name_3" value="Oil 1l">
+        </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_3" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 4-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext" readonly value="4">
+        </div>
+        <div class="col-7 my-auto" style="padding: 0 0;">
+                  <input class="form-control-plaintext text-left" readonly id="item_name_4" value="Soap 1">
+        </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_4" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 5-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext" readonly value="5">
+        </div>
+        <div class="col-7 my-auto" style="padding: 0 0;">
+                  <input class="form-control-plaintext text-left" readonly id="item_name_5" value="Sanitiser 1">
+        </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_5" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 6-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext" readonly value="6">
+        </div>
+        <div class="col-7 my-auto" style="padding: 0 0;">
+                  <input class="form-control-plaintext text-left" readonly id="item_name_6" value="Dal 1kg">
+        </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_6" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 7-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext" readonly value="7">
+        </div>
+        <div class="col-7 my-auto" style="padding: 0 0;">
+                  <input class="form-control-plaintext text-left" readonly id="item_name_7" value="Curd 1kg">
+        </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_7" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 8-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext" readonly value="8">
+        </div>
+        <div class="col-7 my-auto" style="padding: 0 0;">
+                  <input class="form-control-plaintext text-left" readonly id="item_name_8" value="Milk 2l">
+        </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_8" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 9-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext" readonly value="9">
+        </div>
+        <div class="col-7 my-auto" style="padding: 0 0;">
+                  <input class="form-control-plaintext text-left" readonly id="item_name_9" value="Hand Wash 1">
+        </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_9" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <!--Item 10-->
+        <div class="form-row" id="item_1" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin;border-top: dashed #000000 thin">
+          <div class="col-1 my-auto" style="padding: 0 0;">
+            <input class="form-control-plaintext" readonly value="10">
+        </div>
+        <div class="col-7 my-auto" style="padding: 0 0;">
+                  <input class="form-control-plaintext text-left" readonly id="item_name_10" value="Pepper 100g">
+        </div>
+  
+          <div class="col-4 my-auto" style="padding: 0 0;">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rs</span>
+              </div>
+              <input class="form-control" type="number"id="item_price_10" placeholder="Price">
+          </div>
+        </div>   
+      </div>
+      <div class="modal-footer"><h2 style="font-size: 2vw;width: 100%;">Total: Rs.7090</h2><button class="btn btn-info btn-xs" id="confirm_items" onclick="delete1()" style="align-content: flex-end;min-width: 20%;max-width: 25%;"><i class="fa fa-check"></i> Done</button>
+      </div>
     </div>
   </div>
+</div>
+</div>
+
+<!--Item 4-->
+<div class="form-row" id="item_4" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">4 </span>
+</div>
+    <input class="form-control" id="item_name_4" readonly name="prod4" placeholder="Example : Soap 4">
+</div>
+</div>
+</div>
+<!--Item 5-->
+<div class="form-row" id="item_5" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">5 </span>
+</div>
+    <input class="form-control" id="item_name_5" readonly name="prod5" placeholder="Example : Hair Oil 250ml">
+</div>
+</div>
+</div>
+
+<!--Item 6-->
+<div class="form-row" id="item_6" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">6 </span>
+</div>
+    <input class="form-control" id="item_name_6" readonly name="prod6" placeholder="Example : Rice 5kg">
+</div>
+</div>
+</div>
+
+<!--Item 7-->
+<div class="form-row" id="item_7" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">7 </span>
+</div>
+    <input class="form-control" id="item_name_7" readonly name="prod7" placeholder="Example : Milk 2litres">
+</div>
+</div>
+</div>
+
+<!--Item 8-->
+<div class="form-row" id="item_8" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">8 </span>
+</div>
+    <input class="form-control" id="item_name_8" readonly name="prod8" placeholder="Example : Salt 100g">
+</div>
+</div>
+</div>
+
+<!--Item 9-->
+<div class="form-row" id="item_9" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">9 </span>
+</div>
+    <input class="form-control" id="item_name_9" readonly name="prod9" placeholder="Example : Soap 4">
+</div>
+</div>
+</div>
+
+<!--Item 10-->
+<div class="form-row" id="item_10" style="padding: 0.5rem 0;border-bottom: dashed #000000 thin">
+<div class="col my-auto">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">10 </span>
+</div>
+    <input class="form-control" id="item_name_10" readonly name="prod10" placeholder="Example : Hair Oil 250ml">
+</div>
+</div>
+</div>
+<!--button to insert items and custuser(customer username) once he clicks                           -->
+<!--<input type="submit" value="Order Now" class="btn btn-primary" name="order_now" data-target="#item" data-toggle="modal">-->
+</div>
+<div class="modal-footer">
+<input type="submit" name="order_now" class="btn-icon text-center" id="confirm_items" window. style="align-content: flex-end;min-width: 20%;max-width: 25%;background-color: lawngreen"><i class="fa fa-check"></i> Confirm Items
+
+<!--<button type="button" class="btn btn-default" name="order_now" data-dismiss="modal" style="position: fixed; left: 42%; bottom: 2%;">confirm</button>-->
 </div>
    
         <!--Item 2-->

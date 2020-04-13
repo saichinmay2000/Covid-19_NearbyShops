@@ -519,7 +519,7 @@ mark,
 	border-radius: 10px;
   width: auto;
   word-wrap: break-word;
-	margin: 10px 16px;
+	margin: 16px 64px;
 }
 
 .container-fluid#shop_details_container:hover{
@@ -541,11 +541,14 @@ mark,
 
 .s-name{
   color: black;
-  font-size: 56px;
+  font-size: 7vh;
 }
 
 #token_stat{
   margin-bottom: 16px;
+  font-size: 4rem;
+  color: red;
+  -webkit-text-stroke: thin black;
 }
 
 .s-name:hover{
@@ -557,7 +560,7 @@ mark,
 }
 
 .s-cat{
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 #shop_details{
@@ -576,7 +579,6 @@ mark,
 	font-size: 1.5vw;
   margin-bottom: 0;
   color: black;
-  /*-webkit-text-stroke: 0.25px black;*/
 }
 
 .sk-phone { 
@@ -585,7 +587,6 @@ mark,
 	font-size: 1.5vw;
   margin-bottom: 0;
   color: black;
-  -webkit-text-stroke: 0.25px black;
 }
 
 .sk-phone:hover{
@@ -5102,7 +5103,7 @@ input[type="button"].btn-block {
 .sh-map{	
 	border-top: solid medium #000000;
 	border-bottom-left-radius: 10px;
-	max-height: 200px;
+	min-height: 200px;
 	width: 100%;
 }
 
@@ -10481,11 +10482,15 @@ a.text-dark:hover, a.text-dark:focus {
   }
 
   .s-name{
-    font-size: 20px;
+    font-size: 2.5vh;
+  }
+
+  .s-cat{
+    font-size: 1vh;
   }
 
   .s-add{
-    font-size: 2vw;
+    font-size: 1.5vh;
     margin-bottom: 0px;
   }
 

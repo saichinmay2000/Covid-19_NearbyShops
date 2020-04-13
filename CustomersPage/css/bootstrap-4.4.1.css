@@ -229,8 +229,8 @@ button {
 button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
-}
 
+}
 input,
 button,
 select,
@@ -510,6 +510,18 @@ mark,
 	margin-right: -0.5rem;
 }
 
+#sk_img_div {
+  width: 100%;
+  height: 100%;
+  align-content: center;
+	padding: 0;
+  padding: 0 1rem;
+}
+
+.sk_img{
+  object-fit: fill;
+}
+
 .s-img{
   object-fit: fill;
 }
@@ -551,6 +563,13 @@ mark,
   -webkit-text-stroke: thin black;
 }
 
+#token_stat_sub{
+  margin-bottom: 16px;
+  font-size: 2rem;
+  color: red;
+  -webkit-text-stroke: thin black;
+}
+
 .s-name:hover{
   color: black;
 }
@@ -583,7 +602,7 @@ mark,
 
 .sk-phone { 
 	font-family: company-font;
-  margin-top: 0.25rem;
+  margin-top: 0.275rem;
 	font-size: 1.5vw;
   margin-bottom: 0;
   color: black;
@@ -10419,13 +10438,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
-#sk_img_div {
-  width: 100%;
-  height: 100%;
-	padding: 0;
-  padding: 0 1rem;
-}
-
 .item_input {
 	width: 100%;
 	margin: 0 1rem;
@@ -10470,7 +10482,9 @@ a.text-dark:hover, a.text-dark:focus {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-
+#det_row{
+  margin: auto 24;
+}
 
 #item_quantity_1 {
 	padding: 0.45rem 0.1rem;
@@ -10498,6 +10512,10 @@ a.text-dark:hover, a.text-dark:focus {
   #token_stat{
     font-size: 1.75rem;
   }
+
+  #token_stat_sub{
+    font-size: 1rem;
+  }
   
   .nav-link {
     font-size: 16px;
@@ -10506,5 +10524,22 @@ a.text-dark:hover, a.text-dark:focus {
 
   .navbar-brand{
     font-size: 1.5rem;
+  }
+
+  .sk-name{
+    font-size: 3vw;
+  }
+
+  .sk-email{
+    font-size: 1.75vw;
+    word-wrap: inherit;
+  }
+
+  .sk-phone{
+    font-size: 2vw;
+  }
+
+  #det_row{
+    margin: 2 2;
   }
 }

@@ -24,35 +24,35 @@
             </nav>
 
         <div class="jumbotron jumbotron-fluid text-center">
-          <h1 class="display-4" style="font-size: 4.5vw;color: green;">Out for Pickup</h1>
-          <h3 class="display-4" style="font-size: 1.5vw;color: black;">Please go to stores and collect your order.</h3>
-            <!-- <h1 class="display-4" style="font-size: 3.5vw;">Your Token Number : 1 </h1>
-            <h1 class="display-4" style="font-size: 3.5vw;">Present Token Number : 1  </h1> -->
+          <h1 class="display-4 company_font" style="color: green;" id="token_stat">Out for Pickup</h1>
+          <h3 class="display-4 company_font" style="color: black;" id="token_stat_sub">Please go to stores and collect your order.</h3>
+            <!-- <h1 class="display-4 company_font" style="font-size: 3.5vw;">Your Token Number : 1 </h1>
+            <h1 class="display-4 company_font" style="font-size: 3.5vw;">Present Token Number : 1  </h1> -->
         </div>
 
         <hr style="width: 80%;" color="black">
 
-        <div class="row mx-4 my-2">
-            <div class="col-sm-5">
-                <div class="container text-center" style="height: 100%;width: 100%;">
-                    <div class="modal-content">
-                        <div class="modal-header" style="background-color: greenyellow;">
+        <div class="row my2" style="padding: 0;" id="det_row">
+            <div class="col-sm-5" style="padding: 0;">
+                <div class="container text-center" style="height: 100%;width: 100%;margin-bottom: 1rem;padding: 0;">
+                    <div class="modal-content" style="border: solid thin #000000;border-radius: 0.5rem;">
+                        <div class="modal-header" style="background-color: greenyellow;margin: 0;border-radius: 0.5rem;border-bottom: solid thin;">
                             <h2 class="modal-title" style="text-align: center;width: 100%;">Ordered Items</h2>
                         </div>
                         <div class="modal-body">
                             
                             <!--Heading-->
-                            <div class="form-row" id="heading" style="font-weight: bold;margin-top: -0.75rem;padding: 0 0;border-bottom: dashed #000000 thin;">
+                            <div class="form-row" id="heading" style="font-weight: bold;margin-top: -0.75rem;padding: 0 0;border-bottom: dashed #000000 thin;word-wrap: break-word;">
                               
                               <div class="col-1 my-auto" style="padding: 0 0;">
                                   <input class="form-control-plaintext" style="font-weight: bold" readonly value="#">
                               </div>
                               <div class="col-7 my-auto" style="padding: 0 0;">
-                                  <input class="form-control-plaintext text-left" style="font-weight: bold" readonly id="item_name_1" value="Product And Quantity">
+                                  <input class="form-control-plaintext text-left" style="font-weight: bold" readonly id="item_name" value="Product-Quantity">
                               </div>
                       
                               <div class="col-4 my-auto" style="padding: 0 0;">
-                                <input class="form-control-plaintext text-right" style="font-weight: bold" readonly id="item_price_1" value="Price">
+                                <input class="form-control-plaintext text-right" style="font-weight: bold" readonly id="item_price" value="Price">
                               </div>
                             </div>
 
@@ -67,7 +67,7 @@
                             </div>
                     
                             <div class="col-4 my-auto" style="padding: 0 0;">
-                              <input class="form-control-plaintext text-right" readonly id="item_price_1" value="Rs.2500">
+                              <input class="form-control-plaintext text-right " readonly id="item_price_1" value="Rs.2500">
                             </div>
                           </div>
                             
@@ -82,7 +82,7 @@
                             </div>
                     
                             <div class="col-4 my-auto" style="padding: 0 0;">
-                              <input class="form-control-plaintext text-right" readonly id="item_price_2" value="Rs.2000">
+                              <input class="form-control-plaintext text-right " readonly id="item_price_2" value="Rs.2000">
                             </div>
                           </div>
                             
@@ -96,7 +96,7 @@
                             </div>
                     
                             <div class="col-4 my-auto" style="padding: 0 0;">
-                              <input class="form-control-plaintext text-right" readonly id="item_price_3" value="Rs.250">
+                              <input class="form-control-plaintext text-right " readonly id="item_price_3" value="Rs.250">
                             </div>
                           </div>
                             
@@ -110,7 +110,7 @@
                             </div>
                     
                             <div class="col-4 my-auto" style="padding: 0 0;">
-                              <input class="form-control-plaintext text-right" readonly id="item_price_4" value="Rs.150">
+                              <input class="form-control-plaintext text-right " readonly id="item_price_4" value="Rs.150">
                             </div>
                           </div>
                             
@@ -124,7 +124,7 @@
                             </div>
                     
                             <div class="col-4 my-auto" style="padding: 0 0;">
-                              <input class="form-control-plaintext text-right" readonly id="item_price_5" value="Rs.100">
+                              <input class="form-control-plaintext text-right " readonly id="item_price_5" value="Rs.100">
                             </div>
                           </div>
                             
@@ -138,7 +138,7 @@
                             </div>
                     
                             <div class="col-4 my-auto" style="padding: 0 0;">
-                              <input class="form-control-plaintext text-right" readonly id="item_price_6" value="Rs.90">
+                              <input class="form-control-plaintext text-right " readonly id="item_price_6" value="Rs.90">
                             </div>
                           </div>
                             
@@ -152,7 +152,7 @@
                             </div>
                     
                             <div class="col-4 my-auto" style="padding: 0 0;">
-                              <input class="form-control-plaintext text-right" readonly id="item_price_7" value="Rs.200">
+                              <input class="form-control-plaintext text-right " readonly id="item_price_7" value="Rs.200">
                             </div>
                           </div>
                             
@@ -166,7 +166,7 @@
                             </div>
                     
                             <div class="col-4 my-auto" style="padding: 0 0;">
-                              <input class="form-control-plaintext text-right" readonly id="item_price_8" value="Rs.100">
+                              <input class="form-control-plaintext text-right " readonly id="item_price_8" value="Rs.100">
                             </div>
                           </div>
                             
@@ -180,7 +180,7 @@
                             </div>
                     
                             <div class="col-4 my-auto" style="padding: 0 0;">
-                              <input class="form-control-plaintext text-right" readonly id="item_price_9" value="Rs.500">
+                              <input class="form-control-plaintext text-right " readonly id="item_price_9" value="Rs.500">
                             </div>
                           </div>
                             
@@ -194,12 +194,12 @@
                             </div>
                     
                             <div class="col-4 my-auto" style="padding: 0 0;">
-                              <input class="form-control-plaintext text-right" readonly id="item_price_10" value="Rs.1200">
+                              <input class="form-control-plaintext text-right " readonly id="item_price_10" value="Rs.1200">
                             </div>
                           </div>
                             
                         </div>
-                        <div class="modal-footer" style="background-color: greenyellow;"><h3 class="company_font" style="font-size: 2vw;">Total: Rs.7090</h3>
+                        <div class="modal-footer" style="background-color: greenyellow;border-radius: 0.5rem;border-top: solid thin;"><h3 class="company_font" style="font-size: 2rem;">Total: Rs.7090</h3>
                         </div>
                         <!-- <div class="modal-footer" style="background-color: white;min-width: 100%;justify-content: center;">
                           <div class="row">
@@ -215,36 +215,29 @@
                       </div>
                 </div>
             </div>
+
             <div class="col-sm-7">
-                <div class="row" id="shop_details_cont" style="margin-bottom: 1rem;">
-                    <div align="center" class="col-5 py-0 my-auto" id="shop_img"> <img id="s_img" class="rounded img-fluid" alt="value image" src="images/Rectangle 2.png"> </div>
-                    <div class="col-7" id="shop_details" style="margin: 1.75rem 0rem;">
-                      <div class="card col-7 my-auto">
-                        <div class="card-body">
-                          <h5 class="card-title" id="s_name" style="font-size: 2vw; margin-bottom: 0.5rem;">Chinmay Shop</h5>
-                          <h6 class="card-subtitle mb-2 text-muted" id="s_cat" style="font-size: 1.2vw; margin-bottom: 0.25rem;">Kirana and General</h6>
-                          <p class="card-text" id="s_addr" style="font-size: 1.5vw; margin-bottom: 0.5rem;">8-46/2,JP Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>
-                        </div>
-                      </div>
+                <div class="row container-fluid" id="shop_details_container" style="margin:0;margin-bottom: 1rem;padding: 0.25rem 0.25rem;">
+                    <div align="center" class="col-4 py-0 my-auto px=0" id="shop_img"> <img id="s_img" class="rounded img-fluid" alt="value image" src="images/Rectangle 2.png"> </div>
+                    <div class="col-8 my-auto" id="shop_details" style="margin: 1.75rem 0rem;">
+                          <h5 class="company_font s-name" id="s_name" >Chinmay Shop</h5>
+                          <h6 class="s-cat company_font text-muted" id="s_cat">Kirana and General</h6>
+                          <p class="s-add company_font" id="s_addr">8-46/2,JP Colony, Patancheru, Hyderabad , Telangana, India, 502319</p>
                     </div>
                 </div>
                 
-                <div id="shop_keeper_detail_cont" style="width:80%;border: solid #f90000 thin;border-radius: 1rem; padding: 0.75rem 0.5rem;float: right;;">
-                    <div class="row" id="sk_det">
-                      <div class="col-9 my-auto">
-                        <div class="card col-md-8 my-auto" id="sk_card" style="background-color: white;">
-                          <div class="card-body" id="sk_card_body" style="background-color: white;padding: 0px;">
-                            <h5 class="card-title" id="sk_name" style="font-size: 1.75vw; margin-bottom: 0.5rem;">Chinmay Sai T</h5>
-                            <p class="card-subtitle" id="sk_phone" style="font-size: 1.2vw; margin-bottom: 0.25rem;">+91 9100903791</p>
-                            <p class="card-subtitle" id="sk_email" style="font-size: 1.2vw; margin-bottom: 0.25rem;">saichinmaytripurari@gmail.com</p>
-                          </div>
-                        </div>
+                <div id="shop_keeper_details" style="width:80%;border: solid #f90000 thin;border-radius: 1rem; padding: 0.75rem 0.5rem;float: right;">
+                    <div class="row">
+                      <div class="col-8 my-auto">
+                            <h5 class="sk-name" id="sk_name" >Chinmay Sai T</h5>
+                            <a href="#" class="sk-phone" id="sk_phone" >+91 9100903791</a><br>
+                            <a href="#" class="sk-email" id="sk_email">saichinmaytripurari@gmail.com</a>
                       </div>
-                      <div class="col-3 my-auto" id="sk_img_div"><img class="rounded img-fluid" id="sk_img" src="images/Rectangle 4.png"/></div>
+                      <div class="col-4 my-auto" id="sk_img_div"><img class="rounded img-fluid" id="sk_img" src="images/Rectangle 4.png"/></div>
                     </div>
                 </div>
                 
-                <div id="sh_map" style="width:100%;height: 75%;border: solid #00ff00 thin;border-radius: 1rem; padding: 0rem 0rem;float: left;margin-top: 1rem;">
+                <div id="sh_map" style="width:100%;height: 300px;border: solid #00ff00 thin;border-radius: 1rem; padding: 0rem 0rem;float: left;margin-top: 1rem;">
                 </div>
                 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Mp-nbpxvDIUmjL9MWCDil6AypsFcCVQ&callback=initMap"></script>
 

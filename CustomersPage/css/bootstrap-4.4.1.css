@@ -539,36 +539,13 @@ mark,
 	text-align: center;
 }
 
-@media (max-width: 576px){
-  .container-fluid#shop_details_container{
-    margin : 4 4;
-  }
-
-  .s-name{
-    font-size: 20px;
-  }
-
-  .s-add{
-    font-size: 2vw;
-    margin-bottom: 0px;
-  }
-
-  #token_stat{
-    font-size: 2rem;
-  }
-  
-  .nav-link {
-    font-size: 16px;
-    border: none;
-  }
+.s-name{
+  color: black;
+  font-size: 56px;
 }
 
 #token_stat{
   margin-bottom: 16px;
-}
-
-.s-name{
-  color: black;
 }
 
 .s-name:hover{
@@ -10495,4 +10472,33 @@ a.text-dark:hover, a.text-dark:focus {
 
 #item_quantity_1 {
 	padding: 0.45rem 0.1rem;
+}
+
+/*MOBILE*/
+@media (max-width: 576px){
+  .container-fluid#shop_details_container{
+    margin : 4 4;
+  }
+
+  .s-name{
+    font-size: 20px;
+  }
+
+  .s-add{
+    font-size: 2vw;
+    margin-bottom: 0px;
+  }
+
+  #token_stat{
+    font-size: 2rem;
+  }
+  
+  .nav-link {
+    font-size: 16px;
+    border: none;
+  }
+
+  .navbar-brand{
+    font-size: 1.5rem;
+  }
 }

@@ -3,31 +3,21 @@ var earth = 6378;
 var pi = Math.PI;
 var finLat,finLong;
 (function(){
-    if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-           lat=position.coords.latitude;
-           long= position.coords.longitude;
-          north = lat+(1/earth)*(180/pi);
-          south = lat-(1/earth)*(180/pi);
-          east = long+(1/earth)*(180/pi)/Math.cos(lat*pi/180);
-          west = long-(1/earth)*(180/pi)/Math.cos(lat*pi/180);
-          
-        });
-    } else {
-        alert("Sorry, your browser does not support HTML5 geolocation.");
-    }
+    
     firebase.auth().onAuthStateChanged(user => {
-        document.getElementById("phone").innerHTML=user.phoneNumber;
         var root =  firebase.database();
-        var root1 =  firebase.database().ref("Notifications");
-        root1.once("value").then(function(snap){
-            snap.forEach(function(childSnapshot) {
+        var root1 =  firebase.database().ref("Approval");
+        root1.child(user.uid).once("value").then(function(snap1){
+            snap1.forEach(function(childSnapshot) {
               var childKey = childSnapshot.key;
-              root1.child(childKey).child(user.uid).once("value").then(function(snap1){
-                var Name = snap1.child("Name").val();
-                var Order = snap1.child("Order").val();
-                
-                if(Order==="Done"){
+              
+        root1.child(user.uid).child(childKey).once("value").then(function(snap){
+          var Name = snap.child("Name").val();
+          var Req = snap.child("Request").val();
+          console.log(Name);
+          
+          
+                if(Req=="Not Accepted"){
                 //console.log(finLat);
                 //console.log(finLong);
                 alert("You Have A Notification");
@@ -71,7 +61,7 @@ var finLat,finLong;
           cel1.innerHTML="<img src=\""+ imglink+"\" alt=\"\" style=\"width: 100px;\">"
           cel2.innerHTML=shopName;
           cel3.innerHTML=PhoneNum;
-          cel4.innerHTML=Order;
+          cel4.innerHTML=Req;
           cel5.appendChild(button);
         })
         })

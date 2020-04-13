@@ -11,12 +11,12 @@ var finLat,finLong;
           south = lat-(2/earth)*(180/pi);
           east = long+(2/earth)*(180/pi)/Math.cos(lat*pi/180);
           west = long-(2/earth)*(180/pi)/Math.cos(lat*pi/180);
-          /*console.log(north);
+          console.log(north);
           console.log(south);
           console.log(east);
           console.log(west);
           console.log(lat);
-          console.log(long);*/
+          console.log(long);
           
 
         });

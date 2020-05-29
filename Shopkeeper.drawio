@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-05-29T07:04:07.125Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36 Edg/83.0.478.37" etag="AW3iOWJCqrLmAktIGiEg" version="13.1.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-29T07:05:31.260Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36 Edg/83.0.478.37" etag="Dbai1QBESxBUuZvaEdrc" version="13.1.6" type="github">
   <diagram id="Z1raAA6gh114MOupmUsH" name="Page-1">
-    <mxGraphModel dx="2607" dy="1593" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="447" dy="273" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -44,10 +44,10 @@
         <mxCell id="stwm3qR8TZIVsBcd-epi-7" value="" style="rhombus;whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="355" y="540" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="stwm3qR8TZIVsBcd-epi-11" value="if&lt;br&gt;NO" style="rhombus;whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="1">
+        <mxCell id="stwm3qR8TZIVsBcd-epi-11" value="&lt;span style=&quot;font-size: 8px&quot;&gt;if CUSTOMER REJECTS&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="515" y="540" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="stwm3qR8TZIVsBcd-epi-9" value="If&amp;nbsp;&lt;br&gt;YES" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;" vertex="1" parent="1">
+        <mxCell id="stwm3qR8TZIVsBcd-epi-9" value="&lt;font style=&quot;font-size: 8px&quot;&gt;if CUSTOMER ACCEPTS&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="375" y="570" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="stwm3qR8TZIVsBcd-epi-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="stwm3qR8TZIVsBcd-epi-24">
